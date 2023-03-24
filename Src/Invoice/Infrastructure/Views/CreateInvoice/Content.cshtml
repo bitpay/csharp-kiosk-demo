@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>@Model.Design.Hero.Title</title>
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+</head>
+
+<body>
+<header class="bg-white shadow-sm lg:static lg:overflow-y-visible">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative flex justify-between xl:grid xl:grid-cols-12 lg:gap-8">
+            <div class="flex md:absolute md:left-0 md:inset-y-0 lg:static xl:col-span-2">
+                <div class="flex-shrink-0 flex items-center p-5">
+                    <a href="#">
+                        <img src="@Model.Design.Logo" height="34" width="284" alt=""/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="hero" class="relative" style="@("background-color: " + Model.Design.Hero.BgColor)">
+    <div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+        <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl text-center">@Model.Design.Hero.Title</h1>
+        <p class="mt-6 text-xl text-white max-w-3xl text-center m-auto">@Model.Design.Hero.Body</p>
+    </div>
+</div>
+
+<div class="m-auto mt-6 max-w-3xl">
+    @if (Model.Error != null)
+    {
+        <div class="mt-4 bg-red-700">
+            <span>@Model.Error</span>
+        </div>
+    }
+
+    <form action="/invoice" method="post">
+        <div>
+            @foreach (var field in Model.Design.PosData.Fields)
+            {
+                @switch (field.Type)
+                {
+                    case "select":
+                        <div class="mt-4">
+                            <label for="@field.Name" class="block text-sm font-medium text-gray-700">@field.Label</label>
+                            <select id="@field.Id" name="@field.Name" required="@field.Required" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                                <option selected="selected" value=""></option>
+                                @foreach (var option in field.Options)
+                                {
+                                    <option value="@option.Value">@option.Label</option>
+                                }
+                            </select>
+                        </div>
+                        break;
+                    case "fieldset":
+                        <div class="mt-4">
+                            <fieldset>
+                                <legend>@field.Label</legend>
+                                @foreach (var option in field.Options)
+                                {
+                                    <div>
+                                        <input type="radio" required="@field.Required" id="@option.Id" name="@field.Name" value="@option.Value"/>
+                                        <label for="@option.Id">@option.Label</label>
+                                    </div>
+                                }
+                            </fieldset>
+                        </div>
+                        break;
+                    case "text":
+                        <div class="mt-4">
+                            <label for="@field.Name" class="block text-sm font-medium text-gray-700">@field.Label</label>
+                            <div class="mt-1">
+                                <input type="text" id="@field.Id" name="@field.Name" required="@field.Required" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"/>
+                            </div>
+                        </div>
+                        break;
+                    case "price":
+                        <div class="mt-4">
+                            <label for="@field.Name" class="block text-sm font-medium text-gray-700">@field.Label</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <span class="text-gray-500 sm:text-sm"> $ </span>
+                                </div>
+                                <input step="0.01" type="number" id="@field.Id" name="@field.Name" required="@field.Required" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" placeholder="0.00" aria-describedby="@(field.Id + "-currency")"/>
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <span class="text-gray-500 sm:text-sm" id="@field.Id + '-currency'">@field.Currency</span>
+                                </div>
+                            </div>
+                        </div>
+                        break;
+                }
+            }
+        </div>
+
+        <div class="mt-4 text-center">
+            <button type="submit">
+                <img src="https://test.bitpay.com/cdn/en_US/bp-btn-pay-currencies.svg" alt=""/>
+            </button>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>

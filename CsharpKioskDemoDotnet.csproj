@@ -27,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="Src/Invoice/Infrastructure/Views/HttpGetInvoiceForm/View.cshtml" />
+      <_ContentIncludedByDefault Remove="Src/Invoice/Infrastructure/Views/CreateInvoice/Content.cshtml" />
     </ItemGroup>
 
 </Project>
