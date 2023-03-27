@@ -8,7 +8,7 @@ public class MvcInvoiceContext : DbContext
     {
     }
 
-    public DbSet<Invoice.Domain.Invoice> Invoice { get; set; } = default!;
+    public DbSet<Invoice.Domain.Invoice> Invoices { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

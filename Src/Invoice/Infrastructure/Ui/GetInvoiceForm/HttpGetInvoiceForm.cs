@@ -18,9 +18,8 @@ public class HttpGetInvoiceForm : Controller
     {
         return View(
             "/Src/Invoice/Infrastructure/Views/CreateInvoice/Content.cshtml",
-            new InvoiceFormDto
+            new InvoiceFormDto(_bitPayProperties.Design)
             {
-                Design = _bitPayProperties.Design,
                 Error = (string?)TempData["Error"]
             }
         );

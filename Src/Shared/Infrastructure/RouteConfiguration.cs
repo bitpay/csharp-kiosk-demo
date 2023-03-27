@@ -13,5 +13,10 @@ public static class RouteConfiguration
             pattern: "invoice",
             defaults: new { controller = "HttpCreateInvoice", action = "Execute" }
         );
+        app.MapControllerRoute(
+            name: "invoices",
+            pattern: "invoices",
+            defaults: new { controller = "HttpGetInvoiceGrid", action = "Execute" }
+        );
     }
 }

@@ -1,4 +1,6 @@
+using CsharpKioskDemoDotnet.Invoice.Application.Features.Shared;
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
+using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoiceDtoGrid;
 using CsharpKioskDemoDotnet.Invoice.Domain;
 using CsharpKioskDemoDotnet.Invoice.Infrastructure.Domain;
 using CsharpKioskDemoDotnet.Invoice.Infrastructure.Features.Tasks.CreateInvoice;
@@ -24,9 +26,11 @@ public static class DependencyInjectionConfiguration
         builder.Services.AddSingleton<InvoiceTransactionFactory>();
         builder.Services.AddSingleton<CsharpKioskDemoDotnet.Shared.Logger.ILogger, StdoutLogger>();
         builder.Services.AddSingleton<IObjectToJsonConverter, ObjectToJsonConverter>();
+        builder.Services.AddSingleton<InvoiceMapperDto>();
 
         builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
         builder.Services.AddScoped<CreateInvoice>();
+        builder.Services.AddScoped<GetInvoiceDtoGrid>();
     }
     
 }
