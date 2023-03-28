@@ -25,9 +25,4 @@
     <ItemGroup>
         <Folder Include="Migrations" />
     </ItemGroup>
-
-    <ItemGroup>
-      <_ContentIncludedByDefault Remove="Src/Invoice/Infrastructure/Views/CreateInvoice/Content.cshtml" />
-    </ItemGroup>
-
 </Project>

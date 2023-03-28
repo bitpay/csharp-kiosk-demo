@@ -18,7 +18,7 @@ public class InvoiceRepository : IInvoiceRepository
         _context.SaveChanges();
     }
 
-    public Page<Invoice.Domain.Invoice> findAllPaginated(
+    public Page<Invoice.Domain.Invoice> FindAllPaginated(
         EntityPageNumber entityPageNumber,
         EntityPageSize entityPageSize
     )
@@ -39,5 +39,17 @@ public class InvoiceRepository : IInvoiceRepository
             totalElements: totalElements,
             totalPages: (int) Math.Ceiling((decimal)totalElements / entityPageSize.Value)
         );
+    }
+
+    public Invoice.Domain.Invoice FindById(long invoiceId)
+    {
+        var invoice = _context.Invoices.Find(invoiceId);
+
+        if (invoice == null)
+        {
+            throw new InvoiceNotFound();
+        }
+
+        return invoice;
     }
 }

@@ -1,5 +1,6 @@
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Shared;
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
+using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoice;
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoiceDtoGrid;
 using CsharpKioskDemoDotnet.Invoice.Domain;
 using CsharpKioskDemoDotnet.Invoice.Infrastructure.Domain;
@@ -31,6 +32,7 @@ public static class DependencyInjectionConfiguration
         builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
         builder.Services.AddScoped<CreateInvoice>();
         builder.Services.AddScoped<GetInvoiceDtoGrid>();
+        builder.Services.AddScoped<GetInvoiceDto>();
     }
     
 }

@@ -6,8 +6,10 @@ public interface IInvoiceRepository
 {
     void Save(Invoice invoice);
 
-    public Page<Invoice> findAllPaginated(
+    Page<Invoice> FindAllPaginated(
         EntityPageNumber entityPageNumber,
         EntityPageSize entityPageSize
     );
+
+    Invoice FindById(long invoiceId);
 }

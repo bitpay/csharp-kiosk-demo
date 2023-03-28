@@ -1,18 +1,17 @@
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Shared;
 using CsharpKioskDemoDotnet.Invoice.Domain;
-using CsharpKioskDemoDotnet.Shared.Domain;
 using CsharpKioskDemoDotnet.Shared.Logger;
 using ILogger = CsharpKioskDemoDotnet.Shared.Logger.ILogger;
 
-namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoiceDtoGrid;
+namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoice;
 
-public class GetInvoiceDtoGrid
+public class GetInvoiceDto
 {
     private readonly IInvoiceRepository _invoiceRepository;
     private readonly InvoiceMapperDto _invoiceMapperDto;
     private readonly ILogger _logger;
 
-    public GetInvoiceDtoGrid(
+    public GetInvoiceDto(
         IInvoiceRepository invoiceRepository,
         InvoiceMapperDto invoiceMapperDto,
         ILogger logger
@@ -23,22 +22,18 @@ public class GetInvoiceDtoGrid
         _logger = logger;
     }
 
-    public Page<InvoiceDto> Execute(EntityPageNumber entityPageNumber)
+    public InvoiceDto Execute(long invoiceId)
     {
-        var pagedInvoice = _invoiceRepository.FindAllPaginated(
-            entityPageNumber,
-            new EntityPageSize(10)
-        );
-
+        var invoice = _invoiceRepository.FindById(invoiceId);
         _logger.Info(
-            LogCode.INVOICE_GRID_GET,
-            "Loaded invoice grid",
+            LogCode.INVOICE_GET,
+            "Loaded invoice",
             new Dictionary<string, object?>
             {
-                { "page", pagedInvoice.CurrentPageNumber }
+                { "id", invoice.Id }
             }
         );
 
-        return pagedInvoice.MapElementsToNewType(_invoiceMapperDto);
+        return _invoiceMapperDto.Execute(invoice);
     }
 }
