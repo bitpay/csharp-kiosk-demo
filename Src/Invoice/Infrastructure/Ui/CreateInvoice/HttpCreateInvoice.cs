@@ -13,7 +13,7 @@ public class HttpCreateInvoice : Controller
     }
 
     // POST: invoice
-    [HttpPost]
+    [HttpPost("invoice")]
     public IActionResult Execute(Dictionary<string, string?> parameters)
     {
         try

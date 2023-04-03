@@ -14,13 +14,13 @@ public class HttpGetInvoiceForm : Controller
         _bitPayProperties = bitPayPropertiesOption.Value;
     }
 
+    [HttpGet]
     public IActionResult Execute()
     {
         return View(
             "/Src/Invoice/Infrastructure/Views/CreateInvoice/Content.cshtml",
-            new InvoiceFormDto
+            new InvoiceFormDto(_bitPayProperties.Design)
             {
-                Design = _bitPayProperties.Design,
                 Error = (string?)TempData["Error"]
             }
         );
