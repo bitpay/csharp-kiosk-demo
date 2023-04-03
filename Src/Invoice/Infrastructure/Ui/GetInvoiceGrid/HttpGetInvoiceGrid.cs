@@ -20,7 +20,9 @@ public class HttpGetInvoiceGrid : Controller
         _bitPayProperties = bitPayPropertiesOption.Value;
     }
 
-    public IActionResult Execute(int page)
+    // GET: invoices
+    [HttpGet("invoices")]
+    public IActionResult Execute([FromQuery] int? page = null)
     {
         var grid = _getInvoiceDtoGrid.Execute(new EntityPageNumber(page));
         var gridDto = new InvoiceGridDto(

@@ -1,5 +1,6 @@
 using CsharpKioskDemoDotnet.Invoice.Domain;
 using CsharpKioskDemoDotnet.Shared.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace CsharpKioskDemoDotnet.Invoice.Infrastructure.Domain;
 
@@ -17,8 +18,14 @@ public class InvoiceRepository : IInvoiceRepository
         _context.Add(invoice);
         _context.SaveChanges();
     }
+    
+    public void Update(Invoice.Domain.Invoice invoice)
+    {
+        _context.Update(invoice);
+        _context.SaveChanges();
+    }
 
-    public Page<Invoice.Domain.Invoice> findAllPaginated(
+    public Page<Invoice.Domain.Invoice> FindAllPaginated(
         EntityPageNumber entityPageNumber,
         EntityPageSize entityPageSize
     )
@@ -39,5 +46,34 @@ public class InvoiceRepository : IInvoiceRepository
             totalElements: totalElements,
             totalPages: (int) Math.Ceiling((decimal)totalElements / entityPageSize.Value)
         );
+    }
+
+    public Invoice.Domain.Invoice FindById(long invoiceId)
+    {
+        var invoice = _context.Invoices.Find(invoiceId);
+
+        if (invoice == null)
+        {
+            throw new InvoiceNotFound();
+        }
+
+        return invoice;
+    }
+
+    public Invoice.Domain.Invoice FindByUuid(string invoiceUuid)
+    {
+        var invoice = _context.Invoices
+            .Include(x => x.InvoicePayment)
+            .Include(x => x.InvoiceBuyer)
+            .Include(x => x.InvoiceRefund)
+            .FirstOrDefault(invoice => invoice.Uuid == invoiceUuid);
+
+        if (invoice == null)
+        {
+            throw new InvoiceNotFound();
+        }
+
+        return invoice;
+        
     }
 }

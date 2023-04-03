@@ -14,6 +14,7 @@ public class HttpGetInvoiceForm : Controller
         _bitPayProperties = bitPayPropertiesOption.Value;
     }
 
+    [HttpGet]
     public IActionResult Execute()
     {
         return View(

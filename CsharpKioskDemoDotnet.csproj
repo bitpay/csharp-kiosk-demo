@@ -8,6 +8,7 @@
 
     <ItemGroup>
         <PackageReference Include="BitPay" Version="4.4.2203" />
+        <PackageReference Include="Lib.AspNetCore.ServerSentEvents" Version="8.2.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.4">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
@@ -25,9 +26,4 @@
     <ItemGroup>
         <Folder Include="Migrations" />
     </ItemGroup>
-
-    <ItemGroup>
-      <_ContentIncludedByDefault Remove="Src/Invoice/Infrastructure/Views/CreateInvoice/Content.cshtml" />
-    </ItemGroup>
-
 </Project>

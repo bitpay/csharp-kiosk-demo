@@ -1,3 +1,4 @@
+using CsharpKioskDemoDotnet.Invoice.Domain.Payment;
 using Microsoft.EntityFrameworkCore;
 
 namespace CsharpKioskDemoDotnet.Invoice.Infrastructure.Domain;
@@ -73,7 +74,7 @@ public class MvcInvoiceContext : DbContext
 
             b.HasIndex("InvoiceBuyerProvidedInfoId");
 
-            b.ToTable("invoice_buyer", (string)null);
+            b.ToTable("invoice_buyer");
         });
 
         modelBuilder.Entity("CsharpKioskDemoDotnet.Invoice.Domain.Buyer.InvoiceBuyerProvidedInfo", b =>
@@ -113,7 +114,7 @@ public class MvcInvoiceContext : DbContext
 
             b.HasKey("Id");
 
-            b.ToTable("invoice_buyer_provided_info", (string)null);
+            b.ToTable("invoice_buyer_provided_info");
         });
 
         modelBuilder.Entity("CsharpKioskDemoDotnet.Invoice.Domain.Invoice", b =>
@@ -261,7 +262,7 @@ public class MvcInvoiceContext : DbContext
 
             b.HasIndex("InvoiceRefundId");
 
-            b.ToTable("invoice", (string)null);
+            b.ToTable("invoice");
         });
 
         modelBuilder.Entity("CsharpKioskDemoDotnet.Invoice.Domain.ItemizedDetail.InvoiceItemizedDetail", b =>
@@ -291,7 +292,7 @@ public class MvcInvoiceContext : DbContext
 
             b.HasIndex("InvoiceId");
 
-            b.ToTable("invoice_itemized_detail", (string)null);
+            b.ToTable("invoice_itemized_detail");
         });
 
         modelBuilder.Entity("CsharpKioskDemoDotnet.Invoice.Domain.Payment.InvoicePayment", b =>
@@ -335,7 +336,7 @@ public class MvcInvoiceContext : DbContext
 
             b.HasKey("Id");
 
-            b.ToTable("invoice_payment", (string)null);
+            b.ToTable("invoice_payment");
         });
 
         modelBuilder.Entity("CsharpKioskDemoDotnet.Invoice.Domain.Payment.InvoicePaymentCurrency", b =>
@@ -385,14 +386,8 @@ public class MvcInvoiceContext : DbContext
             b.HasIndex("MinerFeeId");
 
             b.HasIndex("SupportedTransactionCurrencyId");
-            
-            // b.HasIndex("MinerFeeId")
-            //     .IsUnique();
-            //
-            // b.HasIndex("SupportedTransactionCurrencyId")
-            //     .IsUnique();
 
-            b.ToTable("invoice_payment_currency", (string)null);
+            b.ToTable("invoice_payment_currency");
         });
 
         modelBuilder.Entity("CsharpKioskDemoDotnet.Invoice.Domain.Payment.InvoicePaymentCurrencyCode", b =>
@@ -419,7 +414,7 @@ public class MvcInvoiceContext : DbContext
 
             b.HasIndex("PaymentCurrencyId");
 
-            b.ToTable("invoice_payment_currency_code", (string)null);
+            b.ToTable("invoice_payment_currency_code");
         });
 
         modelBuilder.Entity("CsharpKioskDemoDotnet.Invoice.Domain.Payment.InvoicePaymentCurrencyExchangeRate", b =>
@@ -447,7 +442,7 @@ public class MvcInvoiceContext : DbContext
 
             b.HasIndex("PaymentCurrencyId");
 
-            b.ToTable("invoice_payment_currency_exchange_rate", (string)null);
+            b.ToTable("invoice_payment_currency_exchange_rate");
         });
 
         modelBuilder.Entity("CsharpKioskDemoDotnet.Invoice.Domain.Payment.InvoicePaymentCurrencyMinerFee", b =>
@@ -471,7 +466,7 @@ public class MvcInvoiceContext : DbContext
 
             b.HasKey("Id");
 
-            b.ToTable("invoice_payment_currency_miner_fee", (string)null);
+            b.ToTable("invoice_payment_currency_miner_fee");
         });
 
         modelBuilder.Entity(
@@ -492,7 +487,7 @@ public class MvcInvoiceContext : DbContext
 
                 b.HasKey("Id");
 
-                b.ToTable("invoice_payment_currency_supported_transaction_currency", (string)null);
+                b.ToTable("invoice_payment_currency_supported_transaction_currency");
             });
 
         modelBuilder.Entity("CsharpKioskDemoDotnet.Invoice.Domain.Refund.InvoiceRefund", b =>
@@ -514,7 +509,7 @@ public class MvcInvoiceContext : DbContext
 
             b.HasKey("Id");
 
-            b.ToTable("invoice_refund", (string)null);
+            b.ToTable("invoice_refund");
         });
 
         modelBuilder.Entity("CsharpKioskDemoDotnet.Invoice.Domain.Refund.InvoiceRefundInfo", b =>
@@ -541,7 +536,7 @@ public class MvcInvoiceContext : DbContext
 
             b.HasIndex("InvoiceRefundId");
 
-            b.ToTable("invoice_refund_info", (string)null);
+            b.ToTable("invoice_refund_info");
         });
 
         modelBuilder.Entity("CsharpKioskDemoDotnet.Invoice.Domain.Refund.InvoiceRefundInfoAmount", b =>
@@ -568,7 +563,7 @@ public class MvcInvoiceContext : DbContext
 
             b.HasIndex("InvoiceRefundInfoId");
 
-            b.ToTable("invoice_refund_info_amount", (string)null);
+            b.ToTable("invoice_refund_info_amount");
         });
 
         modelBuilder.Entity("CsharpKioskDemoDotnet.Invoice.Domain.Transaction.InvoiceTransaction", b =>
@@ -602,7 +597,7 @@ public class MvcInvoiceContext : DbContext
 
             b.HasIndex("InvoiceId");
 
-            b.ToTable("invoice_transaction", (string)null);
+            b.ToTable("invoice_transaction");
         });
 
         modelBuilder.Entity("CsharpKioskDemoDotnet.Invoice.Domain.Buyer.InvoiceBuyer", b =>

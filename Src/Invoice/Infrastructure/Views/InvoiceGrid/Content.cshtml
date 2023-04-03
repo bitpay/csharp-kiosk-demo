@@ -7,6 +7,7 @@
     <title>@Model.Design.Hero.Title</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all"/>
+    <script src="/js/invoiceSnackBar.js"></script>
     <script src="/js/invoiceGrid.js"></script>
     <style type="text/tailwindcss">
         @@layer components {
@@ -33,6 +34,7 @@
     </style>
 </head>
 <body class="h-full">
+@Html.Partial("../Shared/Snackbars.cshtml")
 
 <div class="min-h-full">
     <nav class="border-b border-gray-200 bg-white">
@@ -166,5 +168,8 @@
         </div>
     </main>
 </div>
+<script type="text/javascript">
+    new UpdateStatusSse().execute();
+</script>
 </body>
 </html>
