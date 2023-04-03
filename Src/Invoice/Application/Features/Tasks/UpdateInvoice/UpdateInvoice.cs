@@ -1,6 +1,4 @@
 using CsharpKioskDemoDotnet.Invoice.Domain;
-using CsharpKioskDemoDotnet.Shared.Logger;
-using ILogger = CsharpKioskDemoDotnet.Shared.Logger.ILogger;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.UpdateInvoice;
 
@@ -10,21 +8,21 @@ public class UpdateInvoice
     private readonly GetInvoiceWithUpdateData _getInvoiceWithUpdateData;
     private readonly ValidateUpdateData _validateUpdateData;
     private readonly IAfterInvoiceUpdate _afterInvoiceUpdate;
-    private readonly ILogger _logger;
+    private readonly UpdateInvoiceLogger _updateInvoiceLogger;
 
     public UpdateInvoice(
         IInvoiceRepository invoiceRepository,
         GetInvoiceWithUpdateData getInvoiceWithUpdateData,
         IAfterInvoiceUpdate afterInvoiceUpdate,
         ValidateUpdateData validateUpdateData,
-        ILogger logger
+        UpdateInvoiceLogger updateInvoiceLogger
     )
     {
         _invoiceRepository = invoiceRepository;
         _getInvoiceWithUpdateData = getInvoiceWithUpdateData;
         _afterInvoiceUpdate = afterInvoiceUpdate;
         _validateUpdateData = validateUpdateData;
-        _logger = logger;
+        _updateInvoiceLogger = updateInvoiceLogger;
     }
 
     public void Execute(
@@ -34,57 +32,24 @@ public class UpdateInvoice
     {
         try
         {
-            _logger.Info(
-                LogCode.IPN_RECEIVED,
-                "Received IPN",
-                updateData
-            );
+            _updateInvoiceLogger.LogIpnReceived(updateData);
             var invoice = _invoiceRepository.FindByUuid(invoiceUuid);
             _validateUpdateData.Execute(updateData, invoice);
             var invoiceUpdate = _getInvoiceWithUpdateData.Execute(updateData, invoice);
-            _logger.Info(
-                LogCode.IPN_VALIDATE_SUCCESS,
-                "Successfully validated IPN",
-                new Dictionary<string, object?>
-                {
-                    { "id", invoice.Id }
-                }
-            );
+            _updateInvoiceLogger.LogIpnValidateSuccess(invoice);
             invoice.Update(invoiceUpdate);
             _invoiceRepository.Update(invoice);
-            _logger.Info(
-                LogCode.INVOICE_UPDATE_SUCCESS,
-                "Successfully updated invoice",
-                new Dictionary<string, object?>
-                {
-                    { "id", invoice.Id }
-                }
-            );
+            _updateInvoiceLogger.LogInvoiceUpdateSuccess(invoice);
             _afterInvoiceUpdate.Execute(invoice, (string?)updateData["eventName"]);
         }
         catch (InvoiceNotFound invoiceNotFound)
         {
-            _logger.Error(
-                LogCode.INVOICE_UPDATE_FAIL,
-                "Failed to update invoice",
-                new Dictionary<string, object?>
-                {
-                    { "uuid", invoiceUuid }
-                }
-            );
+            _updateInvoiceLogger.LogInvoiceUpdateFail(invoiceUuid);
             throw;
         }
         catch (ValidationInvoiceUpdateDataFailed validationInvoiceUpdateDataFailed)
         {
-            _logger.Error(
-                LogCode.IPN_VALIDATE_FAIL,
-                "Failed to validate IPN",
-                new Dictionary<string, object?>
-                {
-                    { "uuid", validationInvoiceUpdateDataFailed.Errors },
-                    { "stackTrace", validationInvoiceUpdateDataFailed.StackTrace }
-                }
-            );
+            _updateInvoiceLogger.LogIpnValidateFail(validationInvoiceUpdateDataFailed);
             throw;
         }
     }

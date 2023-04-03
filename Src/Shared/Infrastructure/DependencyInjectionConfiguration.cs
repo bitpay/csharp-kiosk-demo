@@ -36,6 +36,7 @@ public static class DependencyInjectionConfiguration
         builder.Services.AddSingleton<GetInvoiceWithUpdateData>();
         builder.Services.AddSingleton<ValidateUpdateData>();
         builder.Services.AddSingleton<IAfterInvoiceUpdate, SendSseNotification>();
+        builder.Services.AddSingleton<UpdateInvoiceLogger>();
 
         builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
         builder.Services.AddScoped<CreateInvoice>();

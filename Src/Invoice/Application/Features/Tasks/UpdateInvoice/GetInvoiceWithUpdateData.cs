@@ -1,3 +1,4 @@
+using CsharpKioskDemoDotnet.Invoice.Application.Features.Shared;
 using CsharpKioskDemoDotnet.Invoice.Domain.Buyer;
 using CsharpKioskDemoDotnet.Invoice.Domain.Payment;
 using CsharpKioskDemoDotnet.Shared;
@@ -84,9 +85,7 @@ public class GetInvoiceWithUpdateData
             return null;
         }
 
-        return new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)
-            .AddMilliseconds(double.Parse(expirationTime.ToString()!))
-            .ToLocalTime();
+        return ParseMilisecondsToDataTime.Execute(expirationTime.ToString()!);
     }
 
     private InvoicePayment GetPayment(
