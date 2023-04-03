@@ -1,5 +1,6 @@
 using CsharpKioskDemoDotnet.Invoice.Domain;
 using CsharpKioskDemoDotnet.Shared.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace CsharpKioskDemoDotnet.Invoice.Infrastructure.Domain;
 
@@ -15,6 +16,12 @@ public class InvoiceRepository : IInvoiceRepository
     public void Save(Invoice.Domain.Invoice invoice)
     {
         _context.Add(invoice);
+        _context.SaveChanges();
+    }
+    
+    public void Update(Invoice.Domain.Invoice invoice)
+    {
+        _context.Update(invoice);
         _context.SaveChanges();
     }
 
@@ -51,5 +58,22 @@ public class InvoiceRepository : IInvoiceRepository
         }
 
         return invoice;
+    }
+
+    public Invoice.Domain.Invoice FindByUuid(string invoiceUuid)
+    {
+        var invoice = _context.Invoices
+            .Include(x => x.InvoicePayment)
+            .Include(x => x.InvoiceBuyer)
+            .Include(x => x.InvoiceRefund)
+            .FirstOrDefault(invoice => invoice.Uuid == invoiceUuid);
+
+        if (invoice == null)
+        {
+            throw new InvoiceNotFound();
+        }
+
+        return invoice;
+        
     }
 }
