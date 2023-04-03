@@ -1,3 +1,6 @@
+using CsharpKioskDemoDotnet.Shared.Sse;
+using Lib.AspNetCore.ServerSentEvents;
+
 namespace CsharpKioskDemoDotnet.Shared.Infrastructure;
 
 public static class RouteConfiguration
@@ -8,5 +11,9 @@ public static class RouteConfiguration
             "default",
             "{controller=HttpGetInvoiceForm}/{action=Execute}"
         );
+        app.MapServerSentEvents<NotificationsServerSentEventsService>("/stream-sse", new ServerSentEventsOptions
+        {
+            RequireAcceptHeader = true
+        });
     }
 }
