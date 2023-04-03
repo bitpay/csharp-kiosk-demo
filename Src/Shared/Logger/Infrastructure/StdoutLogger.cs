@@ -30,7 +30,7 @@ public class StdoutLogger : ILogger
             new Dictionary<string, object>
             {
                 { "level", level },
-                { "timestamp", new DateTime() },
+                { "timestamp", ((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds() },
                 { "code", code },
                 { "message", message },
                 { "context", context }

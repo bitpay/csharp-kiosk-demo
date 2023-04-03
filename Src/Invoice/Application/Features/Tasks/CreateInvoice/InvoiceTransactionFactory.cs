@@ -14,7 +14,7 @@ public class InvoiceTransactionFactory
             Amount = transaction.Amount,
             Confirmations = Convert.ToInt32(transaction.Confirmations),
             ReceivedTime = transaction.ReceivedTime != null
-                ? DateTime.Parse(transaction.ReceivedTime)
+                ? DateTime.Parse(transaction.ReceivedTime).ToLocalTime()
                 : null,
             Txid = transaction.Txid
         };

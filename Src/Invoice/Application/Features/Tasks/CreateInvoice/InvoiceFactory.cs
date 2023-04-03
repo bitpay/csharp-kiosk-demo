@@ -1,4 +1,5 @@
 using BitPaySDK.Models.Invoice;
+using CsharpKioskDemoDotnet.Invoice.Application.Features.Shared;
 using CsharpKioskDemoDotnet.Invoice.Domain.ItemizedDetail;
 using InvoiceTransaction = CsharpKioskDemoDotnet.Invoice.Domain.Transaction.InvoiceTransaction;
 
@@ -106,8 +107,6 @@ public class InvoiceFactory
 
     private DateTime GetDateTime(long dateTime)
     {
-        return new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)
-            .AddMilliseconds(dateTime)
-            .ToLocalTime();
+        return ParseMilisecondsToDataTime.Execute(dateTime.ToString());
     }
 }
