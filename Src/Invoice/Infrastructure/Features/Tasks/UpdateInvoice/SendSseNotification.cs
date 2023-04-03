@@ -81,7 +81,7 @@ public class SendSseNotification : IAfterInvoiceUpdate
     {
         return new ServerSentEvent
         {
-            Id = DateTime.Now.ToFileTimeUtc().ToString(),
+            Id = ((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds().ToString(),
             Type = eventName,
             Data = GetData(invoice, eventType, eventMessage)
         };
