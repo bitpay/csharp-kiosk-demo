@@ -5,7 +5,7 @@ namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice
 
 public class InvoiceRefundInfoFactory
 {
-    internal InvoiceRefundInfo Create(
+    internal virtual InvoiceRefundInfo Create(
         InvoiceRefund invoiceRefund,
         RefundInfo info
     )

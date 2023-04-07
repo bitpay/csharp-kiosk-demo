@@ -1,0 +1,24 @@
+{
+  "Id": 0,
+  "Name": null,
+  "Address1": null,
+  "Address2": null,
+  "City": null,
+  "Region": null,
+  "PostalCode": null,
+  "Country": null,
+  "Email": null,
+  "Phone": null,
+  "Notify": null,
+  "BuyerProvidedEmail": "test@example.com",
+  "InvoiceBuyerProvidedInfo": {
+    "Id": 0,
+    "Name": null,
+    "PhoneNumber": null,
+    "SelectedTransactionCurrency": null,
+    "EmailAddress": null,
+    "SelectedWallet": null,
+    "Sms": null,
+    "SmsVerified": null
+  }
+}

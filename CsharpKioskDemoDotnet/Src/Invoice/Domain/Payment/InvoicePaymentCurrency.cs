@@ -3,11 +3,14 @@
  * All rights reserved.
  */
 
+using CsharpKioskDemoDotnet.Shared;
+
 namespace CsharpKioskDemoDotnet.Invoice.Domain.Payment;
 
 public class InvoicePaymentCurrency
 {
     public long Id { get; }
+    [FieldExcludedFromSerialization]
     public InvoicePayment InvoicePayment { get; set; }
     public string CurrencyCode { get; set; }
     public string? Total { get; set; }

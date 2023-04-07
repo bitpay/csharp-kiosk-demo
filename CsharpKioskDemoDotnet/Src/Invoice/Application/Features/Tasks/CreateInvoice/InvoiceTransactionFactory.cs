@@ -4,7 +4,7 @@ namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice
 
 public class InvoiceTransactionFactory
 {
-    internal InvoiceTransaction Create(
+    internal virtual InvoiceTransaction Create(
         Domain.Invoice invoice,
         BitPaySDK.Models.Invoice.InvoiceTransaction transaction
     )

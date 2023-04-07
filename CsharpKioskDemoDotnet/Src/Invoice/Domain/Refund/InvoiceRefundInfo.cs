@@ -3,11 +3,14 @@
  * All rights reserved.
  */
 
+using CsharpKioskDemoDotnet.Shared;
+
 namespace CsharpKioskDemoDotnet.Invoice.Domain.Refund;
 
 public class InvoiceRefundInfo
 {
     public long Id { get; }
+    [FieldExcludedFromSerialization]
     private InvoiceRefund InvoiceRefund { get; }
     public string? SupportRequest { get; set; }
     public string CurrencyCode { get; set; }

@@ -9,7 +9,7 @@ namespace CsharpKioskDemoDotnet.Invoice.Domain;
 
 public class Invoice
 {
-    public long Id { get; }
+    public long Id { get; init; }
     public string Uuid { get; set; }
     public string PosData { get; set; }
     public double Price { get; set; }

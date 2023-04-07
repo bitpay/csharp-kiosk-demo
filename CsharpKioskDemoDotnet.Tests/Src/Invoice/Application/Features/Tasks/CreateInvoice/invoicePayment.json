@@ -1,0 +1,286 @@
+{
+  "Id": 0,
+  "AmountPaid": 10.1,
+  "DisplayAmountPaid": 10.1,
+  "UnderpaidAmount": 0.0,
+  "OverpaidAmount": 0.0,
+  "NonPayProPaymentReceived": false,
+  "UniversalCodesPaymentString": "https://link.test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K",
+  "UniversalCodesVerificationLink": "",
+  "TransactionCurrency": "USD",
+  "PaymentCurrencies": [
+    {
+      "Id": 0,
+      "CurrencyCode": "BTC",
+      "Total": null,
+      "Subtotal": null,
+      "DisplayTotal": null,
+      "DisplaySubtotal": null,
+      "ExchangeRates": [],
+      "CurrencyCodes": [],
+      "SupportedTransactionCurrency": {
+        "Id": 0,
+        "Enabled": null,
+        "Reason": null
+      },
+      "MinerFee": {
+        "Id": 0,
+        "SatoshisPerByte": null,
+        "TotalFee": null,
+        "FiatAmount": null
+      }
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "BTC",
+      "Total": null,
+      "Subtotal": null,
+      "DisplayTotal": null,
+      "DisplaySubtotal": null,
+      "ExchangeRates": [],
+      "CurrencyCodes": [],
+      "SupportedTransactionCurrency": {
+        "Id": 0,
+        "Enabled": null,
+        "Reason": null
+      },
+      "MinerFee": {
+        "Id": 0,
+        "SatoshisPerByte": null,
+        "TotalFee": null,
+        "FiatAmount": null
+      }
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "BTC",
+      "Total": null,
+      "Subtotal": null,
+      "DisplayTotal": null,
+      "DisplaySubtotal": null,
+      "ExchangeRates": [],
+      "CurrencyCodes": [],
+      "SupportedTransactionCurrency": {
+        "Id": 0,
+        "Enabled": null,
+        "Reason": null
+      },
+      "MinerFee": {
+        "Id": 0,
+        "SatoshisPerByte": null,
+        "TotalFee": null,
+        "FiatAmount": null
+      }
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "BTC",
+      "Total": null,
+      "Subtotal": null,
+      "DisplayTotal": null,
+      "DisplaySubtotal": null,
+      "ExchangeRates": [],
+      "CurrencyCodes": [],
+      "SupportedTransactionCurrency": {
+        "Id": 0,
+        "Enabled": null,
+        "Reason": null
+      },
+      "MinerFee": {
+        "Id": 0,
+        "SatoshisPerByte": null,
+        "TotalFee": null,
+        "FiatAmount": null
+      }
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "BTC",
+      "Total": null,
+      "Subtotal": null,
+      "DisplayTotal": null,
+      "DisplaySubtotal": null,
+      "ExchangeRates": [],
+      "CurrencyCodes": [],
+      "SupportedTransactionCurrency": {
+        "Id": 0,
+        "Enabled": null,
+        "Reason": null
+      },
+      "MinerFee": {
+        "Id": 0,
+        "SatoshisPerByte": null,
+        "TotalFee": null,
+        "FiatAmount": null
+      }
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "BTC",
+      "Total": null,
+      "Subtotal": null,
+      "DisplayTotal": null,
+      "DisplaySubtotal": null,
+      "ExchangeRates": [],
+      "CurrencyCodes": [],
+      "SupportedTransactionCurrency": {
+        "Id": 0,
+        "Enabled": null,
+        "Reason": null
+      },
+      "MinerFee": {
+        "Id": 0,
+        "SatoshisPerByte": null,
+        "TotalFee": null,
+        "FiatAmount": null
+      }
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "BTC",
+      "Total": null,
+      "Subtotal": null,
+      "DisplayTotal": null,
+      "DisplaySubtotal": null,
+      "ExchangeRates": [],
+      "CurrencyCodes": [],
+      "SupportedTransactionCurrency": {
+        "Id": 0,
+        "Enabled": null,
+        "Reason": null
+      },
+      "MinerFee": {
+        "Id": 0,
+        "SatoshisPerByte": null,
+        "TotalFee": null,
+        "FiatAmount": null
+      }
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "BTC",
+      "Total": null,
+      "Subtotal": null,
+      "DisplayTotal": null,
+      "DisplaySubtotal": null,
+      "ExchangeRates": [],
+      "CurrencyCodes": [],
+      "SupportedTransactionCurrency": {
+        "Id": 0,
+        "Enabled": null,
+        "Reason": null
+      },
+      "MinerFee": {
+        "Id": 0,
+        "SatoshisPerByte": null,
+        "TotalFee": null,
+        "FiatAmount": null
+      }
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "BTC",
+      "Total": null,
+      "Subtotal": null,
+      "DisplayTotal": null,
+      "DisplaySubtotal": null,
+      "ExchangeRates": [],
+      "CurrencyCodes": [],
+      "SupportedTransactionCurrency": {
+        "Id": 0,
+        "Enabled": null,
+        "Reason": null
+      },
+      "MinerFee": {
+        "Id": 0,
+        "SatoshisPerByte": null,
+        "TotalFee": null,
+        "FiatAmount": null
+      }
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "BTC",
+      "Total": null,
+      "Subtotal": null,
+      "DisplayTotal": null,
+      "DisplaySubtotal": null,
+      "ExchangeRates": [],
+      "CurrencyCodes": [],
+      "SupportedTransactionCurrency": {
+        "Id": 0,
+        "Enabled": null,
+        "Reason": null
+      },
+      "MinerFee": {
+        "Id": 0,
+        "SatoshisPerByte": null,
+        "TotalFee": null,
+        "FiatAmount": null
+      }
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "BTC",
+      "Total": null,
+      "Subtotal": null,
+      "DisplayTotal": null,
+      "DisplaySubtotal": null,
+      "ExchangeRates": [],
+      "CurrencyCodes": [],
+      "SupportedTransactionCurrency": {
+        "Id": 0,
+        "Enabled": null,
+        "Reason": null
+      },
+      "MinerFee": {
+        "Id": 0,
+        "SatoshisPerByte": null,
+        "TotalFee": null,
+        "FiatAmount": null
+      }
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "BTC",
+      "Total": null,
+      "Subtotal": null,
+      "DisplayTotal": null,
+      "DisplaySubtotal": null,
+      "ExchangeRates": [],
+      "CurrencyCodes": [],
+      "SupportedTransactionCurrency": {
+        "Id": 0,
+        "Enabled": null,
+        "Reason": null
+      },
+      "MinerFee": {
+        "Id": 0,
+        "SatoshisPerByte": null,
+        "TotalFee": null,
+        "FiatAmount": null
+      }
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "BTC",
+      "Total": null,
+      "Subtotal": null,
+      "DisplayTotal": null,
+      "DisplaySubtotal": null,
+      "ExchangeRates": [],
+      "CurrencyCodes": [],
+      "SupportedTransactionCurrency": {
+        "Id": 0,
+        "Enabled": null,
+        "Reason": null
+      },
+      "MinerFee": {
+        "Id": 0,
+        "SatoshisPerByte": null,
+        "TotalFee": null,
+        "FiatAmount": null
+      }
+    }
+  ]
+}

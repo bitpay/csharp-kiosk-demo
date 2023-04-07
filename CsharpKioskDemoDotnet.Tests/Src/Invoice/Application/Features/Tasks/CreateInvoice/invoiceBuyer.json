@@ -1,0 +1,24 @@
+{
+  "Id": 0,
+  "Name": "John Wick",
+  "Address1": "123 Broadcast",
+  "Address2": null,
+  "City": "New York",
+  "Region": "TX",
+  "PostalCode": "10001",
+  "Country": "US",
+  "Email": "test@example.com",
+  "Phone": "123456789",
+  "Notify": true,
+  "BuyerProvidedEmail": "test@example.com",
+  "InvoiceBuyerProvidedInfo": {
+    "Id": 0,
+    "Name": null,
+    "PhoneNumber": null,
+    "SelectedTransactionCurrency": null,
+    "EmailAddress": null,
+    "SelectedWallet": null,
+    "Sms": null,
+    "SmsVerified": null
+  }
+}

@@ -3,11 +3,14 @@
  * All rights reserved.
  */
 
+using CsharpKioskDemoDotnet.Shared;
+
 namespace CsharpKioskDemoDotnet.Invoice.Domain.Payment;
 
 public class InvoicePaymentCurrencyExchangeRate
 {
     public long Id { get; }
+    [FieldExcludedFromSerialization]
     public InvoicePaymentCurrency PaymentCurrency { get; set; }
     public string CurrencyCode { get; set; }
     public string Rate { get; set; }

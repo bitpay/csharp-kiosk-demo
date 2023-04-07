@@ -8,17 +8,17 @@ namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoice;
 public class GetInvoiceDto
 {
     private readonly IInvoiceRepository _invoiceRepository;
-    private readonly InvoiceMapperDto _invoiceMapperDto;
+    private readonly InvoiceDtoMapper _invoiceDtoMapper;
     private readonly ILogger _logger;
 
     public GetInvoiceDto(
         IInvoiceRepository invoiceRepository,
-        InvoiceMapperDto invoiceMapperDto,
+        InvoiceDtoMapper invoiceDtoMapper,
         ILogger logger
     )
     {
         _invoiceRepository = invoiceRepository;
-        _invoiceMapperDto = invoiceMapperDto;
+        _invoiceDtoMapper = invoiceDtoMapper;
         _logger = logger;
     }
 
@@ -34,6 +34,6 @@ public class GetInvoiceDto
             }
         );
 
-        return _invoiceMapperDto.Execute(invoice);
+        return _invoiceDtoMapper.Execute(invoice);
     }
 }
