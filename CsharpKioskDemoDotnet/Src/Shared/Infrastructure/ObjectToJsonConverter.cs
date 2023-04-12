@@ -28,9 +28,11 @@ internal class IgnoreFieldResolver : DefaultContractResolver
     )
     {
         var property = base.CreateProperty(member, memberSerialization);
-        var customAttribute = (FieldExcludedFromSerialization)property.AttributeProvider!
+#pragma warning disable CS8600
+        Attribute? customAttribute = (FieldExcludedFromSerialization)property.AttributeProvider!
             .GetAttributes(typeof(FieldExcludedFromSerialization), true)
             .FirstOrDefault();
+#pragma warning restore CS8600
         if (customAttribute != null)
         {
             property.Ignored = true;

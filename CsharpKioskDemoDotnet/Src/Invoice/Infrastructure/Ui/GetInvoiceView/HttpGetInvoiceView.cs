@@ -37,7 +37,7 @@ public class HttpGetInvoiceView : Controller
                 invoiceViewDto
             );
         }
-        catch (InvoiceNotFound exception)
+        catch (InvoiceNotFound)
         {
             return RedirectPermanent("/404");
         }

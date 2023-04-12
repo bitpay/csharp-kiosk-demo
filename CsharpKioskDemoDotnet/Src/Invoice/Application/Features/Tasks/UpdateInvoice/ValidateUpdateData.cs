@@ -73,7 +73,7 @@ public class ValidateUpdateData
                 updateData["buyerFields"]!.ToString()
             )!;
         }
-        catch (Exception exception)
+        catch (Exception)
         {
             errors.Add("buyerFields", "BuyerFields isn't object.");
             return;
