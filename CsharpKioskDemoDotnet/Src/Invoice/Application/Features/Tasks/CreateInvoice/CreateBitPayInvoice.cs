@@ -7,13 +7,13 @@ namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice
 
 public class CreateBitPayInvoice
 {
-    private readonly BitPay _bitPayClient;
+    private readonly IBitPayClient _bitPayClient;
     private readonly BitPayProperties _bitPayProperties;
     private readonly IObjectToJsonConverter _objectToJsonConverter;
     private readonly IGetNotificationUrl _getNotificationUrl;
 
     public CreateBitPayInvoice(
-        BitPay bitPayClient,
+        IBitPayClient bitPayClient,
         IOptions<BitPayProperties> bitPayPropertiesOption,
         IObjectToJsonConverter objectToJsonConverter,
         IGetNotificationUrl getNotificationUrl
@@ -50,7 +50,7 @@ public class CreateBitPayInvoice
         }
         catch (AggregateException ae)
         {
-            throw ae.InnerException;
+            throw ae.InnerException!;
         }
     }
 }

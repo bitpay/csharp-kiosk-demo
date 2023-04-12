@@ -1,0 +1,444 @@
+{
+  "currency": "USD",
+  "guid": "6ba0b636-4bb4-4650-8c03-b13384265860",
+  "token": "6yqFWN5u7Asbnnan6H59qHDSpp5QuUmAZhzg4s1nFLnyYdZNNKjg7Y4zb4hzv7hpxg",
+  "price": 123.0,
+  "posData": "{\"price\":\"123\",\"reg_transaction_no\":\"123\",\"store\":\"store-2\",\"register\":\"2\"}",
+  "notificationURL": "https://localhost:8080/invoices/54449eb1-5ae3-473d-9e0d-ad330594cc39",
+  "transactionSpeed": "medium",
+  "fullNotifications": false,
+  "notificationEmail": "",
+  "redirectURL": "",
+  "closeURL": "",
+  "orderId": "18cf8fde-8478-461b-82c6-8a5eba3e817d",
+  "itemDesc": "Example",
+  "itemCode": "",
+  "physical": false,
+  "acceptanceWindow": 0,
+  "buyerSms": "",
+  "merchantName": "SUMO Heavy Industries LLC",
+  "selectedTransactionCurrency": "",
+  "forcedBuyerSelectedWallet": "",
+  "universalCodes": {
+    "paymentString": "https://link.test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K",
+    "verificationLink": ""
+  },
+  "autoRedirect": false,
+  "id": "CoJ3XEVtpekVWXoD781j3K",
+  "url": "https://test.bitpay.com/invoice?id\u003dCoJ3XEVtpekVWXoD781j3K",
+  "status": "new",
+  "lowFeeDetected": false,
+  "invoiceTime": 1678443507831,
+  "expirationTime": 1678444407831,
+  "currentTime": 1678443507932,
+  "exceptionStatus": "false",
+  "targetConfirmations": 0,
+  "buyerProvidedEmail": "test@example.com",
+  "buyer": {
+    "name": "John Wick",
+    "address1": "123 Broadcast",
+    "address2": null,
+    "locality": "New York",
+    "region": "TX",
+    "postalCode": "10001",
+    "country": "US",
+    "email": "test@example.com",
+    "phone": "123456789",
+    "notify": true
+  },
+  "buyerProvidedInfo": {
+    "name": "John Wick",
+    "phoneNumber": "123456789",
+    "selectedTransactionCurrency": "BTC",
+    "emailAddress": "test@example.com",
+    "selectedWallet": "bitpay",
+    "sms": "123456789",
+    "smsVerified": true
+  },
+  "supportedTransactionCurrencies": {
+    "btc": {
+      "enabled": true,
+      "reason": ""
+    },
+    "bch": {
+      "enabled": true,
+      "reason": ""
+    },
+    "eth": {
+      "enabled": true,
+      "reason": ""
+    },
+    "usdc": {
+      "enabled": true,
+      "reason": ""
+    },
+    "gusd": {
+      "enabled": true,
+      "reason": ""
+    },
+    "pax": {
+      "enabled": true,
+      "reason": ""
+    },
+    "xrp": {
+      "enabled": false,
+      "reason": ""
+    }
+  },
+  "minerFees": {
+    "btc": {
+      "satoshisPerByte": 1,
+      "totalFee": 100,
+      "fiatAmount": 0.02
+    },
+    "bch": {
+      "satoshisPerByte": 0,
+      "totalFee": 0,
+      "fiatAmount": 0.0
+    },
+    "eth": {
+      "satoshisPerByte": 0,
+      "totalFee": 0,
+      "fiatAmount": 0.0
+    },
+    "usdc": {
+      "satoshisPerByte": 0,
+      "totalFee": 0,
+      "fiatAmount": 0.0
+    },
+    "gusd": {
+      "satoshisPerByte": 0,
+      "totalFee": 0,
+      "fiatAmount": 0.0
+    },
+    "pax": {
+      "satoshisPerByte": 0,
+      "totalFee": 0,
+      "fiatAmount": 0.0
+    },
+    "xrp": {
+      "fiatAmount": 0.0
+    }
+  },
+  "shopper": {
+    "user": ""
+  },
+  "billId": "",
+  "extendedNotifications": true,
+  "transactionCurrency": "USD",
+  "forcedBuyerSelectedTransactionCurrency": "",
+  "amountPaid": 10.1,
+  "displayAmountPaid": 10.1,
+  "exchangeRates": {
+    "GUSD": {
+      "BTC": "5.0398145348251183E-5",
+      "MATIC": "1.0478885046631037",
+      "USDC": "1",
+      "LTC": "0.014124293785310734",
+      "BUSD": "1",
+      "USDT": "1",
+      "USD": "1",
+      "ETH": "7.177102173226539E-4",
+      "DOGE": "15.620040954968704",
+      "BCH": "0.009379983116030392",
+      "USDC_m": "1",
+      "PAX": "1"
+    },
+    "BTC": {
+      "GUSD": "19844.66",
+      "MATIC": "20794.99109294771",
+      "USDC": "19844.66",
+      "LTC": "280.29180790960453",
+      "BUSD": "19844.66",
+      "USDT": "19844.66",
+      "USD": "19844.66",
+      "ETH": "14.242715241294174",
+      "DOGE": "309974.40193742927",
+      "BCH": "186.14257574336366",
+      "USDC_m": "19844.66",
+      "PAX": "19844.66"
+    },
+    "MATIC": {
+      "GUSD": "0.9540999999999998",
+      "BTC": "4.8084870476766456E-5",
+      "USDC": "0.9540999999999998",
+      "LTC": "0.01347598870056497",
+      "BUSD": "0.9540999999999998",
+      "USDT": "0.9541",
+      "USD": "0.9540999999999998",
+      "ETH": "6.847673183475439E-4",
+      "DOGE": "14.90308107513564",
+      "BCH": "0.008949441891004597",
+      "USDC_m": "0.9540999999999998",
+      "PAX": "0.9540999999999998"
+    },
+    "USDC": {
+      "GUSD": "1",
+      "BTC": "5.0398145348251183E-5",
+      "MATIC": "1.0478885046631037",
+      "LTC": "0.014124293785310734",
+      "BUSD": "1",
+      "USDT": "1",
+      "USD": "1",
+      "ETH": "7.177102173226539E-4",
+      "DOGE": "15.620040954968704",
+      "BCH": "0.009379983116030392",
+      "USDC_m": "1",
+      "PAX": "1"
+    },
+    "LTC": {
+      "GUSD": "70.77",
+      "BTC": "0.0035666767462957365",
+      "MATIC": "74.15906947500785",
+      "USDC": "70.77",
+      "BUSD": "70.77",
+      "USDT": "70.77000000000001",
+      "USD": "70.77",
+      "ETH": "0.05079235207992421",
+      "DOGE": "1105.4302983831353",
+      "BCH": "0.6638214051214708",
+      "USDC_m": "70.77",
+      "PAX": "70.77"
+    },
+    "BUSD": {
+      "GUSD": "1",
+      "BTC": "5.0398145348251183E-5",
+      "MATIC": "1.0478885046631037",
+      "USDC": "1",
+      "LTC": "0.014124293785310734",
+      "USDT": "1",
+      "USD": "1",
+      "ETH": "7.177102173226539E-4",
+      "DOGE": "15.620040954968704",
+      "BCH": "0.009379983116030392",
+      "USDC_m": "1",
+      "PAX": "1"
+    },
+    "USDT": {
+      "GUSD": "0.9999000000000001",
+      "BTC": "5.0393105533716365E-5",
+      "MATIC": "1.0477837158126375",
+      "USDC": "0.9999000000000001",
+      "LTC": "0.014122881355932204",
+      "BUSD": "0.9999000000000001",
+      "USD": "0.9999000000000001",
+      "ETH": "7.176384463009216E-4",
+      "DOGE": "15.61847895087321",
+      "BCH": "0.009379045117718789",
+      "USDC_m": "0.9999000000000001",
+      "PAX": "0.9999000000000001"
+    },
+    "ETH": {
+      "GUSD": "1393.2",
+      "BTC": "0.07021469609918356",
+      "MATIC": "1459.9182646966362",
+      "USDC": "1393.2",
+      "LTC": "19.677966101694913",
+      "BUSD": "1393.2",
+      "USDT": "1393.1999999999998",
+      "USD": "1393.2",
+      "DOGE": "21761.8410584624",
+      "BCH": "13.068192477253541",
+      "USDC_m": "1393.2",
+      "PAX": "1393.2"
+    },
+    "DOGE": {
+      "GUSD": "0.06400228130282641",
+      "BTC": "3.2255962762688145E-6",
+      "MATIC": "0.06706725483159083",
+      "USDC": "0.06400228130282641",
+      "LTC": "9.039870235646331E-4",
+      "BUSD": "0.06400228130282641",
+      "USDT": "0.06400228129469612",
+      "USD": "0.06400228130282641",
+      "ETH": "4.59350912179716E-5",
+      "BCH": "6.003403174356703E-4",
+      "USDC_m": "0.06400228130282641",
+      "PAX": "0.06400228130282641"
+    },
+    "BCH": {
+      "GUSD": "106.53",
+      "BTC": "0.005368914423949199",
+      "MATIC": "111.63156240176045",
+      "USDC": "106.53",
+      "LTC": "1.5046610169491528",
+      "BUSD": "106.53",
+      "USDT": "106.53",
+      "USD": "106.53",
+      "ETH": "0.07645766945138233",
+      "DOGE": "1664.0029629328162",
+      "USDC_m": "106.53",
+      "PAX": "106.53"
+    },
+    "USDC_m": {
+      "GUSD": "1",
+      "BTC": "5.0398145348251183E-5",
+      "MATIC": "1.0478885046631037",
+      "USDC": "1",
+      "LTC": "0.014124293785310734",
+      "BUSD": "1",
+      "USDT": "1",
+      "USD": "1",
+      "ETH": "7.177102173226539E-4",
+      "DOGE": "15.620040954968704",
+      "BCH": "0.009379983116030392",
+      "PAX": "1"
+    },
+    "PAX": {
+      "GUSD": "1",
+      "BTC": "5.0398145348251183E-5",
+      "MATIC": "1.0478885046631037",
+      "USDC": "1",
+      "LTC": "0.014124293785310734",
+      "BUSD": "1",
+      "USDT": "1",
+      "USD": "1",
+      "ETH": "7.177102173226539E-4",
+      "DOGE": "15.620040954968704",
+      "BCH": "0.009379983116030392",
+      "USDC_m": "1"
+    }
+  },
+  "isCancelled": false,
+  "bitpayIdRequired": false,
+  "paymentSubtotals": {
+    "GUSD": "12300",
+    "BTC": "619800",
+    "MATIC": "128917304000000000000",
+    "USDC": "123000000",
+    "LTC": "173802500",
+    "BUSD": "123000000000000000000",
+    "USDT": "123010000",
+    "ETH": "88286000000000000",
+    "DOGE": "192180649700",
+    "BCH": "115460400",
+    "USDC_m": "123000000",
+    "PAX": "123000000000000000000"
+  },
+  "paymentTotals": {
+    "GUSD": "12300",
+    "BTC": "619900",
+    "MATIC": "128917304000000000000",
+    "USDC": "123000000",
+    "LTC": "173802500",
+    "BUSD": "123000000000000000000",
+    "USDT": "123010000",
+    "ETH": "88286000000000000",
+    "DOGE": "192180649700",
+    "BCH": "115460400",
+    "USDC_m": "123000000",
+    "PAX": "123000000000000000000"
+  },
+  "paymentDisplayTotals": {
+    "GUSD": "123.00",
+    "BTC": "0.006199",
+    "MATIC": "128.917304",
+    "USDC": "123.00",
+    "LTC": "1.738025",
+    "BUSD": "123.00",
+    "USDT": "123.01",
+    "ETH": "0.088286",
+    "DOGE": "1921.806497",
+    "BCH": "1.154604",
+    "USDC_m": "123.00",
+    "PAX": "123.00"
+  },
+  "paymentDisplaySubTotals": {
+    "GUSD": "123.00",
+    "BTC": "0.006198",
+    "MATIC": "128.917304",
+    "USDC": "123.00",
+    "LTC": "1.738025",
+    "BUSD": "123.00",
+    "USDT": "123.01",
+    "ETH": "0.088286",
+    "DOGE": "1921.806497",
+    "BCH": "1.154604",
+    "USDC_m": "123.00",
+    "PAX": "123.00"
+  },
+  "nonPayProPaymentReceived": false,
+  "jsonPayProRequired": false,
+  "paymentCodes": {
+    "GUSD": {
+      "EIP681b": "ethereum:?r\u003dhttps://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K"
+    },
+    "BTC": {
+      "BIP72b": "bitcoin:?r\u003dhttps://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K",
+      "BIP73": "https://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K"
+    },
+    "MATIC": {
+      "EIP681": "matic:?r\u003dhttps://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K"
+    },
+    "USDC": {
+      "EIP681b": "ethereum:?r\u003dhttps://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K"
+    },
+    "LTC": {
+      "BIP72b": "litecoin:?r\u003dhttps://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K",
+      "BIP73": "https://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K"
+    },
+    "BUSD": {
+      "EIP681b": "ethereum:?r\u003dhttps://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K"
+    },
+    "USDT": {
+      "EIP681b": "ethereum:?r\u003dhttps://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K"
+    },
+    "ETH": {
+      "EIP681": "ethereum:?r\u003dhttps://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K"
+    },
+    "DOGE": {
+      "BIP72b": "dogecoin:?r\u003dhttps://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K",
+      "BIP73": "https://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K"
+    },
+    "BCH": {
+      "BIP72b": "bitcoincash:?r\u003dhttps://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K",
+      "BIP73": "https://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K"
+    },
+    "USDC_m": {
+      "EIP681b": "matic:?r\u003dhttps://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K"
+    },
+    "PAX": {
+      "EIP681b": "ethereum:?r\u003dhttps://test.bitpay.com/i/CoJ3XEVtpekVWXoD781j3K"
+    }
+  },
+  "itemizedDetails": [
+    {
+      "amount": 5,
+      "description": "Item 1",
+      "isFee": false
+    },
+    {
+      "amount": 15,
+      "description": "Item 2",
+      "isFee": false
+    }
+  ],
+  "refundAddresses": [
+    {
+      "bitcoincash:qr0fwvhrj0x803cmuyell55wqzpg6432euethcdp9z": {
+        "type": "buyerSupplied",
+        "date": "2021-05-11T08:59:55.146Z",
+        "tag": null
+      }
+    }
+  ],
+  "refundAddressRequestPending": true,
+  "refundInfo": [
+    {
+      "supportRequest": "Cw4dQ1wnEaL11EkfLrBQAC",
+      "currency": "USD",
+      "amounts": {
+        "USD": 1010.1,
+        "BTC": 0.145439
+      }
+    }
+  ],
+  "transactions": [
+    {
+      "txid": "db53d7e2bf3385a31257ce09396202d9c2823370a5ca186db315c45e24594057",
+      "amount": 0.000254,
+      "date": "2021-05-27T11:04:23.155Z",
+      "confirmations": 6
+    }
+  ]
+}

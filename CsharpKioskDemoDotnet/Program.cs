@@ -1,4 +1,6 @@
+using CsharpKioskDemoDotnet.Invoice.Infrastructure.Domain;
 using CsharpKioskDemoDotnet.Shared.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,4 +29,14 @@ app.UseAuthorization();
 
 RouteConfiguration.Execute(app);
 
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    var context = services.GetRequiredService<MvcInvoiceContext>();    
+    context.Database.Migrate();
+}
+
 app.Run();
+
+public partial class Program { }

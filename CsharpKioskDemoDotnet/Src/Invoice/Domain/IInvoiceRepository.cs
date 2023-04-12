@@ -12,6 +12,10 @@ public interface IInvoiceRepository
     );
 
     Invoice FindById(long invoiceId);
+
     Invoice FindByUuid(string invoiceUuid);
+
     void Update(Invoice invoice);
+
+    List<Invoice> FindAll();
 }

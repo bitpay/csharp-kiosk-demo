@@ -22,7 +22,9 @@ public class InvoiceTransaction
         Invoice = invoice;
     }
 
+#pragma warning disable CS8618
     internal InvoiceTransaction()
+#pragma warning restore CS8618
     {
     }
 }

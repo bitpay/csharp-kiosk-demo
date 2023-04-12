@@ -76,4 +76,9 @@ public class InvoiceRepository : IInvoiceRepository
         return invoice;
         
     }
+
+    public List<Invoice.Domain.Invoice> FindAll()
+    {
+        return _context.Invoices.ToList();
+    }
 }
