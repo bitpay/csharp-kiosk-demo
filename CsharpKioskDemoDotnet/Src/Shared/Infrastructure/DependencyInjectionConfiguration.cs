@@ -32,7 +32,7 @@ public static class DependencyInjectionConfiguration
         builder.Services.AddSingleton<CsharpKioskDemoDotnet.Shared.Logger.ILogger, StdoutLogger>();
         builder.Services.AddSingleton<IObjectToJsonConverter, ObjectToJsonConverter>();
         builder.Services.AddSingleton<IJsonToObjectConverter, JsonToObjectConverter>();
-        builder.Services.AddSingleton<InvoiceMapperDto>();
+        builder.Services.AddSingleton<InvoiceDtoMapper>();
         builder.Services.AddSingleton<GetInvoiceWithUpdateData>();
         builder.Services.AddSingleton<ValidateUpdateData>();
         builder.Services.AddSingleton<IAfterInvoiceUpdate, SendSseNotification>();

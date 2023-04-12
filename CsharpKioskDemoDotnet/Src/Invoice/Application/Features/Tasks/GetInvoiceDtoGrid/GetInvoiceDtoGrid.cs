@@ -9,17 +9,17 @@ namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoiceDto
 public class GetInvoiceDtoGrid
 {
     private readonly IInvoiceRepository _invoiceRepository;
-    private readonly InvoiceMapperDto _invoiceMapperDto;
+    private readonly InvoiceDtoMapper _invoiceDtoMapper;
     private readonly ILogger _logger;
 
     public GetInvoiceDtoGrid(
         IInvoiceRepository invoiceRepository,
-        InvoiceMapperDto invoiceMapperDto,
+        InvoiceDtoMapper invoiceDtoMapper,
         ILogger logger
     )
     {
         _invoiceRepository = invoiceRepository;
-        _invoiceMapperDto = invoiceMapperDto;
+        _invoiceDtoMapper = invoiceDtoMapper;
         _logger = logger;
     }
 
@@ -39,6 +39,6 @@ public class GetInvoiceDtoGrid
             }
         );
 
-        return pagedInvoice.MapElementsToNewType(_invoiceMapperDto);
+        return pagedInvoice.MapElementsToNewType(_invoiceDtoMapper);
     }
 }

@@ -1,0 +1,82 @@
+{
+  "Id": 0,
+  "CurrencyCode": "BTC",
+  "Total": null,
+  "Subtotal": null,
+  "DisplayTotal": null,
+  "DisplaySubtotal": null,
+  "ExchangeRates": [
+    {
+      "Id": 0,
+      "CurrencyCode": "GUSD",
+      "Rate": "19844.66"
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "MATIC",
+      "Rate": "20794.99109294771"
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "USDC",
+      "Rate": "19844.66"
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "LTC",
+      "Rate": "280.29180790960453"
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "BUSD",
+      "Rate": "19844.66"
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "USDT",
+      "Rate": "19844.66"
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "USD",
+      "Rate": "19844.66"
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "ETH",
+      "Rate": "14.242715241294174"
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "DOGE",
+      "Rate": "309974.40193742927"
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "BCH",
+      "Rate": "186.14257574336366"
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "USDC_m",
+      "Rate": "19844.66"
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "PAX",
+      "Rate": "19844.66"
+    }
+  ],
+  "CurrencyCodes": [],
+  "SupportedTransactionCurrency": {
+    "Id": 0,
+    "Enabled": true,
+    "Reason": null
+  },
+  "MinerFee": {
+    "Id": 0,
+    "SatoshisPerByte": 1.0,
+    "TotalFee": 100.0,
+    "FiatAmount": 0.02
+  }
+}

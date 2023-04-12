@@ -1,0 +1,96 @@
+{
+  "Id": 0,
+  "Uuid": "123-456-789",
+  "PosData": "{\"price\":\"123\",\"reg_transaction_no\":\"123\",\"store\":\"store-2\",\"register\":\"2\"}",
+  "Price": 123.0,
+  "CurrencyCode": "USD",
+  "BitPayId": "A8Eo7WppQBpQjcgC2mKXqV",
+  "Status": "new",
+  "CreatedDate": "2023-03-10T11:18:27.831+01:00",
+  "BitPayOrderId": "18cf8fde-8478-461b-82c6-8a5eba3e817d",
+  "ExpirationTime": "2023-03-10T11:33:27.831+01:00",
+  "FacadeType": "pos/invoice",
+  "BitPayGuid": "6ba0b636-4bb4-4650-8c03-b13384265860",
+  "ExceptionStatus": "false",
+  "BitPayUrl": "https://test.bitpay.com/invoice?id=CoJ3XEVtpekVWXoD781j3K",
+  "RedirectUrl": "",
+  "CloseUrl": "",
+  "AcceptanceWindow": 0,
+  "Token": "6yqFWN5u7Asbnnan6H59qHDSpp5QuUmAZhzg4s1nFLnyYdZNNKjg7Y4zb4hzv7hpxg",
+  "MerchantName": "SUMO Heavy Industries LLC",
+  "ItemDescription": "Example",
+  "BillId": "",
+  "TargetConfirmations": 0,
+  "LowFeeDetected": false,
+  "AutoRedirect": false,
+  "ShopperUser": "",
+  "JsonPayProRequired": false,
+  "BitPayIdRequired": false,
+  "IsCancelled": false,
+  "TransactionSpeed": "medium",
+  "InvoicePayment": {
+    "Id": 0,
+    "AmountPaid": null,
+    "DisplayAmountPaid": null,
+    "UnderpaidAmount": null,
+    "OverpaidAmount": null,
+    "NonPayProPaymentReceived": null,
+    "UniversalCodesPaymentString": null,
+    "UniversalCodesVerificationLink": null,
+    "TransactionCurrency": null,
+    "PaymentCurrencies": []
+  },
+  "InvoiceBuyer": {
+    "Id": 0,
+    "Name": null,
+    "Address1": null,
+    "Address2": null,
+    "City": null,
+    "Region": null,
+    "PostalCode": null,
+    "Country": null,
+    "Email": null,
+    "Phone": null,
+    "Notify": null,
+    "BuyerProvidedEmail": null,
+    "InvoiceBuyerProvidedInfo": {
+      "Id": 0,
+      "Name": null,
+      "PhoneNumber": null,
+      "SelectedTransactionCurrency": null,
+      "EmailAddress": null,
+      "SelectedWallet": null,
+      "Sms": null,
+      "SmsVerified": null
+    }
+  },
+  "InvoiceRefund": {
+    "Id": 0,
+    "AddressesJson": null,
+    "AddressRequestPending": null,
+    "RefundInfo": []
+  },
+  "InvoiceTransactions": [
+    {
+      "Id": 0,
+      "Amount": null,
+      "Confirmations": null,
+      "ReceivedTime": null,
+      "Txid": null
+    }
+  ],
+  "InvoiceItemizedDetails": [
+    {
+      "Id": 0,
+      "Amount": null,
+      "Description": null,
+      "IsFee": null
+    },
+    {
+      "Id": 0,
+      "Amount": null,
+      "Description": null,
+      "IsFee": null
+    }
+  ]
+}

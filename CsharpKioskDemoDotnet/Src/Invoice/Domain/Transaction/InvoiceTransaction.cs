@@ -3,11 +3,14 @@
  * All rights reserved.
  */
 
+using CsharpKioskDemoDotnet.Shared;
+
 namespace CsharpKioskDemoDotnet.Invoice.Domain.Transaction;
 
 public class InvoiceTransaction
 {
     public long Id { get; }
+    [FieldExcludedFromSerialization]
     private Invoice Invoice { get; }
     public double? Amount { get; set; }
     public int? Confirmations { get; set; }

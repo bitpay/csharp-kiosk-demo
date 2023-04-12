@@ -5,7 +5,7 @@ namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice
 
 public class InvoiceItemizedDetailFactory
 {
-    internal InvoiceItemizedDetail Create(
+    internal virtual InvoiceItemizedDetail Create(
         Domain.Invoice invoice,
         ItemizedDetails itemizedDetail
     )

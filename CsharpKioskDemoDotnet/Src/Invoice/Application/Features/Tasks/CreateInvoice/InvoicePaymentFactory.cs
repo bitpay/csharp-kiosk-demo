@@ -11,7 +11,7 @@ public class InvoicePaymentFactory
         _invoicePaymentCurrencyFactory = invoicePaymentCurrencyFactory;
     }
 
-    internal InvoicePayment Create(BitPaySDK.Models.Invoice.Invoice bitPayInvoice)
+    internal virtual InvoicePayment Create(BitPaySDK.Models.Invoice.Invoice bitPayInvoice)
     {
         var invoicePayment = new InvoicePayment
         {

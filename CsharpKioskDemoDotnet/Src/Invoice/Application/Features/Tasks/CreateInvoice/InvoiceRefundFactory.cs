@@ -18,7 +18,7 @@ public class InvoiceRefundFactory
         _invoiceRefundInfoFactory = invoiceRefundInfoFactory;
     }
 
-    internal InvoiceRefund Create(BitPaySDK.Models.Invoice.Invoice bitPayInvoice)
+    internal virtual InvoiceRefund Create(BitPaySDK.Models.Invoice.Invoice bitPayInvoice)
     {
         var invoiceRefund = new InvoiceRefund
         {

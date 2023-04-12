@@ -4,9 +4,10 @@ namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice
 
 public class InvoiceBuyerProvidedInfoFactory
 {
-    internal InvoiceBuyerProvidedInfo Create(BitPaySDK.Models.Invoice.InvoiceBuyerProvidedInfo buyerProvidedInfo)
+    internal virtual InvoiceBuyerProvidedInfo Create(BitPaySDK.Models.Invoice.InvoiceBuyerProvidedInfo buyerProvidedInfo)
     {
-        return new InvoiceBuyerProvidedInfo {
+        return new InvoiceBuyerProvidedInfo
+        {
             Name = buyerProvidedInfo.Name,
             PhoneNumber = buyerProvidedInfo.PhoneNumber,
             SelectedTransactionCurrency = buyerProvidedInfo.SetSelectedTransactionCurrency,

@@ -6,7 +6,7 @@ namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice
 
 public class InvoicePaymentCurrencyFactory
 {
-    internal InvoicePaymentCurrency Create(
+    internal virtual InvoicePaymentCurrency Create(
         string currencyCode,
         InvoicePayment invoicePayment,
         BitPaySDK.Models.Invoice.Invoice bitPayInvoice
