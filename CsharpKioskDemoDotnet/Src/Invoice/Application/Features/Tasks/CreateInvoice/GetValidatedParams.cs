@@ -17,13 +17,13 @@ public class GetValidatedParams
 
         foreach (var field in _bitPayProperties.GetFields())
         {
-            var value = requestParameters.GetValueOrDefault(field.Name, null);
+            var value = requestParameters!.GetValueOrDefault(field.Name, null);
             if (IsMissingRequiredField(field, value)) {
-                throw new MissingRequiredField {Field = field};
+                throw new MissingRequiredField(field);
             }
 
             if (value != null) {
-                validatedParams.Add(field.Name, value);
+                validatedParams.Add(field.Name!, value);
             }
         }
 

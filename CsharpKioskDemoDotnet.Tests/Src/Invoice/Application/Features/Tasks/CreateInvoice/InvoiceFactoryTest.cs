@@ -1,4 +1,4 @@
-using BitPaySDK.Models.Invoice;
+using BitPay.Models.Invoice;
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 using CsharpKioskDemoDotnet.Invoice.Domain.Buyer;
 using CsharpKioskDemoDotnet.Invoice.Domain.ItemizedDetail;
@@ -48,7 +48,7 @@ public class InvoiceFactoryTest : IGetBitPayInvoice
         var mock = new Mock<InvoiceTransactionFactory>();
         mock.Setup(e => e.Create(
                 It.IsAny<CsharpKioskDemoDotnet.Invoice.Domain.Invoice>(),
-                It.IsAny<BitPaySDK.Models.Invoice.InvoiceTransaction>()
+                It.IsAny<BitPay.Models.Invoice.InvoiceTransaction>()
             ))
             .Returns(
                 new CsharpKioskDemoDotnet.Invoice.Domain.Transaction.InvoiceTransaction(
@@ -77,7 +77,7 @@ public class InvoiceFactoryTest : IGetBitPayInvoice
             Mock.Of<IObjectToJsonConverter>(),
             Mock.Of<InvoiceRefundInfoFactory>()
         );
-        mock.Setup(e => e.Create(It.IsAny<BitPaySDK.Models.Invoice.Invoice>()))
+        mock.Setup(e => e.Create(It.IsAny<BitPay.Models.Invoice.Invoice>()))
             .Returns(new InvoiceRefund());
 
         return mock.Object;
@@ -87,8 +87,8 @@ public class InvoiceFactoryTest : IGetBitPayInvoice
     {
         var mock = new Mock<InvoiceBuyerFactory>(Mock.Of<InvoiceBuyerProvidedInfoFactory>());
         mock.Setup(e => e.Create(
-                It.IsAny<BitPaySDK.Models.Invoice.Invoice>(),
-                It.IsAny<BitPaySDK.Models.Invoice.InvoiceBuyerProvidedInfo>()
+                It.IsAny<BitPay.Models.Invoice.Invoice>(),
+                It.IsAny<BitPay.Models.Invoice.InvoiceBuyerProvidedInfo>()
             ))
             .Returns(new InvoiceBuyer(new InvoiceBuyerProvidedInfo()));
 
@@ -98,7 +98,7 @@ public class InvoiceFactoryTest : IGetBitPayInvoice
     private InvoicePaymentFactory GetInvoicePaymentFactory()
     {
         var mock = new Mock<InvoicePaymentFactory>(Mock.Of<InvoicePaymentCurrencyFactory>());
-        mock.Setup(e => e.Create(It.IsAny<BitPaySDK.Models.Invoice.Invoice>()))
+        mock.Setup(e => e.Create(It.IsAny<BitPay.Models.Invoice.Invoice>()))
             .Returns(new InvoicePayment());
 
         return mock.Object;

@@ -21,7 +21,9 @@ public class InvoiceItemizedDetail
         Invoice = invoice;
     }
     
+#pragma warning disable CS8618
     internal InvoiceItemizedDetail()
+#pragma warning restore CS8618
     {
     }
 }

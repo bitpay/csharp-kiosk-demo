@@ -1,5 +1,6 @@
-using BitPaySDK.Exceptions;
+using BitPay.Exceptions;
 using CsharpKioskDemoDotnet.Invoice.Domain;
+using CsharpKioskDemoDotnet.Shared.Infrastructure;
 using CsharpKioskDemoDotnet.Shared.Logger;
 using ILogger = CsharpKioskDemoDotnet.Shared.Logger.ILogger;
 
@@ -35,6 +36,7 @@ public class CreateInvoice
             var validatedParams = _getValidatedParams.Execute(requestParameters);
             var uuid = Guid.NewGuid().ToString();
             var bitPayInvoice = _createBitPayInvoice.Execute(validatedParams, uuid);
+            // new ObjectToJsonConverter().Execute(bitPayInvoice);
             var invoice = _invoiceFactory.Create(bitPayInvoice, uuid);
 
             _invoiceRepository.Save(invoice);
@@ -53,7 +55,7 @@ public class CreateInvoice
         catch (InvoiceCreationException exception)
         {
             LogException(exception);
-            throw new Exception(exception.InnerException.Message);
+            throw new Exception(exception.InnerException!.Message);
         }
         catch (Exception exception)
         {

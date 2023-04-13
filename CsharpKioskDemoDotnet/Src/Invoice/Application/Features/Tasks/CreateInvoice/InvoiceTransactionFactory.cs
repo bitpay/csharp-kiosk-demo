@@ -6,7 +6,7 @@ public class InvoiceTransactionFactory
 {
     internal virtual InvoiceTransaction Create(
         Domain.Invoice invoice,
-        BitPaySDK.Models.Invoice.InvoiceTransaction transaction
+        BitPay.Models.Invoice.InvoiceTransaction transaction
     )
     {
         return new InvoiceTransaction(invoice)

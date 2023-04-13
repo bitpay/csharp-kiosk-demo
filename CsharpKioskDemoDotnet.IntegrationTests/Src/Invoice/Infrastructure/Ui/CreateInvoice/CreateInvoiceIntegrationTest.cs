@@ -1,5 +1,5 @@
 using System.Net;
-using BitPaySDK.Exceptions;
+using BitPay.Exceptions;
 using Moq;
 
 namespace CsharpKioskDemoDotnet.IntegrationTests.Invoice.Infrastructure.Ui.CreateInvoice;
@@ -16,7 +16,7 @@ public class CreateInvoiceIntegrationTest : AbstractUiIntegrationTest
     public void POST_BitPayInvoiceCreated_SaveInvoiceInDatabaseAndRedirectToBitPayUrl()
     {
         // given
-        bitPay.Setup(e => e.CreateInvoice(It.IsAny<BitPaySDK.Models.Invoice.Invoice>()))
+        bitPay.Setup(e => e.CreateInvoice(It.IsAny<BitPay.Models.Invoice.Invoice>()))
             .ReturnsAsync(UnitTest.GetBitPayInvoice());
 
         // when
@@ -39,7 +39,7 @@ public class CreateInvoiceIntegrationTest : AbstractUiIntegrationTest
     public void POST_CreatingBitPayInvoiceThrowException_DoNotSaveInvoiceInDatabase()
     {
         // given
-        bitPay.Setup(e => e.CreateInvoice(It.IsAny<BitPaySDK.Models.Invoice.Invoice>()))
+        bitPay.Setup(e => e.CreateInvoice(It.IsAny<BitPay.Models.Invoice.Invoice>()))
             .Throws(new AggregateException(new InvoiceCreationException()));
 
         // when

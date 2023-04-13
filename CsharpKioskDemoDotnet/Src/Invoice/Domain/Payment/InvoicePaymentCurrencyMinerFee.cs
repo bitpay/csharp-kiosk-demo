@@ -7,8 +7,8 @@ namespace CsharpKioskDemoDotnet.Invoice.Domain.Payment;
 
 public class InvoicePaymentCurrencyMinerFee
 {
-    public long Id { get;}
-    public double? SatoshisPerByte { get; set; }
-    public double? TotalFee { get; set; }
-    public double? FiatAmount { get; set; }
+    public long Id { get; init;}
+    public decimal? SatoshisPerByte { get; set; }
+    public decimal? TotalFee { get; set; }
+    public decimal? FiatAmount { get; set; }
 }

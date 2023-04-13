@@ -10,7 +10,7 @@ public class InvoiceDtoMapper : IConverter<InvoiceDto, Domain.Invoice>
         return new InvoiceDto(
             id: item.Id,
             bitPayId: item.BitPayId,
-            price: item.Price.ToString("#,###.00#"),
+            price: item.Price.ToString("#,###.00"),
             createdDate: item.CreatedDate.ToUniversalTime().ToString("yyyy-MM-dd HH:mm UTC"),
             bitPayOrderId: item.BitPayOrderId,
             status: item.Status,

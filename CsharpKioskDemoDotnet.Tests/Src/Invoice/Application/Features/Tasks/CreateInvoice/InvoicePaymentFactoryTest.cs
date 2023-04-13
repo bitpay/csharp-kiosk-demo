@@ -36,7 +36,7 @@ public class InvoicePaymentFactoryTest : IGetBitPayInvoice
         mock.Setup(e => e.Create(
                 It.IsAny<string>(),
                 It.IsAny<InvoicePayment>(),
-                It.IsAny<BitPaySDK.Models.Invoice.Invoice>()
+                It.IsAny<BitPay.Models.Invoice.Invoice>()
             ))
             .Returns(new InvoicePaymentCurrency(
                 new InvoicePayment(),

@@ -1,4 +1,3 @@
-using BitPaySDK;
 using CsharpKioskDemoDotnet.Shared;
 using CsharpKioskDemoDotnet.Shared.BitPayProperties;
 using Microsoft.Extensions.Options;
@@ -25,13 +24,13 @@ public class CreateBitPayInvoice
         _getNotificationUrl = getNotificationUrl;
     }
 
-    internal BitPaySDK.Models.Invoice.Invoice Execute(
+    internal BitPay.Models.Invoice.Invoice Execute(
         Dictionary<string, string> validatedParams,
         string uuid
     ) {
-        var price = Convert.ToDouble(validatedParams["price"]);
+        var price = Convert.ToDecimal(validatedParams["price"]);
         var posData = _objectToJsonConverter.Execute(validatedParams);
-        var invoice = new BitPaySDK.Models.Invoice.Invoice(price, _bitPayProperties.GetCurrency())
+        var invoice = new BitPay.Models.Invoice.Invoice(price, _bitPayProperties.GetCurrency())
         {
             OrderId = Guid.NewGuid().ToString(),
             NotificationEmail = _bitPayProperties.NotificationEmail,

@@ -9,7 +9,7 @@ namespace CsharpKioskDemoDotnet.Invoice.Domain.Refund;
 
 public class InvoiceRefundInfo
 {
-    public long Id { get; }
+    public long Id { get; init; }
     [FieldExcludedFromSerialization]
     private InvoiceRefund InvoiceRefund { get; }
     public string? SupportRequest { get; set; }
@@ -25,7 +25,9 @@ public class InvoiceRefundInfo
         CurrencyCode = currencyCode;
     }
     
+#pragma warning disable CS8618
     internal InvoiceRefundInfo()
+#pragma warning restore CS8618
     {
     }
 

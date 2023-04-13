@@ -1,4 +1,4 @@
-using BitPaySDK.Models.Invoice;
+using BitPay.Models.Invoice;
 using CsharpKioskDemoDotnet.Invoice.Domain.ItemizedDetail;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;

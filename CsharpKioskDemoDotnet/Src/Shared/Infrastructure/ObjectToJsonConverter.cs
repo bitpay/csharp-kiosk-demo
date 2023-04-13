@@ -8,8 +8,7 @@ public class ObjectToJsonConverter : IObjectToJsonConverter
 {
     private readonly JsonSerializerSettings _settings = new()
     {
-        ContractResolver = new IgnoreFieldResolver(),
-        Formatting = Formatting.Indented
+        ContractResolver = new IgnoreFieldResolver()
     };
 
     public string? Execute(object? anyObject)

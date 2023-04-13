@@ -3,7 +3,7 @@ namespace CsharpKioskDemoDotnet.Shared.BitPayProperties;
 public class Design
 {
     public Hero Hero { get; set; } = new();
-    public string Logo { get; set; }
+    public string Logo { get; set; } = null!;
     public PosData PosData { get; set; } = new();
 
     public string? GetCurrency()

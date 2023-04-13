@@ -9,7 +9,7 @@ public class InvoiceRefund
 {
     public long Id { get; }
     public string? AddressesJson { get; set; }
-    public string? AddressRequestPending { get; set; }
+    public bool? AddressRequestPending { get; set; }
     public ICollection<InvoiceRefundInfo> RefundInfo { get; } = new List<InvoiceRefundInfo>();
 
     public void AddRefundInfo(ICollection<InvoiceRefundInfo> invoiceRefundInfo)

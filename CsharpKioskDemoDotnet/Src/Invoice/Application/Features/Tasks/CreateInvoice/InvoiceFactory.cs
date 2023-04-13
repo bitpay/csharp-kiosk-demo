@@ -1,4 +1,4 @@
-using BitPaySDK.Models.Invoice;
+using BitPay.Models.Invoice;
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Shared;
 using CsharpKioskDemoDotnet.Invoice.Domain.ItemizedDetail;
 using InvoiceTransaction = CsharpKioskDemoDotnet.Invoice.Domain.Transaction.InvoiceTransaction;
@@ -29,7 +29,7 @@ public class InvoiceFactory
     }
 
     internal Domain.Invoice Create(
-        BitPaySDK.Models.Invoice.Invoice bitPayInvoice,
+        BitPay.Models.Invoice.Invoice bitPayInvoice,
         string uuid
     )
     {
@@ -63,7 +63,7 @@ public class InvoiceFactory
             TargetConfirmations = bitPayInvoice.TargetConfirmations,
             LowFeeDetected = Convert.ToBoolean(bitPayInvoice.LowFeeDetected),
             AutoRedirect = bitPayInvoice.AutoRedirect,
-            ShopperUser = bitPayInvoice.Shopper.User,
+            ShopperUser = bitPayInvoice.Shopper?.User,
             JsonPayProRequired = bitPayInvoice.JsonPayProRequired,
             BitPayIdRequired = bitPayInvoice.BitpayIdRequired,
             IsCancelled = bitPayInvoice.IsCancelled
@@ -99,10 +99,12 @@ public class InvoiceFactory
 
     private ICollection<InvoiceTransaction> GetInvoiceTransactions(
         Domain.Invoice invoice,
-        ICollection<BitPaySDK.Models.Invoice.InvoiceTransaction> transactions
+        ICollection<BitPay.Models.Invoice.InvoiceTransaction>? transactions
     )
     {
-        return transactions.Select(transaction => _invoiceTransactionFactory.Create(invoice, transaction)).ToList();
+        return transactions == null
+            ? new List<InvoiceTransaction>()
+            : transactions.Select(transaction => _invoiceTransactionFactory.Create(invoice, transaction)).ToList();
     }
 
     private DateTime GetDateTime(long dateTime)

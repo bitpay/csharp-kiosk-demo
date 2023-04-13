@@ -12,7 +12,7 @@ public class Invoice
     public long Id { get; init; }
     public string Uuid { get; set; }
     public string PosData { get; set; }
-    public double Price { get; set; }
+    public decimal Price { get; set; }
     public string CurrencyCode { get; set; }
     public string BitPayId { get; set; }
     public string Status { get; set; }
@@ -47,7 +47,7 @@ public class Invoice
     public Invoice(
         string uuid,
         string posData,
-        double price,
+        decimal price,
         string currencyCode,
         string bitPayId,
         string status,
@@ -71,7 +71,9 @@ public class Invoice
         InvoiceRefund = invoiceRefund;
     }
 
+#pragma warning disable CS8618
     internal Invoice()
+#pragma warning restore CS8618
     {
     }
 

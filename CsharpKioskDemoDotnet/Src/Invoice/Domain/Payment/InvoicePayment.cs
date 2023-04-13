@@ -7,9 +7,9 @@ namespace CsharpKioskDemoDotnet.Invoice.Domain.Payment;
 
 public class InvoicePayment
 {
-    public long Id { get; set; }
-    public double? AmountPaid { get; set; }
-    public double? DisplayAmountPaid { get; set; }
+    public long Id { get; init; }
+    public decimal? AmountPaid { get; set; }
+    public string? DisplayAmountPaid { get; set; }
     public double? UnderpaidAmount { get; set; }
     public double? OverpaidAmount { get; set; }
     public bool? NonPayProPaymentReceived { get; set; }

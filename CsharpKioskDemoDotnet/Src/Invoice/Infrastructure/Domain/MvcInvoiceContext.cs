@@ -219,7 +219,7 @@ public class MvcInvoiceContext : DbContext
                 .HasColumnType("TEXT")
                 .HasColumnName("pos_data");
 
-            b.Property<double>("Price")
+            b.Property<decimal>("Price")
                 .HasColumnType("REAL")
                 .HasColumnName("price");
 
@@ -302,11 +302,11 @@ public class MvcInvoiceContext : DbContext
                 .HasColumnType("INTEGER")
                 .HasColumnName("id");
 
-            b.Property<double?>("AmountPaid")
+            b.Property<decimal?>("AmountPaid")
                 .HasColumnType("REAL")
                 .HasColumnName("amount_paid");
 
-            b.Property<double?>("DisplayAmountPaid")
+            b.Property<string?>("DisplayAmountPaid")
                 .HasColumnType("REAL")
                 .HasColumnName("display_amount_paid");
 
@@ -452,15 +452,15 @@ public class MvcInvoiceContext : DbContext
                 .HasColumnType("INTEGER")
                 .HasColumnName("id");
 
-            b.Property<double?>("FiatAmount")
+            b.Property<decimal?>("FiatAmount")
                 .HasColumnType("REAL")
                 .HasColumnName("fiat_amount");
 
-            b.Property<double?>("SatoshisPerByte")
+            b.Property<decimal?>("SatoshisPerByte")
                 .HasColumnType("REAL")
                 .HasColumnName("satoshis_per_byte");
 
-            b.Property<double?>("TotalFee")
+            b.Property<decimal?>("TotalFee")
                 .HasColumnType("REAL")
                 .HasColumnName("total_fee");
 
@@ -497,9 +497,9 @@ public class MvcInvoiceContext : DbContext
                 .HasColumnType("INTEGER")
                 .HasColumnName("id");
 
-            b.Property<string>("AddressRequestPending")
+            b.Property<bool?>("AddressRequestPending")
                 .IsRequired()
-                .HasColumnType("TEXT")
+                .HasColumnType("INTEGER")
                 .HasColumnName("address_request_pending");
 
             b.Property<string>("AddressesJson")
@@ -546,7 +546,7 @@ public class MvcInvoiceContext : DbContext
                 .HasColumnType("INTEGER")
                 .HasColumnName("id");
 
-            b.Property<double?>("Amount")
+            b.Property<decimal?>("Amount")
                 .HasColumnType("REAL")
                 .HasColumnName("amount");
 
@@ -573,7 +573,7 @@ public class MvcInvoiceContext : DbContext
                 .HasColumnType("INTEGER")
                 .HasColumnName("id");
 
-            b.Property<double?>("Amount")
+            b.Property<decimal?>("Amount")
                 .HasColumnType("REAL")
                 .HasColumnName("amount");
 

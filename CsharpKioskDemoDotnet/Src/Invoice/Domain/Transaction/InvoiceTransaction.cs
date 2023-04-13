@@ -12,7 +12,7 @@ public class InvoiceTransaction
     public long Id { get; }
     [FieldExcludedFromSerialization]
     private Invoice Invoice { get; }
-    public double? Amount { get; set; }
+    public decimal? Amount { get; set; }
     public int? Confirmations { get; set; }
     public DateTime? ReceivedTime { get; set; }
     public string? Txid { get; set; }
