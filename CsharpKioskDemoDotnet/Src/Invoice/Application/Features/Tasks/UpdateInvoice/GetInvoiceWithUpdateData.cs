@@ -52,7 +52,7 @@ public class GetInvoiceWithUpdateData
             return invoiceBuyer;
         }
 
-        var buyerFields = _jsonToObjectConverter.Execute<Dictionary<string, object?>>(buyerFieldsData.ToString());
+        var buyerFields = _jsonToObjectConverter.Execute<Dictionary<string, object?>>(buyerFieldsData.ToString())!;
 
         return new InvoiceBuyer(invoiceBuyer.InvoiceBuyerProvidedInfo)
         {

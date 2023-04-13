@@ -84,10 +84,10 @@ public interface IUnitTest
         return newObj;
     }
     
-    BitPaySDK.Models.Invoice.Invoice GetBitPayInvoice()
+    BitPay.Models.Invoice.Invoice GetBitPayInvoice()
     {
         var bitPayInvoiceJson = GetDataFromFile("bitPayInvoice.json");
 
-        return ToObject<BitPaySDK.Models.Invoice.Invoice>(bitPayInvoiceJson);
+        return ToObject<BitPay.Models.Invoice.Invoice>(bitPayInvoiceJson);
     }
 }

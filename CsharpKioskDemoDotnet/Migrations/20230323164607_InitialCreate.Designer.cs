@@ -503,9 +503,9 @@ namespace CsharpKioskDemoDotnet.Migrations
                         .HasColumnType("INTEGER")
                         .HasColumnName("id");
 
-                    b.Property<string>("AddressRequestPending")
+                    b.Property<bool>("AddressRequestPending")
                         .IsRequired()
-                        .HasColumnType("TEXT")
+                        .HasColumnType("INTEGER")
                         .HasColumnName("address_request_pending");
 
                     b.Property<string>("AddressesJson")

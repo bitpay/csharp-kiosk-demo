@@ -2,7 +2,7 @@
   "Id": 0,
   "Name": "John Wick",
   "PhoneNumber": "123456789",
-  "SelectedTransactionCurrency": null,
+  "SelectedTransactionCurrency": "BTC",
   "EmailAddress": "test@example.com",
   "SelectedWallet": "bitpay",
   "Sms": null,

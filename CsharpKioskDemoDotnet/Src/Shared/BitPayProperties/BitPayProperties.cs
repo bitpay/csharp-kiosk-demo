@@ -2,7 +2,7 @@ namespace CsharpKioskDemoDotnet.Shared.BitPayProperties;
 
 public class BitPayProperties
 {
-    public Design Design { get; set; }
+    public Design Design { get; set; } = null!;
     public string? NotificationEmail { get; set; }
 
     public string? GetCurrency()

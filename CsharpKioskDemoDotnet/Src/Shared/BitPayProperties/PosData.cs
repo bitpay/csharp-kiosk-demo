@@ -2,7 +2,7 @@ namespace CsharpKioskDemoDotnet.Shared.BitPayProperties;
 
 public class PosData
 {
-    private List<Field> _fields;
+    private List<Field> _fields = null!;
     public List<Field> Fields
     {
         get => _fields;

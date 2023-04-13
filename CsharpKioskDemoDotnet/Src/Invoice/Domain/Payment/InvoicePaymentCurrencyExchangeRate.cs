@@ -9,7 +9,7 @@ namespace CsharpKioskDemoDotnet.Invoice.Domain.Payment;
 
 public class InvoicePaymentCurrencyExchangeRate
 {
-    public long Id { get; }
+    public long Id { get; init; }
     [FieldExcludedFromSerialization]
     public InvoicePaymentCurrency PaymentCurrency { get; set; }
     public string CurrencyCode { get; set; }
@@ -26,7 +26,9 @@ public class InvoicePaymentCurrencyExchangeRate
         Rate = rate;
     }
     
+#pragma warning disable CS8618
     internal InvoicePaymentCurrencyExchangeRate()
+#pragma warning restore CS8618
     {
     }
 }

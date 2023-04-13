@@ -9,7 +9,7 @@ namespace CsharpKioskDemoDotnet.Invoice.Domain.Payment;
 
 public class InvoicePaymentCurrency
 {
-    public long Id { get; }
+    public long Id { get; init; }
     [FieldExcludedFromSerialization]
     public InvoicePayment InvoicePayment { get; set; }
     public string CurrencyCode { get; set; }
@@ -35,7 +35,9 @@ public class InvoicePaymentCurrency
         MinerFee = minerFee;
     }
     
+#pragma warning disable CS8618
     internal InvoicePaymentCurrency()
+#pragma warning restore CS8618
     {
     }
 

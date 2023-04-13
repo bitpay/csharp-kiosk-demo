@@ -7,7 +7,7 @@ namespace CsharpKioskDemoDotnet.Invoice.Domain.Buyer;
 
 public class InvoiceBuyer
 {
-    public long Id { get; }
+    public long Id { get; init; }
     public string? Name { get; set; }
     public string? Address1 { get; set; }
     public string? Address2 { get; set; }
@@ -26,7 +26,9 @@ public class InvoiceBuyer
         InvoiceBuyerProvidedInfo = invoiceBuyerProvidedInfo;
     }
     
+#pragma warning disable CS8618
     internal InvoiceBuyer()
+#pragma warning restore CS8618
     {
     }
     

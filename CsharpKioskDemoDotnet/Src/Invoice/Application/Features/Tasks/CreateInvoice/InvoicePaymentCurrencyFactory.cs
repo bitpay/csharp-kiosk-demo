@@ -1,4 +1,5 @@
-using BitPaySDK.Models.Invoice;
+using System.Globalization;
+using BitPay.Models.Invoice;
 using CsharpKioskDemoDotnet.Invoice.Domain.Payment;
 using Newtonsoft.Json.Linq;
 
@@ -9,7 +10,7 @@ public class InvoicePaymentCurrencyFactory
     internal virtual InvoicePaymentCurrency Create(
         string currencyCode,
         InvoicePayment invoicePayment,
-        BitPaySDK.Models.Invoice.Invoice bitPayInvoice
+        BitPay.Models.Invoice.Invoice bitPayInvoice
     )
     {
         var invoicePaymentTotal = new InvoicePaymentCurrency(
@@ -37,7 +38,7 @@ public class InvoicePaymentCurrencyFactory
         JToken exchangeRates
     )
     {
-        var allRates = exchangeRates.ToObject<Dictionary<string, Dictionary<string, double>>>();
+        var allRates = exchangeRates.ToObject<Dictionary<string, Dictionary<string, double>>>()!;
         var ratesForCurrencyCode = allRates.GetValueOrDefault(
             invoicePaymentCurrency.CurrencyCode,
             new Dictionary<string, double>()
@@ -47,7 +48,7 @@ public class InvoicePaymentCurrencyFactory
             new InvoicePaymentCurrencyExchangeRate(
                 paymentCurrency: invoicePaymentCurrency,
                 currencyCode: rate.Key,
-                rate: rate.Value.ToString()
+                rate: rate.Value.ToString(CultureInfo.InvariantCulture)
             )
         ).ToList();
     }

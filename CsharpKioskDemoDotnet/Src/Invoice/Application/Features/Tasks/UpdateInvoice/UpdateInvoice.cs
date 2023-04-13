@@ -42,7 +42,7 @@ public class UpdateInvoice
             _updateInvoiceLogger.LogInvoiceUpdateSuccess(invoice);
             _afterInvoiceUpdate.Execute(invoice, (string?)updateData["eventName"]);
         }
-        catch (InvoiceNotFound invoiceNotFound)
+        catch (InvoiceNotFound)
         {
             _updateInvoiceLogger.LogInvoiceUpdateFail(invoiceUuid);
             throw;

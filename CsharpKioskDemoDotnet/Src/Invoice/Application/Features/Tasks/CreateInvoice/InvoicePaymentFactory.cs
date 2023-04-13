@@ -11,12 +11,12 @@ public class InvoicePaymentFactory
         _invoicePaymentCurrencyFactory = invoicePaymentCurrencyFactory;
     }
 
-    internal virtual InvoicePayment Create(BitPaySDK.Models.Invoice.Invoice bitPayInvoice)
+    internal virtual InvoicePayment Create(BitPay.Models.Invoice.Invoice bitPayInvoice)
     {
         var invoicePayment = new InvoicePayment
         {
             AmountPaid = bitPayInvoice.AmountPaid,
-            DisplayAmountPaid = Convert.ToDouble(bitPayInvoice.DisplayAmountPaid),
+            DisplayAmountPaid = bitPayInvoice.DisplayAmountPaid,
             NonPayProPaymentReceived = bitPayInvoice.NonPayProPaymentReceived,
             UniversalCodesPaymentString = bitPayInvoice.UniversalCodes.PaymentString,
             UniversalCodesVerificationLink = bitPayInvoice.UniversalCodes.VerificationLink,
@@ -37,7 +37,7 @@ public class InvoicePaymentFactory
 
     private ICollection<InvoicePaymentCurrency> GetInvoicePaymentCurrencies(
         InvoicePayment invoicePayment,
-        BitPaySDK.Models.Invoice.Invoice bitPayInvoice
+        BitPay.Models.Invoice.Invoice bitPayInvoice
     )
     {
         return bitPayInvoice.MinerFees.GetType().GetProperties()

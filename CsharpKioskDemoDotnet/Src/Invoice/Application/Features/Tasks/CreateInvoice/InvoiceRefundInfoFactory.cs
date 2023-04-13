@@ -1,4 +1,4 @@
-using BitPaySDK.Models.Invoice;
+using BitPay.Models.Invoice;
 using CsharpKioskDemoDotnet.Invoice.Domain.Refund;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
@@ -30,7 +30,7 @@ public class InvoiceRefundInfoFactory
 
     private ICollection<InvoiceRefundInfoAmount> GetRefundInfoAmounts(
         InvoiceRefundInfo invoiceRefundInfo,
-        Dictionary<string, double> infoAmounts
+        Dictionary<string, decimal> infoAmounts
     )
     {
         return infoAmounts.Select(item => new InvoiceRefundInfoAmount(

@@ -1,4 +1,4 @@
-using BitPaySDK.Models.Invoice;
+using BitPay.Models.Invoice;
 using CsharpKioskDemoDotnet.Invoice.Domain.Refund;
 using CsharpKioskDemoDotnet.Shared;
 
@@ -18,7 +18,7 @@ public class InvoiceRefundFactory
         _invoiceRefundInfoFactory = invoiceRefundInfoFactory;
     }
 
-    internal virtual InvoiceRefund Create(BitPaySDK.Models.Invoice.Invoice bitPayInvoice)
+    internal virtual InvoiceRefund Create(BitPay.Models.Invoice.Invoice bitPayInvoice)
     {
         var invoiceRefund = new InvoiceRefund
         {

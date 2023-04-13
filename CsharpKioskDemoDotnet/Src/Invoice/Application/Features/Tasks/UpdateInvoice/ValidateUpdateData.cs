@@ -1,5 +1,4 @@
-using BitPaySDK.Models.Invoice;
-using CsharpKioskDemoDotnet.Invoice.Application.Features.Shared;
+using BitPay.Models.Invoice;
 using CsharpKioskDemoDotnet.Shared;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.UpdateInvoice;

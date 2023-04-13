@@ -47,7 +47,7 @@ public class GetValidatedParamsTest : IUnitTest
         var exception = Assert.Throws<MissingRequiredField>(() => GetTestedClass().Execute(requestParameters));
 
         // then
-        UnitTest.Equals("price", exception.Field.Name);
+        UnitTest.Equals("price", exception.Field.Name!);
     }
 
     private GetValidatedParams GetTestedClass()

@@ -1,5 +1,5 @@
 using CsharpKioskDemoDotnet.Invoice.Domain.Buyer;
-using InvoiceBuyerProvidedInfo = BitPaySDK.Models.Invoice.InvoiceBuyerProvidedInfo;
+using InvoiceBuyerProvidedInfo = BitPay.Models.Invoice.InvoiceBuyerProvidedInfo;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 
@@ -14,7 +14,7 @@ public class InvoiceBuyerFactory
     }
 
     internal virtual InvoiceBuyer Create(
-        BitPaySDK.Models.Invoice.Invoice bitPayInvoice,
+        BitPay.Models.Invoice.Invoice bitPayInvoice,
         InvoiceBuyerProvidedInfo buyerProvidedInfo
     )
     {

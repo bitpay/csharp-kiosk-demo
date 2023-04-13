@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="BitPay" Version="4.4.2203" />
         <PackageReference Include="Lib.AspNetCore.ServerSentEvents" Version="8.2.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.4">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -31,5 +30,9 @@
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
             <_Parameter1>DynamicProxyGenAssembly2</_Parameter1>
         </AssemblyAttribute>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\csharp-bitpay-client\BitPay\BitPay.csproj" />
     </ItemGroup>
 </Project>

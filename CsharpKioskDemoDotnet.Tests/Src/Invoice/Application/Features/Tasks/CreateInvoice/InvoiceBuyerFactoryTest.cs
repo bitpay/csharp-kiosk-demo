@@ -18,7 +18,7 @@ public class InvoiceBuyerFactoryTest : IGetBitPayInvoice
         // when
         var result = GetTestedClass().Create(
             bitPayInvoice,
-            new BitPaySDK.Models.Invoice.InvoiceBuyerProvidedInfo()
+            new BitPay.Models.Invoice.InvoiceBuyerProvidedInfo()
         );
 
         // then
@@ -33,12 +33,12 @@ public class InvoiceBuyerFactoryTest : IGetBitPayInvoice
     {
         // given
         var bitPayInvoiceJson = UnitTest.GetDataFromFile("bitPayInvoiceWithoutBuyer.json"); 
-        var bitPayInvoice = UnitTest.ToObject<BitPaySDK.Models.Invoice.Invoice>(bitPayInvoiceJson);
+        var bitPayInvoice = UnitTest.ToObject<BitPay.Models.Invoice.Invoice>(bitPayInvoiceJson);
 
         // when
         var result = GetTestedClass().Create(
             bitPayInvoice,
-            new BitPaySDK.Models.Invoice.InvoiceBuyerProvidedInfo()
+            new BitPay.Models.Invoice.InvoiceBuyerProvidedInfo()
         );
 
         // then
@@ -51,7 +51,7 @@ public class InvoiceBuyerFactoryTest : IGetBitPayInvoice
     private InvoiceBuyerFactory GetTestedClass()
     {
         var mock = new Mock<InvoiceBuyerProvidedInfoFactory>();
-        mock.Setup(e => e.Create(It.IsAny<BitPaySDK.Models.Invoice.InvoiceBuyerProvidedInfo>()))
+        mock.Setup(e => e.Create(It.IsAny<BitPay.Models.Invoice.InvoiceBuyerProvidedInfo>()))
             .Returns(new InvoiceBuyerProvidedInfo());
 
         return new InvoiceBuyerFactory(mock.Object);

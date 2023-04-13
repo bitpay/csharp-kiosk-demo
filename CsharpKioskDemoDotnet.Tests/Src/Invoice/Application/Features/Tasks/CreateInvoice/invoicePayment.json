@@ -1,7 +1,7 @@
 {
   "Id": 0,
   "AmountPaid": 10.1,
-  "DisplayAmountPaid": 10.1,
+  "DisplayAmountPaid": "10.1",
   "UnderpaidAmount": 0.0,
   "OverpaidAmount": 0.0,
   "NonPayProPaymentReceived": false,
