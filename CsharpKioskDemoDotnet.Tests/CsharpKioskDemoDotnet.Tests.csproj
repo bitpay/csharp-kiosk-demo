@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+    <PackageReference Include="Moq" Version="4.18.4" />
+    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="3.1.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CsharpKioskDemoDotnet\CsharpKioskDemoDotnet.csproj" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Shared\invoice.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Shared\invoiceDto.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\CreateInvoice\bitPayInvoice.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\CreateInvoice\bitPayInvoiceWithoutBuyer.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\CreateInvoice\bitPayProperties.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\CreateInvoice\invoice.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\CreateInvoice\invoiceBuyer.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\CreateInvoice\invoiceBuyerProvidedInfo.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\CreateInvoice\invoiceBuyerWithoutBitPayBuyer.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\CreateInvoice\invoiceItemizedDetail.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\CreateInvoice\invoicePayment.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\CreateInvoice\invoicePaymentCurrency.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\CreateInvoice\invoiceRefund.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\CreateInvoice\invoiceRefundInfo.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\CreateInvoice\invoiceTransaction.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\UpdateInvoice\invalidUpdateData.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\UpdateInvoice\invoice.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\UpdateInvoice\updateData.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\UpdateInvoice\updatedInvoice.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

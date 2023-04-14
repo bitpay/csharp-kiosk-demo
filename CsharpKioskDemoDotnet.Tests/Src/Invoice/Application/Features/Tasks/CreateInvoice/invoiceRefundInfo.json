@@ -1,0 +1,17 @@
+{
+  "Id": 0,
+  "SupportRequest": "Cw4dQ1wnEaL11EkfLrBQAC",
+  "CurrencyCode": "USD",
+  "InvoiceRefundInfoAmounts": [
+    {
+      "Id": 0,
+      "CurrencyCode": "USD",
+      "Amount": 1010.1
+    },
+    {
+      "Id": 0,
+      "CurrencyCode": "BTC",
+      "Amount": 0.145439
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpKioskDemoDotnet", "CsharpKioskDemoDotnet\CsharpKioskDemoDotnet.csproj", "{70C78645-E4F5-4B99-95F9-0D6808C3255A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpKioskDemoDotnet.IntegrationTests", "CsharpKioskDemoDotnet.IntegrationTests\CsharpKioskDemoDotnet.IntegrationTests.csproj", "{FF13BAED-7CB9-4CB0-871D-4BCDFFC886C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpKioskDemoDotnet.Tests", "CsharpKioskDemoDotnet.Tests\CsharpKioskDemoDotnet.Tests.csproj", "{F6B6B8B7-09BE-42C2-BC69-F27A3D1EFFEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp-bitpay-client", "csharp-bitpay-client", "{90EB444D-6226-4173-AC4B-52C3B32E9E84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitPay", "csharp-bitpay-client\BitPay\BitPay.csproj", "{43532F19-1CF1-4CF0-A542-AA9C0297B977}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70C78645-E4F5-4B99-95F9-0D6808C3255A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70C78645-E4F5-4B99-95F9-0D6808C3255A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70C78645-E4F5-4B99-95F9-0D6808C3255A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70C78645-E4F5-4B99-95F9-0D6808C3255A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF13BAED-7CB9-4CB0-871D-4BCDFFC886C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF13BAED-7CB9-4CB0-871D-4BCDFFC886C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF13BAED-7CB9-4CB0-871D-4BCDFFC886C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF13BAED-7CB9-4CB0-871D-4BCDFFC886C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6B6B8B7-09BE-42C2-BC69-F27A3D1EFFEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6B6B8B7-09BE-42C2-BC69-F27A3D1EFFEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6B6B8B7-09BE-42C2-BC69-F27A3D1EFFEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6B6B8B7-09BE-42C2-BC69-F27A3D1EFFEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43532F19-1CF1-4CF0-A542-AA9C0297B977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43532F19-1CF1-4CF0-A542-AA9C0297B977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43532F19-1CF1-4CF0-A542-AA9C0297B977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43532F19-1CF1-4CF0-A542-AA9C0297B977}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{43532F19-1CF1-4CF0-A542-AA9C0297B977} = {90EB444D-6226-4173-AC4B-52C3B32E9E84}
+	EndGlobalSection
+EndGlobal

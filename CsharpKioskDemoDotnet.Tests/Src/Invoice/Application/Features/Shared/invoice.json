@@ -1,0 +1,898 @@
+{
+  "Id": 4,
+  "Uuid": "0a2ec7fe-634b-4cfd-afea-cdac35804be9",
+  "PosData": "{\"store\":\"store-1\",\"register\":\"2\",\"reg_transaction_no\":\"1\",\"price\":\"1\"}",
+  "Price": 1.0,
+  "CurrencyCode": "USD",
+  "BitPayId": "Er4igKLsJLCjujEJ9JxYv4",
+  "Status": "new",
+  "CreatedDate": "2023-04-04T13:26:00.572+02:00",
+  "BitPayOrderId": "cbf866b2-8a3c-4714-a83a-5deb33e3b9f8",
+  "ExpirationTime": "2023-04-04T13:41:00.572+02:00",
+  "FacadeType": "pos/invoice",
+  "BitPayGuid": "5954d161-c7d4-42a1-a222-868476f7cd06",
+  "ExceptionStatus": "false",
+  "BitPayUrl": "https://test.bitpay.com/invoice?id=Er4igKLsJLCjujEJ9JxYv4",
+  "RedirectUrl": null,
+  "CloseUrl": null,
+  "AcceptanceWindow": 0,
+  "Token": "6BrRJ6gXcycQjbrY2qfXQMbkh2ga8xVTaM7JGBbQfbnng4SWVqrkWmX6ShdsHP34qR",
+  "MerchantName": "BitPay",
+  "ItemDescription": "Example",
+  "BillId": null,
+  "TargetConfirmations": 6,
+  "LowFeeDetected": false,
+  "AutoRedirect": false,
+  "ShopperUser": null,
+  "JsonPayProRequired": false,
+  "BitPayIdRequired": false,
+  "IsCancelled": false,
+  "TransactionSpeed": "medium",
+  "InvoicePayment": {
+    "Id": 4,
+    "AmountPaid": 0.0,
+    "DisplayAmountPaid": 0.0,
+    "UnderpaidAmount": 0.0,
+    "OverpaidAmount": 0.0,
+    "NonPayProPaymentReceived": false,
+    "UniversalCodesPaymentString": "https://link.test.bitpay.com/i/Er4igKLsJLCjujEJ9JxYv4",
+    "UniversalCodesVerificationLink": null,
+    "TransactionCurrency": null,
+    "PaymentCurrencies": [
+      {
+        "Id": 40,
+        "CurrencyCode": "BTC",
+        "Total": null,
+        "Subtotal": null,
+        "DisplayTotal": null,
+        "DisplaySubtotal": null,
+        "ExchangeRates": [
+          {
+            "Id": 325,
+            "CurrencyCode": "USD",
+            "Rate": "28261.04"
+          },
+          {
+            "Id": 326,
+            "CurrencyCode": "BCH",
+            "Rate": "222.3702887717366"
+          },
+          {
+            "Id": 327,
+            "CurrencyCode": "ETH",
+            "Rate": "15.195741477578236"
+          },
+          {
+            "Id": 328,
+            "CurrencyCode": "GUSD",
+            "Rate": "28261.04"
+          },
+          {
+            "Id": 329,
+            "CurrencyCode": "PAX",
+            "Rate": "28261.04"
+          },
+          {
+            "Id": 330,
+            "CurrencyCode": "BUSD",
+            "Rate": "28261.04"
+          },
+          {
+            "Id": 331,
+            "CurrencyCode": "USDC",
+            "Rate": "28261.04"
+          },
+          {
+            "Id": 332,
+            "CurrencyCode": "DOGE",
+            "Rate": "281218.92874059157"
+          },
+          {
+            "Id": 333,
+            "CurrencyCode": "LTC",
+            "Rate": "302.2894427211466"
+          },
+          {
+            "Id": 334,
+            "CurrencyCode": "MATIC",
+            "Rate": "25309.905068959342"
+          },
+          {
+            "Id": 335,
+            "CurrencyCode": "USDC_m",
+            "Rate": "28261.04"
+          },
+          {
+            "Id": 336,
+            "CurrencyCode": "USDT",
+            "Rate": "28259.34443933364"
+          }
+        ],
+        "CurrencyCodes": [],
+        "SupportedTransactionCurrency": {
+          "Id": 40,
+          "Enabled": true,
+          "Reason": null
+        },
+        "MinerFee": {
+          "Id": 40,
+          "SatoshisPerByte": 1.0,
+          "TotalFee": 100.0,
+          "FiatAmount": 0.03
+        }
+      },
+      {
+        "Id": 41,
+        "CurrencyCode": "BCH",
+        "Total": null,
+        "Subtotal": null,
+        "DisplayTotal": null,
+        "DisplaySubtotal": null,
+        "ExchangeRates": [
+          {
+            "Id": 337,
+            "CurrencyCode": "USD",
+            "Rate": "127.08"
+          },
+          {
+            "Id": 338,
+            "CurrencyCode": "BTC",
+            "Rate": "0.004497292706232084"
+          },
+          {
+            "Id": 339,
+            "CurrencyCode": "ETH",
+            "Rate": "0.06832992794924185"
+          },
+          {
+            "Id": 340,
+            "CurrencyCode": "GUSD",
+            "Rate": "127.08"
+          },
+          {
+            "Id": 341,
+            "CurrencyCode": "PAX",
+            "Rate": "127.08"
+          },
+          {
+            "Id": 342,
+            "CurrencyCode": "BUSD",
+            "Rate": "127.08"
+          },
+          {
+            "Id": 343,
+            "CurrencyCode": "USDC",
+            "Rate": "127.08"
+          },
+          {
+            "Id": 344,
+            "CurrencyCode": "DOGE",
+            "Rate": "1264.5430410329689"
+          },
+          {
+            "Id": 345,
+            "CurrencyCode": "LTC",
+            "Rate": "1.3592897636110812"
+          },
+          {
+            "Id": 346,
+            "CurrencyCode": "MATIC",
+            "Rate": "113.80977968833959"
+          },
+          {
+            "Id": 347,
+            "CurrencyCode": "USDC_m",
+            "Rate": "127.08"
+          },
+          {
+            "Id": 348,
+            "CurrencyCode": "USDT",
+            "Rate": "127.07237565746054"
+          }
+        ],
+        "CurrencyCodes": [],
+        "SupportedTransactionCurrency": {
+          "Id": 41,
+          "Enabled": true,
+          "Reason": null
+        },
+        "MinerFee": {
+          "Id": 41,
+          "SatoshisPerByte": 0.0,
+          "TotalFee": 0.0,
+          "FiatAmount": 0.0
+        }
+      },
+      {
+        "Id": 42,
+        "CurrencyCode": "ETH",
+        "Total": null,
+        "Subtotal": null,
+        "DisplayTotal": null,
+        "DisplaySubtotal": null,
+        "ExchangeRates": [
+          {
+            "Id": 349,
+            "CurrencyCode": "USD",
+            "Rate": "1859.29"
+          },
+          {
+            "Id": 350,
+            "CurrencyCode": "BTC",
+            "Rate": "0.06579927097710303"
+          },
+          {
+            "Id": 351,
+            "CurrencyCode": "BCH",
+            "Rate": "14.629711228263435"
+          },
+          {
+            "Id": 352,
+            "CurrencyCode": "GUSD",
+            "Rate": "1859.29"
+          },
+          {
+            "Id": 353,
+            "CurrencyCode": "PAX",
+            "Rate": "1859.29"
+          },
+          {
+            "Id": 354,
+            "CurrencyCode": "BUSD",
+            "Rate": "1859.29"
+          },
+          {
+            "Id": 355,
+            "CurrencyCode": "USDC",
+            "Rate": "1859.29"
+          },
+          {
+            "Id": 356,
+            "CurrencyCode": "DOGE",
+            "Rate": "18501.35529400526"
+          },
+          {
+            "Id": 357,
+            "CurrencyCode": "LTC",
+            "Rate": "19.887581559525085"
+          },
+          {
+            "Id": 358,
+            "CurrencyCode": "MATIC",
+            "Rate": "1665.1352319541465"
+          },
+          {
+            "Id": 359,
+            "CurrencyCode": "USDC_m",
+            "Rate": "1859.29"
+          },
+          {
+            "Id": 360,
+            "CurrencyCode": "USDT",
+            "Rate": "1859.1784492930426"
+          }
+        ],
+        "CurrencyCodes": [],
+        "SupportedTransactionCurrency": {
+          "Id": 42,
+          "Enabled": true,
+          "Reason": null
+        },
+        "MinerFee": {
+          "Id": 42,
+          "SatoshisPerByte": 0.0,
+          "TotalFee": 0.0,
+          "FiatAmount": 0.0
+        }
+      },
+      {
+        "Id": 43,
+        "CurrencyCode": "USDC",
+        "Total": null,
+        "Subtotal": null,
+        "DisplayTotal": null,
+        "DisplaySubtotal": null,
+        "ExchangeRates": [
+          {
+            "Id": 361,
+            "CurrencyCode": "USD",
+            "Rate": "1"
+          },
+          {
+            "Id": 362,
+            "CurrencyCode": "BTC",
+            "Rate": "3.538946101850869E-05"
+          },
+          {
+            "Id": 363,
+            "CurrencyCode": "BCH",
+            "Rate": "0.007868439688409789"
+          },
+          {
+            "Id": 364,
+            "CurrencyCode": "ETH",
+            "Rate": "0.0005376922249704269"
+          },
+          {
+            "Id": 365,
+            "CurrencyCode": "GUSD",
+            "Rate": "1"
+          },
+          {
+            "Id": 366,
+            "CurrencyCode": "PAX",
+            "Rate": "1"
+          },
+          {
+            "Id": 367,
+            "CurrencyCode": "BUSD",
+            "Rate": "1"
+          },
+          {
+            "Id": 368,
+            "CurrencyCode": "DOGE",
+            "Rate": "9.950763621600322"
+          },
+          {
+            "Id": 369,
+            "CurrencyCode": "LTC",
+            "Rate": "0.010696331158412663"
+          },
+          {
+            "Id": 370,
+            "CurrencyCode": "MATIC",
+            "Rate": "0.8955758552749418"
+          },
+          {
+            "Id": 371,
+            "CurrencyCode": "USDC_m",
+            "Rate": "1"
+          },
+          {
+            "Id": 372,
+            "CurrencyCode": "USDT",
+            "Rate": "0.999940003599784"
+          }
+        ],
+        "CurrencyCodes": [],
+        "SupportedTransactionCurrency": {
+          "Id": 43,
+          "Enabled": true,
+          "Reason": null
+        },
+        "MinerFee": {
+          "Id": 43,
+          "SatoshisPerByte": 0.0,
+          "TotalFee": 0.0,
+          "FiatAmount": 0.0
+        }
+      },
+      {
+        "Id": 44,
+        "CurrencyCode": "GUSD",
+        "Total": null,
+        "Subtotal": null,
+        "DisplayTotal": null,
+        "DisplaySubtotal": null,
+        "ExchangeRates": [
+          {
+            "Id": 373,
+            "CurrencyCode": "USD",
+            "Rate": "1"
+          },
+          {
+            "Id": 374,
+            "CurrencyCode": "BTC",
+            "Rate": "3.538946101850869E-05"
+          },
+          {
+            "Id": 375,
+            "CurrencyCode": "BCH",
+            "Rate": "0.007868439688409789"
+          },
+          {
+            "Id": 376,
+            "CurrencyCode": "ETH",
+            "Rate": "0.0005376922249704269"
+          },
+          {
+            "Id": 377,
+            "CurrencyCode": "PAX",
+            "Rate": "1"
+          },
+          {
+            "Id": 378,
+            "CurrencyCode": "BUSD",
+            "Rate": "1"
+          },
+          {
+            "Id": 379,
+            "CurrencyCode": "USDC",
+            "Rate": "1"
+          },
+          {
+            "Id": 380,
+            "CurrencyCode": "DOGE",
+            "Rate": "9.950763621600322"
+          },
+          {
+            "Id": 381,
+            "CurrencyCode": "LTC",
+            "Rate": "0.010696331158412663"
+          },
+          {
+            "Id": 382,
+            "CurrencyCode": "MATIC",
+            "Rate": "0.8955758552749418"
+          },
+          {
+            "Id": 383,
+            "CurrencyCode": "USDC_m",
+            "Rate": "1"
+          },
+          {
+            "Id": 384,
+            "CurrencyCode": "USDT",
+            "Rate": "0.999940003599784"
+          }
+        ],
+        "CurrencyCodes": [],
+        "SupportedTransactionCurrency": {
+          "Id": 44,
+          "Enabled": true,
+          "Reason": null
+        },
+        "MinerFee": {
+          "Id": 44,
+          "SatoshisPerByte": 0.0,
+          "TotalFee": 0.0,
+          "FiatAmount": 0.0
+        }
+      },
+      {
+        "Id": 45,
+        "CurrencyCode": "PAX",
+        "Total": null,
+        "Subtotal": null,
+        "DisplayTotal": null,
+        "DisplaySubtotal": null,
+        "ExchangeRates": [
+          {
+            "Id": 385,
+            "CurrencyCode": "USD",
+            "Rate": "1"
+          },
+          {
+            "Id": 386,
+            "CurrencyCode": "BTC",
+            "Rate": "3.538946101850869E-05"
+          },
+          {
+            "Id": 387,
+            "CurrencyCode": "BCH",
+            "Rate": "0.007868439688409789"
+          },
+          {
+            "Id": 388,
+            "CurrencyCode": "ETH",
+            "Rate": "0.0005376922249704269"
+          },
+          {
+            "Id": 389,
+            "CurrencyCode": "GUSD",
+            "Rate": "1"
+          },
+          {
+            "Id": 390,
+            "CurrencyCode": "BUSD",
+            "Rate": "1"
+          },
+          {
+            "Id": 391,
+            "CurrencyCode": "USDC",
+            "Rate": "1"
+          },
+          {
+            "Id": 392,
+            "CurrencyCode": "DOGE",
+            "Rate": "9.950763621600322"
+          },
+          {
+            "Id": 393,
+            "CurrencyCode": "LTC",
+            "Rate": "0.010696331158412663"
+          },
+          {
+            "Id": 394,
+            "CurrencyCode": "MATIC",
+            "Rate": "0.8955758552749418"
+          },
+          {
+            "Id": 395,
+            "CurrencyCode": "USDC_m",
+            "Rate": "1"
+          },
+          {
+            "Id": 396,
+            "CurrencyCode": "USDT",
+            "Rate": "0.999940003599784"
+          }
+        ],
+        "CurrencyCodes": [],
+        "SupportedTransactionCurrency": {
+          "Id": 45,
+          "Enabled": true,
+          "Reason": null
+        },
+        "MinerFee": {
+          "Id": 45,
+          "SatoshisPerByte": 0.0,
+          "TotalFee": 0.0,
+          "FiatAmount": 0.0
+        }
+      },
+      {
+        "Id": 46,
+        "CurrencyCode": "BUSD",
+        "Total": null,
+        "Subtotal": null,
+        "DisplayTotal": null,
+        "DisplaySubtotal": null,
+        "ExchangeRates": [
+          {
+            "Id": 397,
+            "CurrencyCode": "USD",
+            "Rate": "1"
+          },
+          {
+            "Id": 398,
+            "CurrencyCode": "BTC",
+            "Rate": "3.538946101850869E-05"
+          },
+          {
+            "Id": 399,
+            "CurrencyCode": "BCH",
+            "Rate": "0.007868439688409789"
+          },
+          {
+            "Id": 400,
+            "CurrencyCode": "ETH",
+            "Rate": "0.0005376922249704269"
+          },
+          {
+            "Id": 401,
+            "CurrencyCode": "GUSD",
+            "Rate": "1"
+          },
+          {
+            "Id": 402,
+            "CurrencyCode": "PAX",
+            "Rate": "1"
+          },
+          {
+            "Id": 403,
+            "CurrencyCode": "USDC",
+            "Rate": "1"
+          },
+          {
+            "Id": 404,
+            "CurrencyCode": "DOGE",
+            "Rate": "9.950763621600322"
+          },
+          {
+            "Id": 405,
+            "CurrencyCode": "LTC",
+            "Rate": "0.010696331158412663"
+          },
+          {
+            "Id": 406,
+            "CurrencyCode": "MATIC",
+            "Rate": "0.8955758552749418"
+          },
+          {
+            "Id": 407,
+            "CurrencyCode": "USDC_m",
+            "Rate": "1"
+          },
+          {
+            "Id": 408,
+            "CurrencyCode": "USDT",
+            "Rate": "0.999940003599784"
+          }
+        ],
+        "CurrencyCodes": [],
+        "SupportedTransactionCurrency": {
+          "Id": 46,
+          "Enabled": false,
+          "Reason": null
+        },
+        "MinerFee": {
+          "Id": 46,
+          "SatoshisPerByte": 0.0,
+          "TotalFee": 0.0,
+          "FiatAmount": 0.0
+        }
+      },
+      {
+        "Id": 47,
+        "CurrencyCode": "XRP",
+        "Total": null,
+        "Subtotal": null,
+        "DisplayTotal": null,
+        "DisplaySubtotal": null,
+        "ExchangeRates": [],
+        "CurrencyCodes": [],
+        "SupportedTransactionCurrency": {
+          "Id": 47,
+          "Enabled": false,
+          "Reason": null
+        },
+        "MinerFee": {
+          "Id": 47,
+          "SatoshisPerByte": null,
+          "TotalFee": null,
+          "FiatAmount": null
+        }
+      },
+      {
+        "Id": 48,
+        "CurrencyCode": "DOGE",
+        "Total": null,
+        "Subtotal": null,
+        "DisplayTotal": null,
+        "DisplaySubtotal": null,
+        "ExchangeRates": [
+          {
+            "Id": 409,
+            "CurrencyCode": "USD",
+            "Rate": "0.1004477"
+          },
+          {
+            "Id": 410,
+            "CurrencyCode": "BTC",
+            "Rate": "3.554789963548855E-06"
+          },
+          {
+            "Id": 411,
+            "CurrencyCode": "BCH",
+            "Rate": "0.0007903666692894799"
+          },
+          {
+            "Id": 412,
+            "CurrencyCode": "ETH",
+            "Rate": "5.400994730616196E-05"
+          },
+          {
+            "Id": 413,
+            "CurrencyCode": "GUSD",
+            "Rate": "0.1004477"
+          },
+          {
+            "Id": 414,
+            "CurrencyCode": "PAX",
+            "Rate": "0.1004477"
+          },
+          {
+            "Id": 415,
+            "CurrencyCode": "BUSD",
+            "Rate": "0.1004477"
+          },
+          {
+            "Id": 416,
+            "CurrencyCode": "USDC",
+            "Rate": "0.1004477"
+          },
+          {
+            "Id": 417,
+            "CurrencyCode": "LTC",
+            "Rate": "0.0010744218633008877"
+          },
+          {
+            "Id": 418,
+            "CurrencyCode": "MATIC",
+            "Rate": "0.08995853483790077"
+          },
+          {
+            "Id": 419,
+            "CurrencyCode": "USDC_m",
+            "Rate": "0.1004477"
+          },
+          {
+            "Id": 420,
+            "CurrencyCode": "USDT",
+            "Rate": "0.10044167349959003"
+          }
+        ],
+        "CurrencyCodes": [],
+        "SupportedTransactionCurrency": {
+          "Id": 48,
+          "Enabled": false,
+          "Reason": null
+        },
+        "MinerFee": {
+          "Id": 48,
+          "SatoshisPerByte": 0.0,
+          "TotalFee": 0.0,
+          "FiatAmount": 0.0
+        }
+      },
+      {
+        "Id": 49,
+        "CurrencyCode": "LTC",
+        "Total": null,
+        "Subtotal": null,
+        "DisplayTotal": null,
+        "DisplaySubtotal": null,
+        "ExchangeRates": [
+          {
+            "Id": 421,
+            "CurrencyCode": "USD",
+            "Rate": "93.46000000000001"
+          },
+          {
+            "Id": 422,
+            "CurrencyCode": "BTC",
+            "Rate": "0.0033074990267898223"
+          },
+          {
+            "Id": 423,
+            "CurrencyCode": "BCH",
+            "Rate": "0.7353843732787788"
+          },
+          {
+            "Id": 424,
+            "CurrencyCode": "ETH",
+            "Rate": "0.05025271534573611"
+          },
+          {
+            "Id": 425,
+            "CurrencyCode": "GUSD",
+            "Rate": "93.46000000000001"
+          },
+          {
+            "Id": 426,
+            "CurrencyCode": "PAX",
+            "Rate": "93.46000000000001"
+          },
+          {
+            "Id": 427,
+            "CurrencyCode": "BUSD",
+            "Rate": "93.46000000000001"
+          },
+          {
+            "Id": 428,
+            "CurrencyCode": "USDC",
+            "Rate": "93.46000000000001"
+          },
+          {
+            "Id": 429,
+            "CurrencyCode": "DOGE",
+            "Rate": "929.9983680747661"
+          },
+          {
+            "Id": 430,
+            "CurrencyCode": "MATIC",
+            "Rate": "83.70051943399606"
+          },
+          {
+            "Id": 431,
+            "CurrencyCode": "USDC_m",
+            "Rate": "93.46000000000001"
+          },
+          {
+            "Id": 432,
+            "CurrencyCode": "USDT",
+            "Rate": "93.45439273643582"
+          }
+        ],
+        "CurrencyCodes": [],
+        "SupportedTransactionCurrency": {
+          "Id": 49,
+          "Enabled": false,
+          "Reason": null
+        },
+        "MinerFee": {
+          "Id": 49,
+          "SatoshisPerByte": 117.777,
+          "TotalFee": 17300.0,
+          "FiatAmount": 0.02
+        }
+      },
+      {
+        "Id": 50,
+        "CurrencyCode": "DAI",
+        "Total": null,
+        "Subtotal": null,
+        "DisplayTotal": null,
+        "DisplaySubtotal": null,
+        "ExchangeRates": [],
+        "CurrencyCodes": [],
+        "SupportedTransactionCurrency": {
+          "Id": 50,
+          "Enabled": false,
+          "Reason": null
+        },
+        "MinerFee": {
+          "Id": 50,
+          "SatoshisPerByte": null,
+          "TotalFee": null,
+          "FiatAmount": null
+        }
+      },
+      {
+        "Id": 51,
+        "CurrencyCode": "WBTC",
+        "Total": null,
+        "Subtotal": null,
+        "DisplayTotal": null,
+        "DisplaySubtotal": null,
+        "ExchangeRates": [],
+        "CurrencyCodes": [],
+        "SupportedTransactionCurrency": {
+          "Id": 51,
+          "Enabled": false,
+          "Reason": null
+        },
+        "MinerFee": {
+          "Id": 51,
+          "SatoshisPerByte": null,
+          "TotalFee": null,
+          "FiatAmount": null
+        }
+      },
+      {
+        "Id": 52,
+        "CurrencyCode": "SHIB",
+        "Total": null,
+        "Subtotal": null,
+        "DisplayTotal": null,
+        "DisplaySubtotal": null,
+        "ExchangeRates": [],
+        "CurrencyCodes": [],
+        "SupportedTransactionCurrency": {
+          "Id": 52,
+          "Enabled": false,
+          "Reason": null
+        },
+        "MinerFee": {
+          "Id": 52,
+          "SatoshisPerByte": null,
+          "TotalFee": null,
+          "FiatAmount": null
+        }
+      }
+    ]
+  },
+  "InvoiceBuyer": {
+    "Id": 4,
+    "Name": null,
+    "Address1": null,
+    "Address2": null,
+    "City": null,
+    "Region": null,
+    "PostalCode": null,
+    "Country": null,
+    "Email": null,
+    "Phone": null,
+    "Notify": false,
+    "BuyerProvidedEmail": null,
+    "InvoiceBuyerProvidedInfo": {
+      "Id": 4,
+      "Name": null,
+      "PhoneNumber": null,
+      "SelectedTransactionCurrency": null,
+      "EmailAddress": null,
+      "SelectedWallet": null,
+      "Sms": null,
+      "SmsVerified": false
+    }
+  },
+  "InvoiceRefund": {
+    "Id": 4,
+    "AddressesJson": "[]",
+    "AddressRequestPending": "false",
+    "RefundInfo": []
+  },
+  "InvoiceTransactions": [],
+  "InvoiceItemizedDetails": []
+}

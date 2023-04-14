@@ -1,0 +1,3 @@
+[submodule "csharp-bitpay-client"]
+	path = csharp-bitpay-client
+	url = https://github.com/bitpay/csharp-bitpay-client.git
