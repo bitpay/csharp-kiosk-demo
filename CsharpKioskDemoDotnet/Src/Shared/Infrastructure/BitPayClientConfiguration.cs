@@ -10,7 +10,7 @@ public static class BitPayClientConfiguration
     {
         builder.Services.AddSingleton<IBitPayClient>(
             _ => new BitPayClient(
-                new PosToken(builder.Configuration.GetSection("BitPayConfiguration:Token").Value),
+                new PosToken(builder.Configuration.GetSection("BitPay:Token").Value),
                 Environment.Test
             )
         );

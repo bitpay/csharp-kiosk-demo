@@ -1,6 +1,8 @@
 using System.Text;
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 using CsharpKioskDemoDotnet.Invoice.Domain;
+using CsharpKioskDemoDotnet.Shared;
+using CsharpKioskDemoDotnet.Shared.Logger;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,23 +12,23 @@ namespace CsharpKioskDemoDotnet.IntegrationTests;
 
 public class AbstractUiIntegrationTest : IClassFixture<CustomWebApplicationFactory<Program>>, IUnitTest
 {
-    private readonly HttpClient _client;
-    private readonly CustomWebApplicationFactory<Program> _factory;
-    protected readonly Mock<IBitPayClient> bitPay = new();
-    private readonly WebApplicationFactory<Program> webApplicationFactory;
     protected IUnitTest UnitTest => this;
+    protected readonly Mock<IBitPayClient> BitPay = new();
+
+    private readonly HttpClient _client;
+    private readonly WebApplicationFactory<Program> _webApplicationFactory;
 
     protected AbstractUiIntegrationTest(CustomWebApplicationFactory<Program> factory)
     {
-        _factory = factory;
-        webApplicationFactory = _factory.WithWebHostBuilder(builder =>
+        _webApplicationFactory = factory.WithWebHostBuilder(builder =>
         {
             builder.ConfigureTestServices(services =>
             {
-                services.AddSingleton<IBitPayClient>(_ => bitPay.Object);
+                services.AddSingleton<IBitPayClient>(_ => BitPay.Object);
+                services.AddSingleton<ILogger, FakeLogger>();
             });
         });
-        _client = webApplicationFactory.CreateClient(new WebApplicationFactoryClientOptions
+        _client = _webApplicationFactory.CreateClient(new WebApplicationFactoryClientOptions
         {
             AllowAutoRedirect = false
         });
@@ -61,8 +63,19 @@ public class AbstractUiIntegrationTest : IClassFixture<CustomWebApplicationFacto
 
     protected IInvoiceRepository GetInvoiceRepository()
     {
-        var scope = webApplicationFactory.Services.CreateScope();
+        var scope = _webApplicationFactory.Services.CreateScope();
         var services = scope.ServiceProvider;
         return services.GetRequiredService<IInvoiceRepository>();
+    }
+}
+
+public class FakeLogger : ILogger
+{
+    public void Info(LogCode code, string message, Dictionary<string, object?> context)
+    {
+    }
+
+    public void Error(LogCode code, string message, Dictionary<string, object?> context)
+    {
     }
 }
