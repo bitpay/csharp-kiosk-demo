@@ -88,6 +88,7 @@ This app uses a JSON and YAML configuration files to set BitPay credentials and 
 | name     | Field name                                             |
 | label    | Field label                                            |
 | currency | Currency for the field                                 |
+Field with name "price" is required to exists in form. If field is not added to file `bitPayDesign.yaml`, it will be added automatically to form when the application starts.
 
 ## Running
 
