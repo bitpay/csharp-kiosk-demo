@@ -1,5 +1,9 @@
-﻿using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
+﻿// Copyright 2023 BitPay.
+// All rights reserved.
+
+using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 using CsharpKioskDemoDotnet.Shared.BitPayProperties;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
@@ -11,6 +15,7 @@ public class HttpGetInvoiceForm : Controller
 
     public HttpGetInvoiceForm(IOptions<BitPayProperties> bitPayPropertiesOption)
     {
+        ArgumentNullException.ThrowIfNull(bitPayPropertiesOption);
         _bitPayProperties = bitPayPropertiesOption.Value;
     }
 
@@ -18,7 +23,7 @@ public class HttpGetInvoiceForm : Controller
     public IActionResult Execute()
     {
         return View(
-            "/Src/Invoice/Infrastructure/Views/CreateInvoice/Content.cshtml",
+            "/Src/Invoice/Infrastructure/Views/CreateInvoiceForm/Content.cshtml",
             new InvoiceFormDto(_bitPayProperties.Design)
             {
                 Error = (string?)TempData["Error"]

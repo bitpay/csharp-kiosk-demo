@@ -1,4 +1,8 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Infrastructure.Ui.GetInvoiceForm;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace CsharpKioskDemoDotnet.Invoice.Infrastructure.Ui.CreateInvoice;

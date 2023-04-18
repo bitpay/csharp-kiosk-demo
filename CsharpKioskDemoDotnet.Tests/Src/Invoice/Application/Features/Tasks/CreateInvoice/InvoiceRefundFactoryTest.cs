@@ -1,8 +1,14 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using BitPay.Models.Invoice;
+
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 using CsharpKioskDemoDotnet.Invoice.Domain.Refund;
 using CsharpKioskDemoDotnet.Shared;
+
 using Moq;
+
 using Newtonsoft.Json;
 
 namespace CsharpKioskDemoDotnet.Tests.Invoice.Application.Features.Tasks.CreateInvoice;

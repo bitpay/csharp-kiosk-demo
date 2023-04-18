@@ -1,5 +1,9 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 using CsharpKioskDemoDotnet.Shared.BitPayProperties;
+
 using Microsoft.Extensions.Options;
 
 namespace CsharpKioskDemoDotnet.Tests.Invoice.Application.Features.Tasks.CreateInvoice;
@@ -44,7 +48,7 @@ public class GetValidatedParamsTest : IUnitTest
         };
 
         // when
-        var exception = Assert.Throws<MissingRequiredField>(() => GetTestedClass().Execute(requestParameters));
+        var exception = Assert.Throws<MissingRequiredFieldException>(() => GetTestedClass().Execute(requestParameters));
 
         // then
         UnitTest.Equals("price", exception.Field.Name!);

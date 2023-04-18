@@ -1,4 +1,8 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Shared.Sse;
+
 using Lib.AspNetCore.ServerSentEvents;
 
 namespace CsharpKioskDemoDotnet.Shared.Infrastructure;

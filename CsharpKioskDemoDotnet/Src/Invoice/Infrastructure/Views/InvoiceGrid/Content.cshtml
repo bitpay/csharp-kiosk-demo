@@ -1,3 +1,4 @@
+@model CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoiceDtoGrid.InvoiceGridDto
 <!DOCTYPE html>
 <html class="h-full" lang="en">
 <head>
@@ -145,20 +146,20 @@
                     <div class="hidden sm:block">
                         <p class="text-sm text-gray-700">
                             Showing
-                            <span class="font-medium">@Model.Grid.GetFirstPageItemIndex()</span>
+                            <span class="font-medium">@Model.Grid.FirstPageItemIndex</span>
                             to
-                            <span class="font-medium">@Model.Grid.GetLastPageItemIndex()</span>
+                            <span class="font-medium">@Model.Grid.LastPageItemIndex</span>
                             of
                             <span class="font-medium">@Model.Grid.TotalElements</span>
                             results
                         </p>
                     </div>
                     <div class="flex flex-1 justify-between sm:justify-end">
-                        <a href="/invoices?page=@Model.Grid.GetPreviousPageNumber()"
+                        <a href="/invoices?page=@Model.Grid.PreviousPageNumber"
                            class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
                             Previous
                         </a>
-                        <a href="/invoices?page=@Model.Grid.GetNexPageNumber()"
+                        <a href="/invoices?page=@Model.Grid.NexPageNumber"
                            class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
                             Next
                         </a>

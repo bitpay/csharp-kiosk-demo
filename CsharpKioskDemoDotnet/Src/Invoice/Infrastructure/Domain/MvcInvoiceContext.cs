@@ -1,4 +1,8 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Domain.Payment;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace CsharpKioskDemoDotnet.Invoice.Infrastructure.Domain;
@@ -13,6 +17,8 @@ public class MvcInvoiceContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        ArgumentNullException.ThrowIfNull(modelBuilder);
+
         modelBuilder.HasAnnotation("ProductVersion", "7.0.4");
 
         modelBuilder.Entity("CsharpKioskDemoDotnet.Invoice.Domain.Buyer.InvoiceBuyer", b =>
@@ -662,7 +668,7 @@ public class MvcInvoiceContext : DbContext
                 .HasForeignKey("MinerFeeId")
                 .OnDelete(DeleteBehavior.Cascade)
                 .IsRequired();
-            
+
             b.HasOne("CsharpKioskDemoDotnet.Invoice.Domain.Payment.InvoicePaymentCurrencySupportedTransactionCurrency",
                     "SupportedTransactionCurrency")
                 .WithMany()

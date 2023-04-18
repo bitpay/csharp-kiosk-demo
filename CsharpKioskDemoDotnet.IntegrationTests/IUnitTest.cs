@@ -1,3 +1,6 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -5,10 +8,11 @@ namespace CsharpKioskDemoDotnet.IntegrationTests;
 
 public interface IUnitTest
 {
-    string ToJson(object anyObject) { 
-        return JsonConvert.SerializeObject(anyObject, GetSettings()); 
+    string ToJson(object anyObject)
+    {
+        return JsonConvert.SerializeObject(anyObject, GetSettings());
     }
-    
+
     T ToObject<T>(string json)
     {
         return JsonConvert.DeserializeObject<T>(json, GetSettings())!;
@@ -22,12 +26,13 @@ public interface IUnitTest
             Formatting = Formatting.Indented
         };
     }
-    
-    string GetDataFromFile(string fileName) {
+
+    string GetDataFromFile(string fileName)
+    {
         var path = GetType().Namespace!
             .Replace("CsharpKioskDemoDotnet.IntegrationTests.", "")
             .Replace(".", "/");
-        
+
         var pathname = Directory.GetCurrentDirectory() + "/Src/" + path + "/" + fileName;
 
         using var r = new StreamReader(pathname);
@@ -45,7 +50,7 @@ public interface IUnitTest
             strict: false
         );
     }
-    
+
     void EqualsJson(
         string expected,
         string actual
@@ -62,13 +67,13 @@ public interface IUnitTest
     {
         var expectedObject = JObject.Parse(actual);
         var actualObject = JObject.Parse(expected);
-        
+
         var expectedObjectFiltered = FilterProperties(expectedObject, propertiesToIgnore);
         var actualObjectFiltered = FilterProperties(actualObject, propertiesToIgnore);
 
         Equals(ToJson(expectedObjectFiltered), ToJson(actualObjectFiltered));
     }
-    
+
     private JObject FilterProperties(JObject obj, string[] propertiesToIgnore)
     {
         var newObj = new JObject();
@@ -83,7 +88,7 @@ public interface IUnitTest
 
         return newObj;
     }
-    
+
     BitPay.Models.Invoice.Invoice GetBitPayInvoice()
     {
         var bitPayInvoiceJson = GetDataFromFile("bitPayInvoice.json");

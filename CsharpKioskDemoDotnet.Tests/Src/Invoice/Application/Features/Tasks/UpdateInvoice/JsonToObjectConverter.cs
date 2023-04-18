@@ -1,4 +1,8 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Shared;
+
 using Newtonsoft.Json;
 
 namespace CsharpKioskDemoDotnet.Tests.Invoice.Application.Features.Tasks.UpdateInvoice;

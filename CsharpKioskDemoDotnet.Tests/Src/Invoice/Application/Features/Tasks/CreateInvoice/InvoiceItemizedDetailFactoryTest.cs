@@ -1,3 +1,6 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 
 namespace CsharpKioskDemoDotnet.Tests.Invoice.Application.Features.Tasks.CreateInvoice;
@@ -6,7 +9,7 @@ public class InvoiceItemizedDetailFactoryTest : IGetBitPayInvoice
 {
     private IGetBitPayInvoice GetBitPayInvoice => this;
     private IUnitTest UnitTest => this;
-    
+
     [Fact]
     private void Create_BitPayInvoiceItemizedDetail_ReturnInvoiceItemizedDetail()
     {

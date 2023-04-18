@@ -1,7 +1,5 @@
-/*
- * Copyright 2023 BitPay.
- * All rights reserved.
- */
+// Copyright 2023 BitPay.
+// All rights reserved.
 
 using CsharpKioskDemoDotnet.Shared;
 
@@ -24,7 +22,7 @@ public class InvoiceRefundInfo
         InvoiceRefund = invoiceRefund;
         CurrencyCode = currencyCode;
     }
-    
+
 #pragma warning disable CS8618
     internal InvoiceRefundInfo()
 #pragma warning restore CS8618
@@ -33,6 +31,7 @@ public class InvoiceRefundInfo
 
     public void AddRefundInfoAmounts(ICollection<InvoiceRefundInfoAmount> invoiceRefundInfoAmounts)
     {
+        ArgumentNullException.ThrowIfNull(invoiceRefundInfoAmounts);
         foreach (var item in invoiceRefundInfoAmounts)
         {
             InvoiceRefundInfoAmounts.Add(item);

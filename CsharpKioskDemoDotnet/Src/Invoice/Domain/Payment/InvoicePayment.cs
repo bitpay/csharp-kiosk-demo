@@ -1,7 +1,5 @@
-/*
- * Copyright 2023 BitPay.
- * All rights reserved.
- */
+// Copyright 2023 BitPay.
+// All rights reserved.
 
 namespace CsharpKioskDemoDotnet.Invoice.Domain.Payment;
 
@@ -20,6 +18,7 @@ public class InvoicePayment
 
     public void AddPaymentCurrencies(ICollection<InvoicePaymentCurrency> invoicePaymentTotal)
     {
+        ArgumentNullException.ThrowIfNull(invoicePaymentTotal);
         foreach (var item in invoicePaymentTotal)
         {
             PaymentCurrencies.Add(item);
@@ -28,6 +27,7 @@ public class InvoicePayment
 
     public void Update(InvoicePayment invoicePayment)
     {
+        ArgumentNullException.ThrowIfNull(invoicePayment);
         AmountPaid = invoicePayment.AmountPaid;
         TransactionCurrency = invoicePayment.TransactionCurrency;
     }

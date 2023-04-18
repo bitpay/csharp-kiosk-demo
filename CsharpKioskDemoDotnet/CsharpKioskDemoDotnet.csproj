@@ -4,6 +4,9 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <AnalysisMode>Recommended</AnalysisMode>
+        <NoWarn>NU1701,CA1724</NoWarn>
+        <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
     </PropertyGroup>
 
     <ItemGroup>

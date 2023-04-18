@@ -1,14 +1,32 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
+using System.ComponentModel;
+
 namespace CsharpKioskDemoDotnet.Shared.Logger;
 
 public enum LogCode
 {
-    INVOICE_GET,
-    INVOICE_GRID_GET,
-    INVOICE_CREATE_SUCCESS,
-    INVOICE_CREATE_FAIL,
-    INVOICE_UPDATE_SUCCESS,
-    INVOICE_UPDATE_FAIL,
-    IPN_RECEIVED,
-    IPN_VALIDATE_SUCCESS,
-    IPN_VALIDATE_FAIL
+    [Description("INVOICE_GET")] InvoiceGet,
+    [Description("INVOICE_GRID_GET")] InvoiceGridGet,
+    [Description("INVOICE_CREATE_SUCCESS")] InvoiceCreateSuccess,
+    [Description("INVOICE_CREATE_FAIL")] InvoiceCreateFail,
+    [Description("INVOICE_UPDATE_SUCCESS")] InvoiceUpdateSuccess,
+    [Description("INVOICE_UPDATE_FAIL")] InvoiceUpdateFail,
+    [Description("IPN_RECEIVED")] IpnReceived,
+    [Description("IPN_VALIDATE_SUCCESS")] IpnValidateSuccess,
+    [Description("IPN_VALIDATE_FAIL")] IpnValidateFail
+}
+
+public static class DescriptionAttributeExtensions
+{
+    public static string GetEnumDescription(this Enum e)
+    {
+        ArgumentNullException.ThrowIfNull(e);
+        var descriptionAttribute = e.GetType().GetMember(e.ToString())[0]
+                .GetCustomAttributes(typeof(DescriptionAttribute), inherit: false)[0]
+            as DescriptionAttribute;
+
+        return descriptionAttribute!.Description;
+    }
 }

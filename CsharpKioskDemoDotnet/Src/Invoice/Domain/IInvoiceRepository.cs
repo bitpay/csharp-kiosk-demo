@@ -1,3 +1,8 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
+using System.Collections.ObjectModel;
+
 using CsharpKioskDemoDotnet.Shared.Domain;
 
 namespace CsharpKioskDemoDotnet.Invoice.Domain;
@@ -17,5 +22,5 @@ public interface IInvoiceRepository
 
     void Update(Invoice invoice);
 
-    List<Invoice> FindAll();
+    IReadOnlyList<Invoice> FindAll();
 }

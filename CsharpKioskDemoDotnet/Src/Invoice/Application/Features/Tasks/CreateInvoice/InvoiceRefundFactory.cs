@@ -1,4 +1,8 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using BitPay.Models.Invoice;
+
 using CsharpKioskDemoDotnet.Invoice.Domain.Refund;
 using CsharpKioskDemoDotnet.Shared;
 
@@ -41,7 +45,8 @@ public class InvoiceRefundFactory
         ICollection<RefundInfo>? refundInfo
     )
     {
-        if (refundInfo == null) {
+        if (refundInfo == null)
+        {
             return new List<InvoiceRefundInfo>();
         }
 

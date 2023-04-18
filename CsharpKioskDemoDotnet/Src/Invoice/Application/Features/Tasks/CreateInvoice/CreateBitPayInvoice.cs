@@ -1,5 +1,11 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
+using System.Globalization;
+
 using CsharpKioskDemoDotnet.Shared;
 using CsharpKioskDemoDotnet.Shared.BitPayProperties;
+
 using Microsoft.Extensions.Options;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
@@ -18,6 +24,11 @@ public class CreateBitPayInvoice
         IGetNotificationUrl getNotificationUrl
     )
     {
+        ArgumentNullException.ThrowIfNull(bitPayClient);
+        ArgumentNullException.ThrowIfNull(bitPayPropertiesOption);
+        ArgumentNullException.ThrowIfNull(objectToJsonConverter);
+        ArgumentNullException.ThrowIfNull(getNotificationUrl);
+
         _bitPayClient = bitPayClient;
         _bitPayProperties = bitPayPropertiesOption.Value;
         _objectToJsonConverter = objectToJsonConverter;
@@ -27,10 +38,11 @@ public class CreateBitPayInvoice
     internal BitPay.Models.Invoice.Invoice Execute(
         Dictionary<string, string> validatedParams,
         string uuid
-    ) {
-        var price = Convert.ToDecimal(validatedParams["price"]);
+    )
+    {
+        var price = Convert.ToDecimal(validatedParams["price"], CultureInfo.CurrentCulture);
         var posData = _objectToJsonConverter.Execute(validatedParams);
-        var invoice = new BitPay.Models.Invoice.Invoice(price, _bitPayProperties.GetCurrency())
+        var invoice = new BitPay.Models.Invoice.Invoice(price, _bitPayProperties.Currency)
         {
             OrderId = Guid.NewGuid().ToString(),
             NotificationEmail = _bitPayProperties.NotificationEmail,

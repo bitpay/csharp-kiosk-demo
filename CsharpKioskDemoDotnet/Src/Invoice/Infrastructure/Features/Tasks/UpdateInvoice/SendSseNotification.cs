@@ -1,6 +1,12 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
+using System.Globalization;
+
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.UpdateInvoice;
 using CsharpKioskDemoDotnet.Shared;
 using CsharpKioskDemoDotnet.Shared.Sse;
+
 using Lib.AspNetCore.ServerSentEvents;
 
 namespace CsharpKioskDemoDotnet.Invoice.Infrastructure.Features.Tasks.UpdateInvoice;
@@ -24,6 +30,7 @@ public class SendSseNotification : IAfterInvoiceUpdate
         string? eventName
     )
     {
+        ArgumentNullException.ThrowIfNull(invoice);
         var eventType = GetEventMessageTypeFromEventName(eventName);
         var eventMessage = GetEventMessageFromEventName(invoice.BitPayId, eventName);
         var serverSentEvent = GetEvent(invoice, "invoice/update", eventType, eventMessage);
@@ -81,7 +88,7 @@ public class SendSseNotification : IAfterInvoiceUpdate
     {
         return new ServerSentEvent
         {
-            Id = ((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds().ToString(),
+            Id = ((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds().ToString(CultureInfo.CurrentCulture),
             Type = eventName,
             Data = GetData(invoice, eventType, eventMessage)
         };
@@ -97,7 +104,7 @@ public class SendSseNotification : IAfterInvoiceUpdate
         {
             { "invoiceId", invoice.Id },
             { "status", invoice.Status },
-            { "eventType", eventType != null ? eventType.ToString()!.ToLower() : null },
+            { "eventType", eventType != null ? eventType.ToString()!.ToLower(CultureInfo.CurrentCulture) : null },
             { "eventMessage", eventType != null ? eventMessage : null }
         };
 

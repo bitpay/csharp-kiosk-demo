@@ -1,3 +1,6 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 namespace CsharpKioskDemoDotnet.IntegrationTests.Invoice.Infrastructure.Ui.GetInvoiceView;
 
 public class GetInvoiceViewIntegrationTest : AbstractUiIntegrationTest
@@ -51,12 +54,12 @@ public class GetInvoiceViewIntegrationTest : AbstractUiIntegrationTest
         // then
         UnitTest.Equals("/404", result.Headers.Location!.ToString());
     }
-    
+
     private HttpResponseMessage Get(long id)
     {
         return Get("/invoices/" + id).Result;
     }
-    
+
 
     private CsharpKioskDemoDotnet.Invoice.Domain.Invoice CreateInvoice()
     {

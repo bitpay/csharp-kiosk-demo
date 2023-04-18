@@ -1,6 +1,12 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using System.Globalization;
+
 using BitPay.Models.Invoice;
+
 using CsharpKioskDemoDotnet.Invoice.Domain.Payment;
+
 using Newtonsoft.Json.Linq;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
@@ -81,7 +87,7 @@ public class InvoicePaymentCurrencyFactory
         MinerFees minerFees
     )
     {
-        return currencyCode.ToLower() switch
+        return currencyCode.ToLower(CultureInfo.CurrentCulture) switch
         {
             "btc" => minerFees.Btc,
             "bch" => minerFees.Bch,
@@ -131,7 +137,7 @@ public class InvoicePaymentCurrencyFactory
         SupportedTransactionCurrencies supportedTransactionCurrencies
     )
     {
-        return currencyCode.ToLower() switch
+        return currencyCode.ToLower(CultureInfo.CurrentCulture) switch
         {
             "gusd" => supportedTransactionCurrencies.Gusd,
             "btc" => supportedTransactionCurrencies.Btc,

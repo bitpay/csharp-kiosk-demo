@@ -1,4 +1,8 @@
-﻿using CsharpKioskDemoDotnet.Shared.BitPayProperties;
+﻿// Copyright 2023 BitPay.
+// All rights reserved.
+
+using CsharpKioskDemoDotnet.Shared.BitPayProperties;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
@@ -10,6 +14,7 @@ public class HttpGetNotFoundPage : Controller
 
     public HttpGetNotFoundPage(IOptions<BitPayProperties> bitPayPropertiesOption)
     {
+        ArgumentNullException.ThrowIfNull(bitPayPropertiesOption);
         _bitPayProperties = bitPayPropertiesOption.Value;
     }
 

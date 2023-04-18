@@ -1,3 +1,6 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Shared;
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoice;
@@ -9,6 +12,7 @@ using CsharpKioskDemoDotnet.Invoice.Infrastructure.Features.Tasks.CreateInvoice;
 using CsharpKioskDemoDotnet.Invoice.Infrastructure.Features.Tasks.UpdateInvoice;
 using CsharpKioskDemoDotnet.Shared.Logger.Infrastructure;
 using CsharpKioskDemoDotnet.Shared.Sse;
+
 using Lib.AspNetCore.ServerSentEvents;
 
 namespace CsharpKioskDemoDotnet.Shared.Infrastructure;
@@ -17,6 +21,7 @@ public static class DependencyInjectionConfiguration
 {
     public static void Execute(WebApplicationBuilder builder)
     {
+        ArgumentNullException.ThrowIfNull(builder);
         builder.Services.AddSingleton<CreateBitPayInvoice>();
         builder.Services.AddSingleton<IGetNotificationUrl, GetNotificationUrl>();
         builder.Services.AddSingleton<GetValidatedParams>();

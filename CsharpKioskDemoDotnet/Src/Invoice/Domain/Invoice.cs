@@ -1,4 +1,6 @@
-using System.Collections;
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Domain.Buyer;
 using CsharpKioskDemoDotnet.Invoice.Domain.ItemizedDetail;
 using CsharpKioskDemoDotnet.Invoice.Domain.Payment;
@@ -79,6 +81,7 @@ public class Invoice
 
     public void AddInvoiceTransactions(ICollection<InvoiceTransaction> invoiceTransactions)
     {
+        ArgumentNullException.ThrowIfNull(invoiceTransactions);
         foreach (var item in invoiceTransactions)
         {
             InvoiceTransactions.Add(item);
@@ -87,6 +90,7 @@ public class Invoice
 
     public void AddInvoiceItemizedDetails(ICollection<InvoiceItemizedDetail> invoiceItemizedDetails)
     {
+        ArgumentNullException.ThrowIfNull(invoiceItemizedDetails);
         foreach (var item in invoiceItemizedDetails)
         {
             InvoiceItemizedDetails.Add(item);
@@ -95,6 +99,8 @@ public class Invoice
 
     public void Update(Invoice invoice)
     {
+        ArgumentNullException.ThrowIfNull(invoice);
+
         Price = invoice.Price;
         CurrencyCode = invoice.CurrencyCode;
         Status = invoice.Status;

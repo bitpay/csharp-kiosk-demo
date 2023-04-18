@@ -1,7 +1,5 @@
-/*
- * Copyright 2023 BitPay.
- * All rights reserved.
- */
+// Copyright 2023 BitPay.
+// All rights reserved.
 
 using CsharpKioskDemoDotnet.Shared;
 
@@ -16,7 +14,7 @@ public class InvoiceTransaction
     public int? Confirmations { get; set; }
     public DateTime? ReceivedTime { get; set; }
     public string? Txid { get; set; }
-    
+
     public InvoiceTransaction(Invoice invoice)
     {
         Invoice = invoice;
