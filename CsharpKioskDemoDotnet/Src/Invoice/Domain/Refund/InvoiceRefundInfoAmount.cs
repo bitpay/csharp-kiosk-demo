@@ -1,7 +1,5 @@
-/*
- * Copyright 2023 BitPay.
- * All rights reserved.
- */
+// Copyright 2023 BitPay.
+// All rights reserved.
 
 using CsharpKioskDemoDotnet.Shared;
 
@@ -23,7 +21,7 @@ public class InvoiceRefundInfoAmount
         InvoiceRefundInfo = invoiceRefundInfo;
         CurrencyCode = currencyCode;
     }
-    
+
 #pragma warning disable CS8618
     internal InvoiceRefundInfoAmount()
 #pragma warning restore CS8618

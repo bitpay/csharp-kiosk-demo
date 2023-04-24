@@ -1,6 +1,10 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Shared;
 using CsharpKioskDemoDotnet.Invoice.Domain;
 using CsharpKioskDemoDotnet.Shared.Logger;
+
 using ILogger = CsharpKioskDemoDotnet.Shared.Logger.ILogger;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoice;
@@ -26,7 +30,7 @@ public class GetInvoiceDto
     {
         var invoice = _invoiceRepository.FindById(invoiceId);
         _logger.Info(
-            LogCode.INVOICE_GET,
+            LogCode.InvoiceGet,
             "Loaded invoice",
             new Dictionary<string, object?>
             {

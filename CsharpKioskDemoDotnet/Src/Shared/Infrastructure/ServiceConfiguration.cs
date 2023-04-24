@@ -1,3 +1,6 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 namespace CsharpKioskDemoDotnet.Shared.Infrastructure;
 
 public abstract class ServiceConfiguration

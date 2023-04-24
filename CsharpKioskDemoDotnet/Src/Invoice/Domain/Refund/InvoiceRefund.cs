@@ -1,7 +1,5 @@
-/*
- * Copyright 2023 BitPay.
- * All rights reserved.
- */
+// Copyright 2023 BitPay.
+// All rights reserved.
 
 namespace CsharpKioskDemoDotnet.Invoice.Domain.Refund;
 
@@ -14,6 +12,7 @@ public class InvoiceRefund
 
     public void AddRefundInfo(ICollection<InvoiceRefundInfo> invoiceRefundInfo)
     {
+        ArgumentNullException.ThrowIfNull(invoiceRefundInfo);
         foreach (var item in invoiceRefundInfo)
         {
             RefundInfo.Add(item);

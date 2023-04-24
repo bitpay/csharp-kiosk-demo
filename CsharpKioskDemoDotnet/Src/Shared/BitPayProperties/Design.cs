@@ -1,3 +1,6 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 namespace CsharpKioskDemoDotnet.Shared.BitPayProperties;
 
 public class Design
@@ -6,13 +9,19 @@ public class Design
     public string Logo { get; set; } = null!;
     public PosData PosData { get; set; } = new();
 
-    public string? GetCurrency()
+    public string? Currency
     {
-        return PosData.GetCurrency();
+        get
+        {
+            return PosData.GetCurrency();
+        }
     }
 
-    public List<Field> GetFields()
+    public IReadOnlyList<Field> Fields
     {
-        return PosData.Fields;
+        get
+        {
+            return PosData.Fields;
+        }
     }
 }

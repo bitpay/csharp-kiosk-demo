@@ -1,3 +1,8 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
+using System.Globalization;
+
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Shared;
 using CsharpKioskDemoDotnet.Invoice.Domain.Buyer;
 using CsharpKioskDemoDotnet.Invoice.Domain.Payment;
@@ -20,6 +25,9 @@ public class GetInvoiceWithUpdateData
         Domain.Invoice invoice
     )
     {
+        ArgumentNullException.ThrowIfNull(updateData);
+        ArgumentNullException.ThrowIfNull(invoice);
+
         return new Domain.Invoice(
             uuid: invoice.Uuid,
             posData: invoice.PosData,
@@ -46,7 +54,7 @@ public class GetInvoiceWithUpdateData
     )
     {
         var buyerFieldsData = updateData["buyerFields"];
-        
+
         if (buyerFieldsData == null)
         {
             return invoiceBuyer;
@@ -85,7 +93,7 @@ public class GetInvoiceWithUpdateData
             return null;
         }
 
-        return ParseMilisecondsToDataTime.Execute(expirationTime.ToString()!);
+        return ParseMillisecondsToDataTime.Execute(expirationTime.ToString()!);
     }
 
     private InvoicePayment GetPayment(
@@ -99,7 +107,7 @@ public class GetInvoiceWithUpdateData
             TransactionCurrency = GetFieldValue("transactionCurrency", updateData, invoicePayment.TransactionCurrency),
         };
     }
-    
+
     private T? GetFieldValue<T>(
         string fieldName,
         Dictionary<string, object?> updateData,
@@ -112,20 +120,20 @@ public class GetInvoiceWithUpdateData
         }
 
         var value = updateData[fieldName];
-        
+
         if (value == null)
         {
             return default;
         }
-        
+
         var type = typeof(T);
         var nullableType = Nullable.GetUnderlyingType(type);
 
         if (nullableType == null)
         {
-            return (T) Convert.ChangeType(value, type);
+            return (T)Convert.ChangeType(value, type, CultureInfo.CurrentCulture);
         }
-            
-        return (T) Convert.ChangeType(value.ToString(), nullableType)!;
+
+        return (T)Convert.ChangeType(value.ToString(), nullableType, CultureInfo.CurrentCulture)!;
     }
 }

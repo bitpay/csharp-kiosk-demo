@@ -1,11 +1,15 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Domain.Buyer;
+
 using InvoiceBuyerProvidedInfo = BitPay.Models.Invoice.InvoiceBuyerProvidedInfo;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 
 public class InvoiceBuyerFactory
 {
-    
+
     private readonly InvoiceBuyerProvidedInfoFactory _invoiceBuyerProvidedInfoFactory;
 
     public InvoiceBuyerFactory(InvoiceBuyerProvidedInfoFactory invoiceBuyerProvidedInfoFactory)
@@ -20,7 +24,8 @@ public class InvoiceBuyerFactory
     {
         var buyer = bitPayInvoice.Buyer;
 
-        if (buyer == null) {
+        if (buyer == null)
+        {
             return new InvoiceBuyer(_invoiceBuyerProvidedInfoFactory.Create(buyerProvidedInfo))
             {
                 BuyerProvidedEmail = bitPayInvoice.BuyerProvidedEmail,

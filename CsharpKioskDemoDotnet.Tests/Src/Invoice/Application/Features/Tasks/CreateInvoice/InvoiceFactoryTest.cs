@@ -1,11 +1,17 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using BitPay.Models.Invoice;
+
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 using CsharpKioskDemoDotnet.Invoice.Domain.Buyer;
 using CsharpKioskDemoDotnet.Invoice.Domain.ItemizedDetail;
 using CsharpKioskDemoDotnet.Invoice.Domain.Payment;
 using CsharpKioskDemoDotnet.Invoice.Domain.Refund;
 using CsharpKioskDemoDotnet.Shared;
+
 using Moq;
+
 using InvoiceBuyerProvidedInfo = CsharpKioskDemoDotnet.Invoice.Domain.Buyer.InvoiceBuyerProvidedInfo;
 
 namespace CsharpKioskDemoDotnet.Tests.Invoice.Application.Features.Tasks.CreateInvoice;

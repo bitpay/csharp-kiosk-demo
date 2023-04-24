@@ -1,3 +1,8 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
+using System.Globalization;
+
 using CsharpKioskDemoDotnet.Invoice.Domain.Payment;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
@@ -41,7 +46,7 @@ public class InvoicePaymentFactory
     )
     {
         return bitPayInvoice.MinerFees.GetType().GetProperties()
-            .Select(property => _invoicePaymentCurrencyFactory.Create(property.Name.ToUpper(), invoicePayment, bitPayInvoice))
+            .Select(property => _invoicePaymentCurrencyFactory.Create(property.Name.ToUpper(CultureInfo.CurrentCulture), invoicePayment, bitPayInvoice))
             .ToList();
     }
 }

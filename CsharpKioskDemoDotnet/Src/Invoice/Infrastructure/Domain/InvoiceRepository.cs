@@ -1,5 +1,9 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Domain;
 using CsharpKioskDemoDotnet.Shared.Domain;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace CsharpKioskDemoDotnet.Invoice.Infrastructure.Domain;
@@ -18,7 +22,7 @@ public class InvoiceRepository : IInvoiceRepository
         _context.Add(invoice);
         _context.SaveChanges();
     }
-    
+
     public void Update(Invoice.Domain.Invoice invoice)
     {
         _context.Update(invoice);
@@ -30,6 +34,9 @@ public class InvoiceRepository : IInvoiceRepository
         EntityPageSize entityPageSize
     )
     {
+        ArgumentNullException.ThrowIfNull(entityPageNumber);
+        ArgumentNullException.ThrowIfNull(entityPageSize);
+
         var invoices = _context.Invoices;
         var totalElements = invoices.Count();
 
@@ -44,7 +51,7 @@ public class InvoiceRepository : IInvoiceRepository
             currentPageNumber: Math.Max(entityPageNumber.Value - 1, 0),
             maxElementsPerPage: entityPageSize.Value,
             totalElements: totalElements,
-            totalPages: (int) Math.Ceiling((decimal)totalElements / entityPageSize.Value)
+            totalPages: (int)Math.Ceiling((decimal)totalElements / entityPageSize.Value)
         );
     }
 
@@ -54,7 +61,7 @@ public class InvoiceRepository : IInvoiceRepository
 
         if (invoice == null)
         {
-            throw new InvoiceNotFound();
+            throw new InvoiceNotFoundException();
         }
 
         return invoice;
@@ -70,14 +77,13 @@ public class InvoiceRepository : IInvoiceRepository
 
         if (invoice == null)
         {
-            throw new InvoiceNotFound();
+            throw new InvoiceNotFoundException();
         }
 
         return invoice;
-        
     }
 
-    public List<Invoice.Domain.Invoice> FindAll()
+    public IReadOnlyList<Invoice.Domain.Invoice> FindAll()
     {
         return _context.Invoices.ToList();
     }

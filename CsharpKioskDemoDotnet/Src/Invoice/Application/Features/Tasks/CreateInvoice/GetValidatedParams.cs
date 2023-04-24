@@ -1,4 +1,8 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Shared.BitPayProperties;
+
 using Microsoft.Extensions.Options;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
@@ -7,33 +11,38 @@ public class GetValidatedParams
 {
     private readonly BitPayProperties _bitPayProperties;
 
-    public GetValidatedParams(IOptions<BitPayProperties> bitPayPropertiesOption) 
+    public GetValidatedParams(IOptions<BitPayProperties> bitPayPropertiesOption)
     {
+        ArgumentNullException.ThrowIfNull(bitPayPropertiesOption);
         _bitPayProperties = bitPayPropertiesOption.Value;
     }
-    
-    internal Dictionary<string, string> Execute(Dictionary<string, string?> requestParameters) {
+
+    internal Dictionary<string, string> Execute(Dictionary<string, string?> requestParameters)
+    {
         var validatedParams = new Dictionary<string, string>();
 
-        foreach (var field in _bitPayProperties.GetFields())
+        foreach (var field in _bitPayProperties.Fields)
         {
             var value = requestParameters!.GetValueOrDefault(field.Name, null);
-            if (IsMissingRequiredField(field, value)) {
-                throw new MissingRequiredField(field);
+            if (IsMissingRequiredField(field, value))
+            {
+                throw new MissingRequiredFieldException(field);
             }
 
-            if (value != null) {
+            if (value != null)
+            {
                 validatedParams.Add(field.Name!, value);
             }
         }
 
-        return validatedParams; 
+        return validatedParams;
     }
-    
+
     private bool IsMissingRequiredField(
-        Field field, 
+        Field field,
         object? value
-    ) { 
-        return field.Required && value == null; 
+    )
+    {
+        return field.Required && value == null;
     }
 }

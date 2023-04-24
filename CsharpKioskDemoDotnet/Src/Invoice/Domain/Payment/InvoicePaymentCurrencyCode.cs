@@ -1,7 +1,5 @@
-/*
- * Copyright 2023 BitPay.
- * All rights reserved.
- */
+// Copyright 2023 BitPay.
+// All rights reserved.
 
 using CsharpKioskDemoDotnet.Shared;
 
@@ -23,7 +21,7 @@ public class InvoicePaymentCurrencyCode
         PaymentCurrency = paymentCurrency;
         PaymentCode = paymentCode;
     }
-    
+
 #pragma warning disable CS8618
     internal InvoicePaymentCurrencyCode()
 #pragma warning restore CS8618

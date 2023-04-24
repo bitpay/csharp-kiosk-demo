@@ -1,3 +1,6 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.UpdateInvoice;
 
 namespace CsharpKioskDemoDotnet.Tests.Invoice.Application.Features.Tasks.UpdateInvoice;
@@ -35,7 +38,7 @@ public class ValidateUpdateDataTest : IUnitTest
         var updateData = UnitTest.ToObject<Dictionary<string, object?>>(updateDataJson);
 
         // when
-        var exception = Assert.Throws<ValidationInvoiceUpdateDataFailed>(
+        var exception = Assert.Throws<ValidationInvoiceUpdateDataFailedException>(
             () => GetTestedClass().Execute(updateData, invoice)
         );
 

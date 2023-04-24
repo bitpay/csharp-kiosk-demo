@@ -1,11 +1,15 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Shared.Logger;
+
 using ILogger = CsharpKioskDemoDotnet.Shared.Logger.ILogger;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.UpdateInvoice;
 
 public class UpdateInvoiceLogger
 {
-    
+
     private readonly ILogger _logger;
 
     public UpdateInvoiceLogger(ILogger logger)
@@ -13,15 +17,15 @@ public class UpdateInvoiceLogger
         _logger = logger;
     }
 
-    internal void LogIpnValidateFail(ValidationInvoiceUpdateDataFailed validationInvoiceUpdateDataFailed)
+    internal void LogIpnValidateFail(ValidationInvoiceUpdateDataFailedException validationInvoiceUpdateDataFailedException)
     {
         _logger.Error(
-            LogCode.IPN_VALIDATE_FAIL,
+            LogCode.IpnValidateFail,
             "Failed to validate IPN",
             new Dictionary<string, object?>
             {
-                { "uuid", validationInvoiceUpdateDataFailed.Errors },
-                { "stackTrace", validationInvoiceUpdateDataFailed.StackTrace }
+                { "uuid", validationInvoiceUpdateDataFailedException.Errors },
+                { "stackTrace", validationInvoiceUpdateDataFailedException.StackTrace }
             }
         );
     }
@@ -29,7 +33,7 @@ public class UpdateInvoiceLogger
     internal void LogInvoiceUpdateFail(string invoiceUuid)
     {
         _logger.Error(
-            LogCode.INVOICE_UPDATE_FAIL,
+            LogCode.InvoiceUpdateFail,
             "Failed to update invoice",
             new Dictionary<string, object?>
             {
@@ -41,7 +45,7 @@ public class UpdateInvoiceLogger
     internal void LogInvoiceUpdateSuccess(Domain.Invoice invoice)
     {
         _logger.Info(
-            LogCode.INVOICE_UPDATE_SUCCESS,
+            LogCode.InvoiceUpdateSuccess,
             "Successfully updated invoice",
             new Dictionary<string, object?>
             {
@@ -53,7 +57,7 @@ public class UpdateInvoiceLogger
     internal void LogIpnValidateSuccess(Domain.Invoice invoice)
     {
         _logger.Info(
-            LogCode.IPN_VALIDATE_SUCCESS,
+            LogCode.IpnValidateSuccess,
             "Successfully validated IPN",
             new Dictionary<string, object?>
             {
@@ -65,7 +69,7 @@ public class UpdateInvoiceLogger
     internal void LogIpnReceived(Dictionary<string, object?> updateData)
     {
         _logger.Info(
-            LogCode.IPN_RECEIVED,
+            LogCode.IpnReceived,
             "Received IPN",
             updateData
         );

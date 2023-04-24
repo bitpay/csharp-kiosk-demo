@@ -1,15 +1,51 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 namespace CsharpKioskDemoDotnet.Shared.Domain;
 
 public class Page<T>
 {
-    public List<T> Content { get; }
+    public IReadOnlyList<T> Content { get; }
     public int CurrentPageNumber { get; }
-    public int MaxElementsPerPage { get; }
     public long TotalElements { get; }
-    public int TotalPages { get; }
+
+    public int LastPageItemIndex
+    {
+        get
+        {
+            return (_maxElementsPerPage * CurrentPageNumber) + Content.Count;
+        }
+    }
+
+    public int FirstPageItemIndex
+    {
+        get
+        {
+            return (_maxElementsPerPage * CurrentPageNumber) + 1;
+        }
+    }
+
+    public int PreviousPageNumber
+    {
+        get
+        {
+            return Math.Max(CurrentPageNumber, 1);
+        }
+    }
+
+    public int NexPageNumber
+    {
+        get
+        {
+            return Math.Min(CurrentPageNumber + 2, _totalPages);
+        }
+    }
+
+    private readonly int _totalPages;
+    private readonly int _maxElementsPerPage;
 
     public Page(
-        List<T> content,
+        IReadOnlyList<T> content,
         int currentPageNumber,
         int maxElementsPerPage,
         long totalElements,
@@ -18,39 +54,20 @@ public class Page<T>
     {
         Content = content;
         CurrentPageNumber = currentPageNumber;
-        MaxElementsPerPage = maxElementsPerPage;
+        _maxElementsPerPage = maxElementsPerPage;
         TotalElements = totalElements;
-        TotalPages = totalPages;
+        _totalPages = totalPages;
     }
 
     public Page<TU> MapElementsToNewType<TU>(IConverter<TU, T> converter)
     {
+        ArgumentNullException.ThrowIfNull(converter);
         return new Page<TU>(
             content: Content.Select(converter.Execute).ToList(),
             currentPageNumber: CurrentPageNumber,
-            maxElementsPerPage: MaxElementsPerPage,
+            maxElementsPerPage: _maxElementsPerPage,
             totalElements: TotalElements,
-            totalPages: TotalPages
+            totalPages: _totalPages
         );
-    }
-
-    public int GetFirstPageItemIndex()
-    {
-        return (MaxElementsPerPage * CurrentPageNumber) + 1;
-    }
-    
-    public int GetLastPageItemIndex()
-    {
-        return (MaxElementsPerPage * CurrentPageNumber) + Content.Count;
-    }
-    
-    public int GetPreviousPageNumber()
-    {
-        return Math.Max(CurrentPageNumber, 1);
-    }
-    
-    public int GetNexPageNumber()
-    {
-        return Math.Min(CurrentPageNumber + 2, TotalPages);
     }
 }

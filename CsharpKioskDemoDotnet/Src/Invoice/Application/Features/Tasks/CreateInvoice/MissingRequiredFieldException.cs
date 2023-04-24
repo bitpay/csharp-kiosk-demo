@@ -5,13 +5,12 @@ using CsharpKioskDemoDotnet.Shared.BitPayProperties;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 
-public class InvoiceFormDto
+public class MissingRequiredFieldException : Exception
 {
-    public Design Design { get; }
-    public string? Error { get; set; }
-
-    public InvoiceFormDto(Design design)
+    public MissingRequiredFieldException(Field field)
     {
-        Design = design;
+        Field = field;
     }
+
+    public Field Field { get; init; }
 }

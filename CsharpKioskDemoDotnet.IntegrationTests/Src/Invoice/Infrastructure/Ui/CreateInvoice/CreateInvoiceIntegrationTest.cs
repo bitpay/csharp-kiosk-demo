@@ -1,5 +1,10 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using System.Net;
+
 using BitPay.Exceptions;
+
 using Moq;
 
 namespace CsharpKioskDemoDotnet.IntegrationTests.Invoice.Infrastructure.Ui.CreateInvoice;
@@ -7,7 +12,7 @@ namespace CsharpKioskDemoDotnet.IntegrationTests.Invoice.Infrastructure.Ui.Creat
 public class CreateInvoiceIntegrationTest : AbstractUiIntegrationTest
 {
     private const string Url = "/invoice";
-    
+
     public CreateInvoiceIntegrationTest(CustomWebApplicationFactory<Program> factory) : base(factory)
     {
     }
@@ -52,11 +57,11 @@ public class CreateInvoiceIntegrationTest : AbstractUiIntegrationTest
                 { "price", "123" }
             }
         );
-        
+
         // then
         Assert.Empty(GetInvoiceRepository().FindAll());
     }
-    
+
     [Fact]
     public void POST_RequestMissingRequiredFields_DoNotSaveInvoiceInDatabase()
     {
@@ -71,7 +76,7 @@ public class CreateInvoiceIntegrationTest : AbstractUiIntegrationTest
                 { "reg_transaction_no", "test" }
             }
         );
-    
+
         // then
         Assert.Empty(GetInvoiceRepository().FindAll());
     }

@@ -1,3 +1,6 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 namespace CsharpKioskDemoDotnet.Shared.Logger.Infrastructure;
 
 public class StdoutLogger : ILogger
@@ -31,7 +34,7 @@ public class StdoutLogger : ILogger
             {
                 { "level", level },
                 { "timestamp", ((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds() },
-                { "code", code },
+                { "code", code.GetEnumDescription() },
                 { "message", message },
                 { "context", context }
             }

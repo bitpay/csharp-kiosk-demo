@@ -1,4 +1,8 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using System.Reflection;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -28,8 +32,8 @@ internal class IgnoreFieldResolver : DefaultContractResolver
     {
         var property = base.CreateProperty(member, memberSerialization);
 #pragma warning disable CS8600
-        Attribute? customAttribute = (FieldExcludedFromSerialization)property.AttributeProvider!
-            .GetAttributes(typeof(FieldExcludedFromSerialization), true)
+        Attribute? customAttribute = (FieldExcludedFromSerializationAttribute)property.AttributeProvider!
+            .GetAttributes(typeof(FieldExcludedFromSerializationAttribute), true)
             .FirstOrDefault();
 #pragma warning restore CS8600
         if (customAttribute != null)

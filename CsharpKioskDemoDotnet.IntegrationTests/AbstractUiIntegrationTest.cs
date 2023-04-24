@@ -1,11 +1,17 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using System.Text;
+
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 using CsharpKioskDemoDotnet.Invoice.Domain;
 using CsharpKioskDemoDotnet.Shared;
 using CsharpKioskDemoDotnet.Shared.Logger;
+
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
+
 using Moq;
 
 namespace CsharpKioskDemoDotnet.IntegrationTests;

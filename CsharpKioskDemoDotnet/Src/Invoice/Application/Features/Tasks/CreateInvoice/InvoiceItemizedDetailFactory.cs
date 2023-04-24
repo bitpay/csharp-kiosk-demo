@@ -1,4 +1,8 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using BitPay.Models.Invoice;
+
 using CsharpKioskDemoDotnet.Invoice.Domain.ItemizedDetail;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;

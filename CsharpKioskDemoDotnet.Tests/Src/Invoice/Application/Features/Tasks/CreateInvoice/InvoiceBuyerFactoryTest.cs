@@ -1,5 +1,9 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 using CsharpKioskDemoDotnet.Invoice.Domain.Buyer;
+
 using Moq;
 
 namespace CsharpKioskDemoDotnet.Tests.Invoice.Application.Features.Tasks.CreateInvoice;
@@ -32,7 +36,7 @@ public class InvoiceBuyerFactoryTest : IGetBitPayInvoice
     private void Create_BitPayInvoiceWithoutBuyer_ReturnInvoiceBuyer()
     {
         // given
-        var bitPayInvoiceJson = UnitTest.GetDataFromFile("bitPayInvoiceWithoutBuyer.json"); 
+        var bitPayInvoiceJson = UnitTest.GetDataFromFile("bitPayInvoiceWithoutBuyer.json");
         var bitPayInvoice = UnitTest.ToObject<BitPay.Models.Invoice.Invoice>(bitPayInvoiceJson);
 
         // when

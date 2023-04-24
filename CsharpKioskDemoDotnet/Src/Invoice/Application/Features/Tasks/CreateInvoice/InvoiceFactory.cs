@@ -1,6 +1,13 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
+using System.Globalization;
+
 using BitPay.Models.Invoice;
+
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Shared;
 using CsharpKioskDemoDotnet.Invoice.Domain.ItemizedDetail;
+
 using InvoiceTransaction = CsharpKioskDemoDotnet.Invoice.Domain.Transaction.InvoiceTransaction;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
@@ -109,6 +116,6 @@ public class InvoiceFactory
 
     private DateTime GetDateTime(long dateTime)
     {
-        return ParseMilisecondsToDataTime.Execute(dateTime.ToString());
+        return ParseMillisecondsToDataTime.Execute(dateTime.ToString(CultureInfo.CurrentCulture));
     }
 }

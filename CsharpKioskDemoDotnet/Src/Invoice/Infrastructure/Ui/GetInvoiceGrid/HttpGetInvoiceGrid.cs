@@ -1,6 +1,10 @@
-﻿using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoiceDtoGrid;
+﻿// Copyright 2023 BitPay.
+// All rights reserved.
+
+using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoiceDtoGrid;
 using CsharpKioskDemoDotnet.Shared.BitPayProperties;
 using CsharpKioskDemoDotnet.Shared.Domain;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
@@ -16,6 +20,8 @@ public class HttpGetInvoiceGrid : Controller
         GetInvoiceDtoGrid getInvoiceDtoGrid
     )
     {
+        ArgumentNullException.ThrowIfNull(bitPayPropertiesOption);
+        ArgumentNullException.ThrowIfNull(getInvoiceDtoGrid);
         _getInvoiceDtoGrid = getInvoiceDtoGrid;
         _bitPayProperties = bitPayPropertiesOption.Value;
     }
@@ -29,7 +35,7 @@ public class HttpGetInvoiceGrid : Controller
             design: _bitPayProperties.Design,
             grid: grid
         );
-        
+
         return View(
             "/Src/Invoice/Infrastructure/Views/InvoiceGrid/Content.cshtml",
             gridDto

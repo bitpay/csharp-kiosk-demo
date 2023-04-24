@@ -21,7 +21,8 @@ BitPay. This app uses SQLite database to make it easy to start.
 
 ## Configuration
 
-This app uses a JSON and YAML configuration files to set BitPay credentials and form fields. To configure it, you'll need to update `bitPayDesign.yaml`.
+This app uses a JSON and YAML configuration files to set BitPay credentials and form fields. 
+To configure it, you'll need to update `bitPayDesign.yaml`.
 
 ### General Information
 
@@ -47,48 +48,50 @@ This app uses a JSON and YAML configuration files to set BitPay credentials and 
 
 #### Dropdown (posData)
 
-| YAML Key      | Description                                            |
-| ------------- | ------------------------------------------------------ |
-| type          | Set to "select"                                        |
-| required      | Determines whether the field should be required or not |
-| id            | Field identifier                                       |
-| name          | Field name                                             |
-| label         | Field label                                            |
-| options.id    | (options array) ID for a given selection               |
-| options.label | (options array) Label for a given selection            |
-| options.value | (options array) Value for a given selection            |
+| YAML Key                                | Description                                            |
+|-----------------------------------------| ------------------------------------------------------ |
+| type                                    | Set to "select"                                        |
+| required                                | Determines whether the field should be required or not |
+| id                                      | Field identifier                                       |
+| name                                    | Field name                                             |
+| label                                   | Field label                                            |
+| options.id                              | (options array) ID for a given selection               |
+| options.label                           | (options array) Label for a given selection            |
+| options.value                           | (options array) Value for a given selection            |
 
 #### Fieldset (posData)
 
-| YAML Key      | Description                                            |
-| ------------- | ------------------------------------------------------ |
-| type          | Set to "fieldset"                                      |
-| required      | Determines whether the field should be required or not |
-| name          | Field name                                             |
-| label         | Field label                                            |
-| options.id    | (options array) ID for a given selection               |
-| options.label | (options array) Label for a given selection            |
-| options.value | (options array) Value for a given selection            |
+| YAML Key                                | Description                                            |
+|-----------------------------------------| ------------------------------------------------------ |
+| type                                    | Set to "fieldset"                                      |
+| required                                | Determines whether the field should be required or not |
+| name                                    | Field name                                             |
+| label                                   | Field label                                            |
+| options.id                              | (options array) ID for a given selection               |
+| options.label                           | (options array) Label for a given selection            |
+| options.value                           | (options array) Value for a given selection            |
 
 #### Text (posData)
 
-| YAML Key | Description                                            |
-| -------- | ------------------------------------------------------ |
-| type     | Set to "text"                                          |
-| required | Determines whether the field should be required or not |
-| name     | Field name                                             |
-| label    | Field label                                            |
+| YAML Key                                | Description                                            |
+|-----------------------------------------| ------------------------------------------------------ |
+| type                                    | Set to "text"                                          |
+| required                                | Determines whether the field should be required or not |
+| name                                    | Field name                                             |
+| label                                   | Field label                                            |
 
 #### Price
 
-| YAML Key | Description                                            |
-| -------- | ------------------------------------------------------ |
-| type     | Set to "price"                                         |
-| required | Determines whether the field should be required or not |
-| name     | Field name                                             |
-| label    | Field label                                            |
-| currency | Currency for the field                                 |
-Field with name "price" is required to exists in form. If field is not added to file `bitPayDesign.yaml`, it will be added automatically to form when the application starts.
+| YAML Key                                | Description                                            |
+|-----------------------------------------| ------------------------------------------------------ |
+| type                                    | Set to "price"                                         |
+| required                                | Determines whether the field should be required or not |
+| name                                    | Field name                                             |
+| label                                   | Field label                                            |
+| currency                                | Currency for the field                                 |
+
+Field with name "price" is required to exists in form. 
+If field is not added to file `bitPayDesign.yaml`, it will be added automatically to form when the application starts.
 
 ## Running
 

@@ -1,7 +1,5 @@
-/*
- * Copyright 2023 BitPay.
- * All rights reserved.
- */
+// Copyright 2023 BitPay.
+// All rights reserved.
 
 using CsharpKioskDemoDotnet.Shared;
 
@@ -34,7 +32,7 @@ public class InvoicePaymentCurrency
         SupportedTransactionCurrency = supportedTransactionCurrency;
         MinerFee = minerFee;
     }
-    
+
 #pragma warning disable CS8618
     internal InvoicePaymentCurrency()
 #pragma warning restore CS8618
@@ -43,6 +41,7 @@ public class InvoicePaymentCurrency
 
     public void AddExchangeRates(ICollection<InvoicePaymentCurrencyExchangeRate> paymentExchangeRates)
     {
+        ArgumentNullException.ThrowIfNull(paymentExchangeRates);
         foreach (var item in paymentExchangeRates)
         {
             ExchangeRates.Add(item);
@@ -51,6 +50,7 @@ public class InvoicePaymentCurrency
 
     public void AddPaymentCodes(ICollection<InvoicePaymentCurrencyCode> invoicePaymentCodes)
     {
+        ArgumentNullException.ThrowIfNull(invoicePaymentCodes);
         foreach (var item in invoicePaymentCodes)
         {
             CurrencyCodes.Add(item);

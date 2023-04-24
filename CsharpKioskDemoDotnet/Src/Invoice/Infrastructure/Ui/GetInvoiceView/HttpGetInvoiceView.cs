@@ -1,6 +1,10 @@
-﻿using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoice;
+﻿// Copyright 2023 BitPay.
+// All rights reserved.
+
+using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoice;
 using CsharpKioskDemoDotnet.Invoice.Domain;
 using CsharpKioskDemoDotnet.Shared.BitPayProperties;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
@@ -10,16 +14,18 @@ public class HttpGetInvoiceView : Controller
 {
     private readonly BitPayProperties _bitPayProperties;
     private readonly GetInvoiceDto _getInvoiceDto;
-    
+
     public HttpGetInvoiceView(
         IOptions<BitPayProperties> bitPayPropertiesOption,
         GetInvoiceDto getInvoiceDto
     )
     {
+        ArgumentNullException.ThrowIfNull(bitPayPropertiesOption);
+        ArgumentNullException.ThrowIfNull(getInvoiceDto);
         _getInvoiceDto = getInvoiceDto;
         _bitPayProperties = bitPayPropertiesOption.Value;
     }
-    
+
     // GET: invoices/{invoiceId}
     [HttpGet("invoices/{invoiceId}")]
     public IActionResult Execute(int invoiceId)
@@ -31,13 +37,13 @@ public class HttpGetInvoiceView : Controller
                 design: _bitPayProperties.Design,
                 invoice: invoice
             );
-    
+
             return View(
                 "/Src/Invoice/Infrastructure/Views/InvoiceView/Content.cshtml",
                 invoiceViewDto
             );
         }
-        catch (InvoiceNotFound)
+        catch (InvoiceNotFoundException)
         {
             return RedirectPermanent("/404");
         }

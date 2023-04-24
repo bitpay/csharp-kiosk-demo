@@ -1,6 +1,10 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.UpdateInvoice;
 using CsharpKioskDemoDotnet.Invoice.Domain;
 using CsharpKioskDemoDotnet.Shared;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace CsharpKioskDemoDotnet.Invoice.Infrastructure.Ui.UpdateInvoice;
@@ -26,25 +30,25 @@ public class HttpUpdateInvoice : Controller
         [FromBody] Dictionary<string, object> body
     )
     {
+        ArgumentNullException.ThrowIfNull(uuid);
+        ArgumentNullException.ThrowIfNull(body);
         try
         {
             _updateInvoice.Execute(uuid, GetData(body));
 
             return Ok();
         }
-        catch (ValidationInvoiceUpdateDataFailed exception)
+        catch (ValidationInvoiceUpdateDataFailedException exception)
         {
             return BadRequest(exception.Errors);
         }
-        catch (InvoiceNotFound)
+        catch (InvoiceNotFoundException)
         {
             return NotFound();
         }
     }
 
-    private Dictionary<string, object?> GetData(
-        Dictionary<string, object> body
-    )
+    private Dictionary<string, object?> GetData(Dictionary<string, object> body)
     {
         var data = _jsonToObjectConverter.Execute<Dictionary<string, object?>>(
             body["data"].ToString() ?? throw new InvalidOperationException()

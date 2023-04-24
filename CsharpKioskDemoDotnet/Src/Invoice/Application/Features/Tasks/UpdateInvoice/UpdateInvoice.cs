@@ -1,3 +1,6 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Domain;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.UpdateInvoice;
@@ -42,12 +45,12 @@ public class UpdateInvoice
             _updateInvoiceLogger.LogInvoiceUpdateSuccess(invoice);
             _afterInvoiceUpdate.Execute(invoice, (string?)updateData["eventName"]);
         }
-        catch (InvoiceNotFound)
+        catch (InvoiceNotFoundException)
         {
             _updateInvoiceLogger.LogInvoiceUpdateFail(invoiceUuid);
             throw;
         }
-        catch (ValidationInvoiceUpdateDataFailed validationInvoiceUpdateDataFailed)
+        catch (ValidationInvoiceUpdateDataFailedException validationInvoiceUpdateDataFailed)
         {
             _updateInvoiceLogger.LogIpnValidateFail(validationInvoiceUpdateDataFailed);
             throw;

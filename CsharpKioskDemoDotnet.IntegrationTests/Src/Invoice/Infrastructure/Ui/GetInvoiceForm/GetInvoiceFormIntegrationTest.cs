@@ -1,3 +1,6 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 namespace CsharpKioskDemoDotnet.IntegrationTests.Invoice.Infrastructure.Ui.GetInvoiceForm;
 
 public class GetInvoiceFormIntegrationTest : AbstractUiIntegrationTest
@@ -5,15 +8,15 @@ public class GetInvoiceFormIntegrationTest : AbstractUiIntegrationTest
     public GetInvoiceFormIntegrationTest(CustomWebApplicationFactory<Program> factory) : base(factory)
     {
     }
-    
+
     [Fact]
     public async Task GET_FormFieldsLoadedFromYamlFile_ProvidesAllFieldsInForm()
     {
         // given
-     
+
         // when
         var result = await Get("/");
-        
+
         // then
         var content = await HtmlHelpers.GetDocumentAsync(result);
         Assert.NotNull(content.QuerySelector("select[name='store']"));

@@ -1,7 +1,5 @@
-/*
- * Copyright 2023 BitPay.
- * All rights reserved.
- */
+// Copyright 2023 BitPay.
+// All rights reserved.
 
 namespace CsharpKioskDemoDotnet.Invoice.Domain.Buyer;
 
@@ -20,20 +18,21 @@ public class InvoiceBuyer
     public bool? Notify { get; set; }
     public string? BuyerProvidedEmail { get; set; }
     public InvoiceBuyerProvidedInfo InvoiceBuyerProvidedInfo { get; set; }
-    
+
     public InvoiceBuyer(InvoiceBuyerProvidedInfo invoiceBuyerProvidedInfo)
     {
         InvoiceBuyerProvidedInfo = invoiceBuyerProvidedInfo;
     }
-    
+
 #pragma warning disable CS8618
     internal InvoiceBuyer()
 #pragma warning restore CS8618
     {
     }
-    
+
     public void Update(InvoiceBuyer invoiceBuyer)
     {
+        ArgumentNullException.ThrowIfNull(invoiceBuyer);
         Name = invoiceBuyer.Name;
         Address1 = invoiceBuyer.Address1;
         Address2 = invoiceBuyer.Address2;

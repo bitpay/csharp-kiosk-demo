@@ -1,4 +1,10 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
+using System.Globalization;
+
 using BitPay.Models.Invoice;
+
 using CsharpKioskDemoDotnet.Shared;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.UpdateInvoice;
@@ -50,7 +56,7 @@ public class ValidateUpdateData
 
         if (errors.Any())
         {
-            throw new ValidationInvoiceUpdateDataFailed(errors);
+            throw new ValidationInvoiceUpdateDataFailedException(errors);
         }
     }
 
@@ -64,8 +70,8 @@ public class ValidateUpdateData
             return;
         }
 
-        Dictionary<string,object?> buyerFields;
-        
+        Dictionary<string, object?> buyerFields;
+
         try
         {
             buyerFields = _jsonToObjectConverter.Execute<Dictionary<string, object?>>(
@@ -123,7 +129,7 @@ public class ValidateUpdateData
 
         try
         {
-            long.Parse(updateData["expirationTime"]!.ToString()!);
+            long.Parse(updateData["expirationTime"]!.ToString()!, CultureInfo.CurrentCulture);
         }
         catch (FormatException)
         {
@@ -144,7 +150,7 @@ public class ValidateUpdateData
 
         try
         {
-            double.Parse(updateData[fieldName]!.ToString()!);
+            double.Parse(updateData[fieldName]!.ToString()!, CultureInfo.CurrentCulture);
         }
         catch (FormatException)
         {
@@ -236,6 +242,6 @@ public class ValidateUpdateData
 
     private static string Capitalize(string text)
     {
-        return string.Concat(text[..1].ToUpper(), text.AsSpan(1));
+        return string.Concat(text[..1].ToUpper(System.Globalization.CultureInfo.CurrentCulture), text.AsSpan(1));
     }
 }

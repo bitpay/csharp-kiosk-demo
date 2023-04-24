@@ -1,4 +1,8 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Infrastructure.Features.Tasks.CreateInvoice;
+
 using Microsoft.Extensions.Configuration;
 
 namespace CsharpKioskDemoDotnet.Tests.Invoice.Infrastructure.Features.Tasks.CreateInvoice;
@@ -6,9 +10,10 @@ namespace CsharpKioskDemoDotnet.Tests.Invoice.Infrastructure.Features.Tasks.Crea
 public class GetNotificationUrlTest : IUnitTest
 {
     private IUnitTest UnitTest => this;
-    
+
     [Fact]
-    void Execute_InvoiceUuId_ReturnNotificationUrl() {
+    void Execute_InvoiceUuId_ReturnNotificationUrl()
+    {
         // given
         var invoiceUuid = "123-456-789";
 
@@ -36,7 +41,7 @@ public class GetNotificationUrlTest : IUnitTest
         IConfiguration configuration = new ConfigurationBuilder()
             .AddInMemoryCollection(inMemorySettings!)
             .Build();
-        
+
         return configuration;
     }
 }

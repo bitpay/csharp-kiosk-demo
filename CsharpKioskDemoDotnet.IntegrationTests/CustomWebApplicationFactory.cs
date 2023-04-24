@@ -1,5 +1,10 @@
-using CsharpKioskDemoDotnet.Invoice.Infrastructure.Domain;
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using System.Data.Common;
+
+using CsharpKioskDemoDotnet.Invoice.Infrastructure.Domain;
+
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Data.Sqlite;
@@ -40,7 +45,7 @@ public class CustomWebApplicationFactory<TProgram>
                 var connection = container.GetRequiredService<DbConnection>();
                 options.UseSqlite(connection);
             });
-            
+
         });
 
         builder.UseEnvironment("Development");

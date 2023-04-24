@@ -1,3 +1,6 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 namespace CsharpKioskDemoDotnet.Shared.BitPayProperties;
 
 public class Field
@@ -7,7 +10,7 @@ public class Field
     public string? Id { get; set; }
     public string? Name { get; set; }
     public string? Label { get; set; }
-    public List<Option> Options { get; set; } = new();
+    public IReadOnlyList<Option> Options { get; set; } = new List<Option>();
     public string? Currency { get; set; } = "USD";
 
     public static Field CreatePriceField()

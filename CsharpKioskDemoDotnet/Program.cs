@@ -1,7 +1,12 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Infrastructure.Domain;
 using CsharpKioskDemoDotnet.Shared.Infrastructure;
+
 using Microsoft.EntityFrameworkCore;
 
+[assembly: System.Runtime.InteropServices.ComVisible(false)]
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -33,7 +38,7 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
 
-    var context = services.GetRequiredService<MvcInvoiceContext>();    
+    var context = services.GetRequiredService<MvcInvoiceContext>();
     context.Database.Migrate();
 }
 

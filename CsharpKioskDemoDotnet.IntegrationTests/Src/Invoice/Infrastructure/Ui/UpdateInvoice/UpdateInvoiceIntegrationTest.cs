@@ -1,3 +1,6 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using System.Net;
 
 namespace CsharpKioskDemoDotnet.IntegrationTests.Invoice.Infrastructure.Ui.UpdateInvoice;

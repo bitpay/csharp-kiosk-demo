@@ -1,7 +1,11 @@
+// Copyright 2023 BitPay.
+// All rights reserved.
+
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Shared;
 using CsharpKioskDemoDotnet.Invoice.Domain;
 using CsharpKioskDemoDotnet.Shared.Domain;
 using CsharpKioskDemoDotnet.Shared.Logger;
+
 using ILogger = CsharpKioskDemoDotnet.Shared.Logger.ILogger;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoiceDtoGrid;
@@ -31,7 +35,7 @@ public class GetInvoiceDtoGrid
         );
 
         _logger.Info(
-            LogCode.INVOICE_GRID_GET,
+            LogCode.InvoiceGridGet,
             "Loaded invoice grid",
             new Dictionary<string, object?>
             {
