@@ -1,8 +1,6 @@
 // Copyright 2023 BitPay.
 // All rights reserved.
 
-using CsharpKioskDemoDotnet.Invoice.Infrastructure.Ui.GetInvoiceForm;
-
 using Microsoft.AspNetCore.Mvc;
 
 namespace CsharpKioskDemoDotnet.Invoice.Infrastructure.Ui.CreateInvoice;
@@ -29,7 +27,7 @@ public class HttpCreateInvoice : Controller
         catch (Exception exception)
         {
             TempData["Error"] = exception.Message;
-            return RedirectToAction(nameof(Execute), nameof(HttpGetInvoiceForm));
+            return RedirectToAction(nameof(Execute), "/");
         }
     }
 }

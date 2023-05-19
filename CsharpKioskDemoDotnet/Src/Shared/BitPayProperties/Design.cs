@@ -6,8 +6,10 @@ namespace CsharpKioskDemoDotnet.Shared.BitPayProperties;
 public class Design
 {
     public Hero Hero { get; set; } = new();
-    public string Logo { get; set; } = null!;
     public PosData PosData { get; set; } = new();
+    public Donation Donation { get; set; } = new();
+    public string Logo { get; set; } = null!;
+    public string Mode { get; set; } = "standard";
 
     public string? Currency
     {
@@ -22,6 +24,11 @@ public class Design
         get
         {
             return PosData.Fields;
+        }
+    }
+    public decimal MaxPrice { 
+        get {
+            return Donation.MaxPrice;
         }
     }
 }

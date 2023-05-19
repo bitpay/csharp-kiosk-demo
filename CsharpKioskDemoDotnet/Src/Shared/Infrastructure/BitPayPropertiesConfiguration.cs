@@ -20,6 +20,7 @@ public static class BitPayPropertiesConfiguration
                 .WithNamingConvention(CamelCaseNamingConvention.Instance)
                 .WithTypeMapping<IReadOnlyList<Field>, List<Field>>()
                 .WithTypeMapping<IReadOnlyList<Option>, List<Option>>()
+                .WithTypeMapping<IReadOnlyList<decimal>, List<decimal>>()
                 .Build();
             var design = deserializer.Deserialize<Design>(File.ReadAllText("bitPayDesign.yaml"));
 

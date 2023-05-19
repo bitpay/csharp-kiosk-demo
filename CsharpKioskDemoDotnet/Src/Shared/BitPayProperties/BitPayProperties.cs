@@ -5,7 +5,7 @@ namespace CsharpKioskDemoDotnet.Shared.BitPayProperties;
 
 public class BitPayProperties
 {
-    public Design Design { get; set; } = null!;
+    public Design Design { get; set; } = new();
     public string? NotificationEmail { get; set; }
 
     public string? Currency
@@ -21,6 +21,18 @@ public class BitPayProperties
         get
         {
             return Design.Fields;
+        }
+    }
+
+    public string Mode { 
+        get {
+            return Design.Mode;
+        }
+    }
+
+    public decimal MaxPrice { 
+        get {
+            return Design.MaxPrice;
         }
     }
 }

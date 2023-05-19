@@ -3,14 +3,14 @@
 
 using CsharpKioskDemoDotnet.Shared.BitPayProperties;
 
-namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
+namespace CsharpKioskDemoDotnet.Shared.Form;
 
-public class InvoiceFormDto
+public class FormDto
 {
     public Design Design { get; }
     public string? Error { get; set; }
 
-    public InvoiceFormDto(Design design)
+    public FormDto(Design design)
     {
         Design = design;
     }

@@ -2,12 +2,13 @@
 // All rights reserved.
 
 using CsharpKioskDemoDotnet.Shared.BitPayProperties;
+using CsharpKioskDemoDotnet.Shared.Form;
 
 using Microsoft.Extensions.Options;
 
 namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 
-public class GetValidatedParams
+public class GetValidatedParams : IGetValidatedParams
 {
     private readonly BitPayProperties _bitPayProperties;
 
@@ -17,7 +18,7 @@ public class GetValidatedParams
         _bitPayProperties = bitPayPropertiesOption.Value;
     }
 
-    internal Dictionary<string, string> Execute(Dictionary<string, string?> requestParameters)
+    public Dictionary<string, string> Execute(Dictionary<string, string?> requestParameters)
     {
         var validatedParams = new Dictionary<string, string>();
 
