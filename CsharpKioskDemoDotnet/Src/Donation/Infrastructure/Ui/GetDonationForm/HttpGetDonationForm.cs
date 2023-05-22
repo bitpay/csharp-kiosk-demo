@@ -7,7 +7,7 @@ using CsharpKioskDemoDotnet.Shared.Form;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
-namespace CsharpKioskDemoDotnet.Src.Donation.Infrastructure.Ui.GetDonationForm;
+namespace CsharpKioskDemoDotnet.Donation.Infrastructure.Ui.GetDonationForm;
 
 public class HttpGetDonationForm : Controller
 {

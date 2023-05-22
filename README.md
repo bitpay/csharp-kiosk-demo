@@ -36,13 +36,19 @@ To configure it, you'll need to update `bitPayDesign.yaml`.
 
 #### bitPayDesign.yaml
 
-| YAML Key                                | Description                                             |
-|-----------------------------------------| ------------------------------------------------------- |
-| hero.bgColor                            | CSS color for hero background                           |
-| hero.title                              | The title to show in the hero                           |
-| hero.body                               | The text to show under the title in the hero            |
-| logo                                    | URL for the logo                                        |
-| posData.fields                          | See the `POS Data Fields` section below                 |
+| YAML Key                                | Description                                                                      |
+|-----------------------------------------| -------------------------------------------------------------------------------- |
+| hero.bgColor                            | CSS color for hero background                                                    |
+| hero.title                              | The title to show in the hero                                                    |
+| hero.body                               | The text to show under the title in the hero                                     |
+| logo                                    | URL for the logo                                                                 |
+| mode                                    | Determines whether the app should be run in `standard` or `donation` mode        |
+| donation.denominations                  | Available donations to choose. The highest value determined the maximum donation |
+| donation.enableOther                    | Determines whether the app should allow to use own donation value.               |
+| donation.footerText                     | The text to show in the footer                                                   |
+| donation.buttonSelectedBgColor          | CSS color for selected donation background                                       |
+| donation.buttonSelectedTextColor        | CSS color for selected donation text                                             |
+| posData.fields                          | See the `POS Data Fields` section below                                          |
 
 ### POS Data Fields
 
