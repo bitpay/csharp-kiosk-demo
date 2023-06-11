@@ -44,5 +44,6 @@
     <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\UpdateInvoice\invoice.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\UpdateInvoice\updateData.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Invoice\Application\Features\Tasks\UpdateInvoice\updatedInvoice.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="..\CsharpKioskDemoDotnet.Tests\Src\Donation\Application\Features\Tasks\CreateDonation\bitPayProperties.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

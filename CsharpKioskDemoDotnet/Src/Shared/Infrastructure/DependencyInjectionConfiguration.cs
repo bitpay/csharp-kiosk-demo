@@ -1,6 +1,7 @@
 // Copyright 2023 BitPay.
 // All rights reserved.
 
+using CsharpKioskDemoDotnet.Donation.Application.Features.Tasks.CreateDonation;
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Shared;
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.GetInvoice;
@@ -10,10 +11,13 @@ using CsharpKioskDemoDotnet.Invoice.Domain;
 using CsharpKioskDemoDotnet.Invoice.Infrastructure.Domain;
 using CsharpKioskDemoDotnet.Invoice.Infrastructure.Features.Tasks.CreateInvoice;
 using CsharpKioskDemoDotnet.Invoice.Infrastructure.Features.Tasks.UpdateInvoice;
+using CsharpKioskDemoDotnet.Shared.Form;
 using CsharpKioskDemoDotnet.Shared.Logger.Infrastructure;
 using CsharpKioskDemoDotnet.Shared.Sse;
 
 using Lib.AspNetCore.ServerSentEvents;
+
+using Microsoft.Extensions.Options;
 
 namespace CsharpKioskDemoDotnet.Shared.Infrastructure;
 
@@ -24,7 +28,6 @@ public static class DependencyInjectionConfiguration
         ArgumentNullException.ThrowIfNull(builder);
         builder.Services.AddSingleton<CreateBitPayInvoice>();
         builder.Services.AddSingleton<IGetNotificationUrl, GetNotificationUrl>();
-        builder.Services.AddSingleton<GetValidatedParams>();
         builder.Services.AddSingleton<InvoiceBuyerFactory>();
         builder.Services.AddSingleton<InvoiceBuyerProvidedInfoFactory>();
         builder.Services.AddSingleton<InvoiceFactory>();
@@ -42,6 +45,15 @@ public static class DependencyInjectionConfiguration
         builder.Services.AddSingleton<ValidateUpdateData>();
         builder.Services.AddSingleton<IAfterInvoiceUpdate, SendSseNotification>();
         builder.Services.AddSingleton<UpdateInvoiceLogger>();
+        builder.Services.AddSingleton<IGetValidatedParams>(_ =>
+        {
+            var bitPayProperties = _.GetService<IOptions<BitPayProperties.BitPayProperties>>()!;
+            if (string.Equals(bitPayProperties.Value.Mode, "donation", StringComparison.OrdinalIgnoreCase)) {
+                return new Donation.Application.Features.Tasks.CreateDonation.GetValidatedParams(bitPayProperties);
+            }
+
+            return new Invoice.Application.Features.Tasks.CreateInvoice.GetValidatedParams(bitPayProperties);
+        });
 
         builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
         builder.Services.AddScoped<CreateInvoice>();

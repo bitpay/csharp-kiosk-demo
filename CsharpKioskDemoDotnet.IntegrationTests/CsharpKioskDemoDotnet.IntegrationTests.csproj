@@ -39,6 +39,9 @@
     <None Update="bitPayDesign.yaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+     <None Update="Src\Donation\Infastructure\Ui\bitPayDesign.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Src\Invoice\Infrastructure\Ui\CreateInvoice\bitPayInvoice.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -58,6 +61,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Src\Invoice\Infrastructure\Ui\UpdateInvoice\invalidUpdateDataResponse.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Src\Donation\Infastructure\Ui\CreateDonation\bitPayInvoice.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

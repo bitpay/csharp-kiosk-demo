@@ -3,7 +3,7 @@
 
 using CsharpKioskDemoDotnet.Shared.BitPayProperties;
 
-namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
+namespace CsharpKioskDemoDotnet.Shared.Form;
 
 public class MissingRequiredFieldException : Exception
 {
@@ -13,4 +13,10 @@ public class MissingRequiredFieldException : Exception
     }
 
     public Field Field { get; init; }
+
+    public override string Message { 
+        get {
+            return $"Field: {Field.Label} is required.";
+        }
+    }
 }

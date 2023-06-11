@@ -5,14 +5,17 @@ using System.Text;
 
 using CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice;
 using CsharpKioskDemoDotnet.Invoice.Domain;
-using CsharpKioskDemoDotnet.Shared;
+using CsharpKioskDemoDotnet.Shared.BitPayProperties;
 using CsharpKioskDemoDotnet.Shared.Logger;
 
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 using Moq;
+
+using YamlDotNet.Serialization.NamingConventions;
 
 namespace CsharpKioskDemoDotnet.IntegrationTests;
 
@@ -24,7 +27,10 @@ public class AbstractUiIntegrationTest : IClassFixture<CustomWebApplicationFacto
     private readonly HttpClient _client;
     private readonly WebApplicationFactory<Program> _webApplicationFactory;
 
-    protected AbstractUiIntegrationTest(CustomWebApplicationFactory<Program> factory)
+    protected AbstractUiIntegrationTest(
+        CustomWebApplicationFactory<Program> factory,
+        string bitPayDesignPath = "bitPayDesign.yaml"
+    )
     {
         _webApplicationFactory = factory.WithWebHostBuilder(builder =>
         {
@@ -32,6 +38,22 @@ public class AbstractUiIntegrationTest : IClassFixture<CustomWebApplicationFacto
             {
                 services.AddSingleton<IBitPayClient>(_ => BitPay.Object);
                 services.AddSingleton<ILogger, FakeLogger>();
+                services.AddSingleton<IConfigureOptions<BitPayProperties>>(_ =>
+                {
+                    var deserializer = new YamlDotNet.Serialization.DeserializerBuilder()
+                        .WithNamingConvention(CamelCaseNamingConvention.Instance)
+                        .WithTypeMapping<IReadOnlyList<Field>, List<Field>>()
+                        .WithTypeMapping<IReadOnlyList<Option>, List<Option>>()
+                        .WithTypeMapping<IReadOnlyList<decimal>, List<decimal>>()
+                        .Build();
+                    var design = deserializer.Deserialize<Design>(File.ReadAllText(bitPayDesignPath));
+
+                    return new ConfigureNamedOptions<BitPayProperties>(string.Empty, options =>
+                    {
+                        options.NotificationEmail = "test@example.com";
+                        options.Design = design;
+                    });
+                });
             });
         });
         _client = _webApplicationFactory.CreateClient(new WebApplicationFactoryClientOptions

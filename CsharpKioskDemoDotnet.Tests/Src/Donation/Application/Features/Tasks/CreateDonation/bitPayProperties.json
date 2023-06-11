@@ -1,0 +1,86 @@
+{
+    "Design": {
+        "Donation": {
+            "Denominations": [
+                2800,
+                1000,
+                500,
+                100,
+                50
+            ],
+            "EnableOther": true,
+            "FooterText": "Contributions or gifts to RECIPIENT are not tax deductible. Contributions are limited to $10,000 per PAC per election cycle ($5,000 primary and $5,000 general) and $5,600 per individual per election cycle ($2,800 primary and $2,800 general). Contributions from the general treasury funds of corporations, labor unions, and national banks are prohibited. Federal contractors and foreign nationals who are not admitted for permanent residence in the United States are prohibited from making contributions. All contributions must be from personal funds and may not be reimbursed or paid by any other person. Federal law requires us to use our best efforts to collect and report the name, mailing address, occupation, and name of employer of individuals whose contributions exceed $200 in an election cycle.",
+            "ButtonSelectedBgColor": "#2a3f90",
+            "ButtonSelectedTextColor": "#ffffff"
+        },
+        "Hero": {
+            "BgColor": "#100000",
+            "Title": "BitPay Demo ts",
+            "Body": "Mattis amet hendrerit dolor, quisque lorem pharetra. Pellentesque lacus nisi urna, arcu sociis eu. Orci vel lectus nisl eget eget ut consectetur. Sit justo viverra non adipisicing elit distinctio."
+        },
+        "Logo": "https://via.placeholder.com/300x75?text=LOGO",
+        "PosData": {
+            "Fields": [
+                {
+                    "Type": "select",
+                    "Required": true,
+                    "Id": "store",
+                    "Name": "store",
+                    "Label": "Store",
+                    "Options": [
+                        {
+                            "Id": "store-1",
+                            "Label": "Store 1",
+                            "Value": "store-1"
+                        },
+                        {
+                            "Id": "store-2",
+                            "Label": "Store 2",
+                            "Value": "store-2"
+                        }
+                    ],
+                    "Currency": "USD"
+                },
+                {
+                    "Type": "fieldset",
+                    "Required": true,
+                    "Id": null,
+                    "Name": "register",
+                    "Label": "Register #",
+                    "Options": [
+                        {
+                            "Id": "register-1",
+                            "Label": "1",
+                            "Value": "1"
+                        },
+                        {
+                            "Id": "register-2",
+                            "Label": "2",
+                            "Value": "2"
+                        }
+                    ],
+                    "Currency": "USD"
+                },
+                {
+                    "Type": "text",
+                    "Required": true,
+                    "Id": "reg_transaction_no",
+                    "Name": "reg_transaction_no",
+                    "Label": "Reg/Transaction #",
+                    "Options": [],
+                    "Currency": "USD"
+                },
+                {
+                    "Type": "price",
+                    "Required": true,
+                    "Id": "price",
+                    "Name": "price",
+                    "Label": "Price",
+                    "Options": [],
+                    "Currency": "USD"
+                }
+            ]
+        }
+    },
+    "NotificationEmail": "example@example.com"
+}

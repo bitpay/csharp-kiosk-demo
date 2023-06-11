@@ -5,6 +5,7 @@ using BitPay.Exceptions;
 
 using CsharpKioskDemoDotnet.Invoice.Domain;
 using CsharpKioskDemoDotnet.Shared.Logger;
+using CsharpKioskDemoDotnet.Shared.Form;
 
 using ILogger = CsharpKioskDemoDotnet.Shared.Logger.ILogger;
 
@@ -12,14 +13,14 @@ namespace CsharpKioskDemoDotnet.Invoice.Application.Features.Tasks.CreateInvoice
 
 public class CreateInvoice
 {
-    private readonly GetValidatedParams _getValidatedParams;
+    private readonly IGetValidatedParams _getValidatedParams;
     private readonly CreateBitPayInvoice _createBitPayInvoice;
     private readonly InvoiceFactory _invoiceFactory;
     private readonly IInvoiceRepository _invoiceRepository;
     private readonly ILogger _logger;
 
     public CreateInvoice(
-        GetValidatedParams getValidatedParams,
+        IGetValidatedParams getValidatedParams,
         CreateBitPayInvoice createBitPayInvoice,
         InvoiceFactory invoiceFactory,
         IInvoiceRepository invoiceRepository,

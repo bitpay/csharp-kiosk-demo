@@ -7,13 +7,13 @@ using CsharpKioskDemoDotnet.Shared.Form;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
-namespace CsharpKioskDemoDotnet.Invoice.Infrastructure.Ui.GetInvoiceForm;
+namespace CsharpKioskDemoDotnet.Donation.Infrastructure.Ui.GetDonationForm;
 
-public class HttpGetInvoiceForm : Controller
+public class HttpGetDonationForm : Controller
 {
     private readonly BitPayProperties _bitPayProperties;
 
-    public HttpGetInvoiceForm(IOptions<BitPayProperties> bitPayPropertiesOption)
+    public HttpGetDonationForm(IOptions<BitPayProperties> bitPayPropertiesOption)
     {
         ArgumentNullException.ThrowIfNull(bitPayPropertiesOption);
         _bitPayProperties = bitPayPropertiesOption.Value;
@@ -23,7 +23,7 @@ public class HttpGetInvoiceForm : Controller
     public IActionResult Execute()
     {
         return View(
-            "/Src/Invoice/Infrastructure/Views/CreateInvoiceForm/Content.cshtml",
+            "/Src/Donation/Infrastructure/Views/DonationForm/Content.cshtml",
             new FormDto(_bitPayProperties.Design)
             {
                 Error = (string?)TempData["Error"]
