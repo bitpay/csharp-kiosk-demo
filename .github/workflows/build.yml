@@ -32,4 +32,4 @@ jobs:
       - name: Unit test
         run: dotnet test CsharpKioskDemoDotnet.Tests --no-restore --verbosity n
       - name: Integration test
-        run: dotnet test CsharpKioskDemoDotnet.IntegrationTests --verbosity n -f net${{ matrix.dotnet-version }}
+        run: dotnet test CsharpKioskDemoDotnet.IntegrationTests --verbosity n
