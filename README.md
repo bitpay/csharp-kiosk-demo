@@ -101,6 +101,13 @@ If field is not added to file `bitPayDesign.yaml`, it will be added automaticall
 
 ## Running
 
+Docker:
+Run `docker-compose up`
+When the app starts, navigate to http://localhost in a browser.
+
+or
+
+Natively: 
 Run `dotnet run --project CsharpKioskDemoDotnet` to run the application.
 
 ## Testing

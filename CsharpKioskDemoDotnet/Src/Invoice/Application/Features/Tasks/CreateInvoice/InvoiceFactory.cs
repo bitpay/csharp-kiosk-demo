@@ -57,7 +57,7 @@ public class InvoiceFactory
             BitPayOrderId = bitPayInvoice.OrderId,
             ExpirationTime = GetDateTime(bitPayInvoice.ExpirationTime),
             FacadeType = "pos/invoice",
-            BitPayGuid = bitPayInvoice.Guid,
+            BitPayGuid = bitPayInvoice.ResourceGuid,
             ExceptionStatus = bitPayInvoice.ExceptionStatus,
             BitPayUrl = bitPayInvoice.Url,
             RedirectUrl = bitPayInvoice.RedirectUrl,

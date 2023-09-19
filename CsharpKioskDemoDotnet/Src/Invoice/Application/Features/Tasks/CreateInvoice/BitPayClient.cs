@@ -18,6 +18,6 @@ public class BitPayClient : Client, IBitPayClient
     public virtual Task<BitPay.Models.Invoice.Invoice> CreateInvoice(BitPay.Models.Invoice.Invoice invoice)
     {
         ArgumentNullException.ThrowIfNull(invoice);
-        return Client.CreateInvoice(invoice, invoice.Guid);
+        return Client.CreateInvoice(invoice);
     }
 }
