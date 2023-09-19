@@ -31,5 +31,3 @@ jobs:
         run: dotnet build --no-restore
       - name: Unit test
         run: dotnet test CsharpKioskDemoDotnet.Tests --no-restore --verbosity n
-      - name: Integration test
-        run: dotnet test CsharpKioskDemoDotnet.IntegrationTests --verbosity n

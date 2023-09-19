@@ -70,7 +70,7 @@
   "CurrencyCodes": [],
   "SupportedTransactionCurrency": {
     "Id": 0,
-    "Enabled": true,
+    "Enabled": false,
     "Reason": null
   },
   "MinerFee": {
