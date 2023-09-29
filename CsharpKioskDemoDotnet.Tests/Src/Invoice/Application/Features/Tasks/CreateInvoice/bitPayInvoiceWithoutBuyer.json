@@ -1,4 +1,6 @@
 {
+  "price": "10,00",
+  "currency": "USD",
   "buyerProvidedEmail": "test@example.com",
   "buyer": null
 }
