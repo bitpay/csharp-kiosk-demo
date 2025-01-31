@@ -19,7 +19,14 @@ public class UpdateInvoiceIntegrationTest : AbstractUiIntegrationTest
         var updateDataJson = UnitTest.GetDataFromFile("updateData.json");
 
         // when
-        var result = await Post("/invoices/" + invoice.Uuid, updateDataJson);
+        var result = await Post(
+            "/invoices/" + invoice.Uuid,
+            updateDataJson,
+            new Dictionary<string, string>
+            {
+                { "x-signature", "bKGK0WgsFfMSEg4fpik9+OdjYrYNA1E99kI1QJmbfKw=" }
+            }
+        );
 
         // then
         result.EnsureSuccessStatusCode();
@@ -37,7 +44,14 @@ public class UpdateInvoiceIntegrationTest : AbstractUiIntegrationTest
         var updateDataJson = UnitTest.GetDataFromFile("updateData.json");
 
         // when
-        var result = await Post("/invoices/12312412", updateDataJson);
+        var result = await Post(
+            "/invoices/12312412", 
+            updateDataJson,
+            new Dictionary<string, string>
+            {
+                { "x-signature", "bKGK0WgsFfMSEg4fpik9+OdjYrYNA1E99kI1QJmbfKw=" }
+            }
+        );
 
         // then
         UnitTest.Equals(
@@ -58,7 +72,14 @@ public class UpdateInvoiceIntegrationTest : AbstractUiIntegrationTest
         var updateDataJson = UnitTest.GetDataFromFile("invalidUpdateData.json");
 
         // when
-        var result = await Post("/invoices/" + invoice.Uuid, updateDataJson);
+        var result = await Post(
+            "/invoices/" + invoice.Uuid, 
+            updateDataJson, 
+            new Dictionary<string, string>
+            {
+                { "x-signature", "16imUAXdJqur7yyQyDRRfcbPCeMPiuBFnNJVLlpi3hQ=" }
+            }
+        );
 
         // then
         UnitTest.Equals(
@@ -69,6 +90,31 @@ public class UpdateInvoiceIntegrationTest : AbstractUiIntegrationTest
             UnitTest.GetDataFromFile("invalidUpdateDataResponse.json"),
             result.Content.ReadAsStringAsync().Result
         );
+        UnitTest.Equals(
+            "new",
+            GetInvoiceRepository().FindById(invoice.Id).Status
+        );
+    }
+
+    [Fact]
+    public async Task POST_WebhookSignatureInvalid_DoNotUpdateInvoice()
+    {
+        // given
+        var invoice = CreateInvoice();
+        var updateDataJson = UnitTest.GetDataFromFile("invalidUpdateData.json");
+
+        // when
+        var result = await Post(
+            "/invoices/" + invoice.Uuid, 
+            updateDataJson, 
+            new Dictionary<string, string>
+            {
+                { "x-signature", "randomsignature" }
+            }
+        );
+
+        // then
+        result.EnsureSuccessStatusCode();
         UnitTest.Equals(
             "new",
             GetInvoiceRepository().FindById(invoice.Id).Status

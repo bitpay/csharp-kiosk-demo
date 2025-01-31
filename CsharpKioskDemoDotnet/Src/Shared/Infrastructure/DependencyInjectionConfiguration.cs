@@ -60,6 +60,7 @@ public static class DependencyInjectionConfiguration
         builder.Services.AddScoped<GetInvoiceDtoGrid>();
         builder.Services.AddScoped<GetInvoiceDto>();
         builder.Services.AddScoped<UpdateInvoice>();
+        builder.Services.AddScoped<WebhookVerifier>();
 
         builder.Services
             .AddServerSentEvents<INotificationsServerSentEventsService, NotificationsServerSentEventsService>(
