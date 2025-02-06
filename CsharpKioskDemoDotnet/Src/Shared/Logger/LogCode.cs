@@ -15,7 +15,8 @@ public enum LogCode
     [Description("INVOICE_UPDATE_FAIL")] InvoiceUpdateFail,
     [Description("IPN_RECEIVED")] IpnReceived,
     [Description("IPN_VALIDATE_SUCCESS")] IpnValidateSuccess,
-    [Description("IPN_VALIDATE_FAIL")] IpnValidateFail
+    [Description("IPN_VALIDATE_FAIL")] IpnValidateFail,
+    [Description("IPN_SIGNATURE_VERIFICATION_FAIL")] IpnSignatureVerificationFail
 }
 
 public static class DescriptionAttributeExtensions

@@ -69,7 +69,8 @@ public class AbstractUiIntegrationTest : IClassFixture<CustomWebApplicationFacto
 
     protected Task<HttpResponseMessage> Post(
         string url,
-        string jsonRequest
+        string jsonRequest,
+        Dictionary<string, string>? headers = null
     )
     {
         var httpContent = new StringContent(
@@ -77,6 +78,13 @@ public class AbstractUiIntegrationTest : IClassFixture<CustomWebApplicationFacto
             Encoding.UTF8,
             "application/json"
         );
+
+        if (headers != null) {
+            foreach(var item in headers)
+            {
+                httpContent.Headers.Add(item.Key, item.Value);
+            }
+        }
 
         return _client.PostAsync(url, httpContent);
     }
