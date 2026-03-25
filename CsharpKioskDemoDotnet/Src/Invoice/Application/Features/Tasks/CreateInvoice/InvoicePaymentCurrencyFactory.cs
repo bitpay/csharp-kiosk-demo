@@ -137,15 +137,6 @@ public class InvoicePaymentCurrencyFactory
         SupportedTransactionCurrencies supportedTransactionCurrencies
     )
     {
-        return currencyCode.ToLower(CultureInfo.CurrentCulture) switch
-        {
-            "gusd" => supportedTransactionCurrencies.Gusd,
-            "btc" => supportedTransactionCurrencies.Btc,
-            "usdc" => supportedTransactionCurrencies.Usdc,
-            "eth" => supportedTransactionCurrencies.Eth,
-            "bch" => supportedTransactionCurrencies.Bch,
-            "pax" => supportedTransactionCurrencies.Pax,
-            _ => null
-        };
+        return supportedTransactionCurrencies.GetSupportedCurrency(currencyCode.ToUpper(CultureInfo.InvariantCulture));
     }
 }

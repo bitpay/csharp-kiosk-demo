@@ -56,7 +56,7 @@ public class CreateInvoice
 
             return invoice;
         }
-        catch (InvoiceCreationException exception)
+        catch (BitPayApiException exception)
         {
             LogException(exception);
             throw exception.InnerException!;

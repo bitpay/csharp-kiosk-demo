@@ -26,8 +26,8 @@ public class InvoicePaymentFactory
             UniversalCodesPaymentString = bitPayInvoice.UniversalCodes.PaymentString,
             UniversalCodesVerificationLink = bitPayInvoice.UniversalCodes.VerificationLink,
             TransactionCurrency = bitPayInvoice.TransactionCurrency,
-            UnderpaidAmount = bitPayInvoice.UnderpaidAmount,
-            OverpaidAmount = bitPayInvoice.OverpaidAmount
+            UnderpaidAmount = (double?)bitPayInvoice.UnderpaidAmount,
+            OverpaidAmount = (double?)bitPayInvoice.OverpaidAmount
         };
 
         invoicePayment.AddPaymentCurrencies(
