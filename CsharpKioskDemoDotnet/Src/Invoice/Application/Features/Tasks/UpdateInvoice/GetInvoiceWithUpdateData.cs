@@ -82,12 +82,12 @@ public class GetInvoiceWithUpdateData
         Domain.Invoice invoice
     )
     {
-        if (!updateData.ContainsKey("expirationTime"))
+        if (!updateData.TryGetValue("expirationTime", out object? value))
         {
             return invoice.ExpirationTime;
         }
 
-        var expirationTime = updateData["expirationTime"];
+        var expirationTime = value;
         if (expirationTime == null)
         {
             return null;
@@ -114,12 +114,10 @@ public class GetInvoiceWithUpdateData
         T? defaultValue
     )
     {
-        if (!updateData.ContainsKey(fieldName))
+        if (!updateData.TryGetValue(fieldName, out object? value))
         {
             return defaultValue;
         }
-
-        var value = updateData[fieldName];
 
         if (value == null)
         {
