@@ -16,7 +16,7 @@ public class InvoiceItemizedDetailFactory
     {
         return new InvoiceItemizedDetail(invoice)
         {
-            Amount = itemizedDetail.Amount,
+            Amount = (double?)itemizedDetail.Amount,
             Description = itemizedDetail.Description,
             IsFee = itemizedDetail.IsFee
         };

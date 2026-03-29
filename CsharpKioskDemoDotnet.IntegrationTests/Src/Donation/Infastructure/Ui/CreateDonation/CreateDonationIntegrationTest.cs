@@ -54,7 +54,7 @@ namespace CsharpKioskDemoDotnet.IntegrationTests.Donation.Infastructure.Ui.Creat
         {
             // given
             BitPay.Setup(e => e.CreateInvoice(It.IsAny<BitPay.Models.Invoice.Invoice>()))
-                .Throws(new AggregateException(new InvoiceCreationException()));
+                .Throws(new AggregateException(new BitPayApiException("Invoice creation failed")));
 
             // when
             var result = Post(

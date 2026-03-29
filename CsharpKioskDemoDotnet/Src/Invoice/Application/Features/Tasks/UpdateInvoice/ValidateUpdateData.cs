@@ -65,7 +65,7 @@ public class ValidateUpdateData
         Dictionary<string, string> errors
     )
     {
-        if (!updateData.ContainsKey("buyerFields") || updateData["buyerFields"] == null)
+        if (!updateData.TryGetValue("buyerFields", out object? value) || value == null)
         {
             return;
         }
@@ -75,7 +75,7 @@ public class ValidateUpdateData
         try
         {
             buyerFields = _jsonToObjectConverter.Execute<Dictionary<string, object?>>(
-                updateData["buyerFields"]!.ToString()
+value!.ToString()
             )!;
         }
         catch (Exception)
@@ -102,14 +102,14 @@ public class ValidateUpdateData
         Dictionary<string, string> errors
     )
     {
-        if (!buyerFields.ContainsKey(fieldName) || buyerFields[fieldName] == null)
+        if (!buyerFields.TryGetValue(fieldName, out object? value) || value == null)
         {
             return;
         }
 
         try
         {
-            bool.Parse(buyerFields[fieldName]!.ToString()!);
+            bool.Parse(value!.ToString()!);
         }
         catch (FormatException)
         {
@@ -122,14 +122,14 @@ public class ValidateUpdateData
         Dictionary<string, string> errors
     )
     {
-        if (!updateData.ContainsKey("expirationTime") || updateData["expirationTime"] == null)
+        if (!updateData.TryGetValue("expirationTime", out object? value) || value == null)
         {
             return;
         }
 
         try
         {
-            long.Parse(updateData["expirationTime"]!.ToString()!, CultureInfo.CurrentCulture);
+            long.Parse(value!.ToString()!, CultureInfo.CurrentCulture);
         }
         catch (FormatException)
         {
@@ -143,14 +143,14 @@ public class ValidateUpdateData
         Dictionary<string, string> errors
     )
     {
-        if (!updateData.ContainsKey(fieldName) || updateData[fieldName] == null)
+        if (!updateData.TryGetValue(fieldName, out object? value) || value == null)
         {
             return;
         }
 
         try
         {
-            double.Parse(updateData[fieldName]!.ToString()!, CultureInfo.CurrentCulture);
+            double.Parse(value!.ToString()!, CultureInfo.CurrentCulture);
         }
         catch (FormatException)
         {
@@ -164,20 +164,20 @@ public class ValidateUpdateData
         Dictionary<string, string> errors
     )
     {
-        if (!updateData.ContainsKey("id") || updateData["id"] == null)
+        if (!updateData.TryGetValue("id", out object? value) || value == null)
         {
             errors.Add("id", "Id is empty.");
             return;
         }
 
 
-        if (updateData["id"]!.GetType() != typeof(string))
+        if (value!.GetType() != typeof(string))
         {
             errors.Add("id", "Id isn't text.");
             return;
         }
 
-        if ((string)updateData["id"]! != bitPayId)
+        if ((string)value! != bitPayId)
         {
             errors.Add("id", "Id not equal.");
         }
@@ -204,13 +204,13 @@ public class ValidateUpdateData
         Dictionary<string, string> errors
     )
     {
-        if (!updateData.ContainsKey("status"))
+        if (!updateData.TryGetValue("status", out object? value))
         {
             errors.Add("status", "Status is empty.");
             return;
         }
 
-        if (!_allowedStatuses.Contains(updateData["status"]))
+        if (!_allowedStatuses.Contains(value))
         {
             errors.Add("status", "Status has wrong type.");
         }
@@ -223,18 +223,18 @@ public class ValidateUpdateData
         Dictionary<string, string> errors
     )
     {
-        if (!updateData.ContainsKey(fieldName) || updateData[fieldName] == null)
+        if (!updateData.TryGetValue(fieldName, out object? value) || value == null)
         {
             return;
         }
 
-        if (updateData[fieldName]!.GetType() != typeof(string))
+        if (value!.GetType() != typeof(string))
         {
             errors.Add(fieldName, Capitalize(fieldName) + " isn't text.");
             return;
         }
 
-        if (((string)updateData[fieldName]!).Length > maxLength)
+        if (((string)value!).Length > maxLength)
         {
             errors.Add(fieldName, Capitalize(fieldName) + " is too long.");
         }

@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Lib.AspNetCore.ServerSentEvents" Version="9.0.0" />
+        <PackageReference Include="Lib.AspNetCore.ServerSentEvents" Version="9.1.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.20">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
