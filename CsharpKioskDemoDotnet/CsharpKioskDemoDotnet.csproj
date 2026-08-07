@@ -22,7 +22,7 @@
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.12" />
-        <PackageReference Include="YamlDotNet" Version="18.0.0" />
+        <PackageReference Include="YamlDotNet" Version="18.1.0" />
     </ItemGroup>
 
     <ItemGroup>
